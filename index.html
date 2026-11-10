@@ -84,49 +84,49 @@
 
   <!-- HEADER FIXO -->
   <header class="sticky top-0 z-40 bg-[#0f1d38]/95 backdrop-blur-md border-b border-blue-500/20 shadow-lg">
-    <div class="max-w-5xl mx-auto px-3 h-16 flex items-center justify-between gap-2">
+    <div class="max-w-5xl mx-auto px-2.5 sm:px-3 h-16 flex items-center justify-between gap-1.5">
       
       <!-- Esquerda: Botão 3 Tracinhos (Menu Lateral) + Logo Clicável -->
-      <div class="flex items-center gap-2.5">
-        <button id="btnOpenDrawer" aria-label="Abrir Menu de Categorias" class="p-2 rounded-xl bg-blue-600/20 hover:bg-blue-600/40 text-blue-300 border border-blue-400/20 transition active:scale-95">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+      <div class="flex items-center gap-2 min-w-0">
+        <button id="btnOpenDrawer" aria-label="Abrir Menu de Categorias" class="p-2 rounded-xl bg-blue-600/20 hover:bg-blue-600/40 text-blue-300 border border-blue-400/20 transition active:scale-95 flex-shrink-0">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
 
         <!-- Clicar na Logo/Nome volta sempre para a Página Inicial -->
-        <a href="#home" id="brandHomeLink" class="flex items-center gap-2.5 group">
-          <div class="w-10 h-10 rounded-xl overflow-hidden shadow-md border border-blue-400/30 flex-shrink-0 bg-gradient-to-br from-sky-400 to-blue-700 flex items-center justify-center relative">
-            <img src="/logo.png" alt="TeleHub Brasil" class="w-10 h-10 object-cover rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <a href="#home" id="brandHomeLink" class="flex items-center gap-2 group min-w-0">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-md border border-blue-400/30 flex-shrink-0 bg-gradient-to-br from-sky-400 to-blue-700 flex items-center justify-center relative">
+            <img src="/logo.png" alt="TeleHub Brasil" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div style="display:none;" class="w-full h-full items-center justify-center relative">
-              <div class="w-7 h-6 bg-white rounded-full flex items-center justify-center shadow-inner relative">
-                <span class="text-blue-700 font-black text-base leading-none">T</span>
-                <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-yellow-400 flex items-center justify-center border border-blue-700">
-                  <span class="w-1.5 h-1.5 rounded-full bg-green-600"></span>
+              <div class="w-6 h-5 bg-white rounded-full flex items-center justify-center shadow-inner relative">
+                <span class="text-blue-700 font-black text-sm leading-none">T</span>
+                <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-yellow-400 flex items-center justify-center border border-blue-700">
+                  <span class="w-1 h-1 rounded-full bg-green-600"></span>
                 </span>
               </div>
             </div>
           </div>
-          <div>
-            <span class="text-lg sm:text-xl font-extrabold tracking-tight text-white group-hover:text-sky-300 transition block leading-none">
+          <div class="min-w-0">
+            <span class="text-base sm:text-xl font-extrabold tracking-tight text-white group-hover:text-sky-300 transition block leading-tight truncate">
               TeleHub <span class="text-sky-400">Brasil</span>
             </span>
-            <span class="text-[11px] text-sky-300/80 font-medium block mt-0.5">Grupos do Telegram</span>
+            <span class="text-[10px] sm:text-[11px] text-sky-300/80 font-medium block leading-tight truncate">Grupos do Telegram</span>
           </div>
         </a>
       </div>
 
       <!-- Direita: Botões de Ação -->
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-1.5 flex-shrink-0">
         <!-- Botão Painel Admin (Visível apenas para monteiro.brms@gmail.com) -->
-        <button id="btnAdminPanel" class="hidden px-2.5 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm shadow flex items-center gap-1 transition">
+        <button id="btnAdminPanel" class="hidden px-2.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow flex items-center gap-1 transition whitespace-nowrap">
           <span>👑 Admin</span>
           <span id="adminPendingBadge" class="hidden px-1.5 py-0.5 text-[10px] rounded-full bg-red-600 text-white font-extrabold">0</span>
         </button>
 
         <!-- Botão Cadastrar Grupo/Canal -->
-        <button id="btnNewGroup" class="px-3 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-xs sm:text-sm shadow-md shadow-blue-600/30 transition active:scale-95 flex items-center gap-1">
-          <span>+ Cadastrar</span>
+        <button id="btnNewGroup" class="px-2.5 sm:px-3 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-xs sm:text-sm shadow-md shadow-blue-600/30 transition active:scale-95 whitespace-nowrap">
+          + Cadastrar
         </button>
 
         <!-- Botão Conta / Login -->
@@ -147,7 +147,7 @@
         <!-- Topo do Menu Lateral -->
         <div class="flex items-center justify-between pb-4 border-b border-slate-700/70">
           <div class="flex items-center gap-2">
-            <span class="text-base font-extrabold text-white">Categorias & Menu</span>
+            <span class="text-base font-extrabold text-white">Categorias e Menu</span>
           </div>
           <button id="btnCloseDrawer" class="p-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
             ✕
@@ -164,7 +164,7 @@
           </button>
         </div>
 
-        <!-- Destaques/Banners do Menu Lateral -->
+        <!-- Destaques do Menu Lateral -->
         <div id="sidebarHighlightsContainer" class="mt-3 space-y-2 hidden">
           <p class="text-[11px] font-bold uppercase tracking-wider text-amber-400 px-1">Destaques</p>
           <div id="sidebarHighlightsList" class="space-y-2"></div>
@@ -215,16 +215,16 @@
       </div>
     </section>
 
-    <!-- SEÇÃO DE DESTAQUES OFICIAIS NO TOPO -->
+    <!-- SEÇÃO DE DESTAQUES OFICIAIS NO TOPO (LIMPA, SEM & E SEM BOTS) -->
     <section id="topHighlightsSection" class="space-y-3">
       <div class="flex items-center justify-between px-1">
         <h2 class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
-          <span>⭐ Grupos & Bots Oficiais em Destaque</span>
+          <span>★ Grupos Oficiais em Destaque</span>
         </h2>
       </div>
       <!-- Destaque #1 Principal (Open Chat Brasil) -->
       <div id="primaryHighlightContainer" class="space-y-2.5"></div>
-      <!-- Destaques Abaixo do Principal (Desiré Chat, TeleHub Divulgações, Bot do TeleHub) -->
+      <!-- Destaques Abaixo do Principal (Desiré Chat e outros) -->
       <div id="secondaryHighlightsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"></div>
     </section>
 
@@ -315,7 +315,7 @@
       <div id="authLoggedOutView" class="space-y-4">
         <div>
           <h3 class="text-lg font-extrabold text-white">Acesse sua Conta</h3>
-          <p class="text-xs text-slate-300 mt-0.5">Crie uma conta rápida ou entre com o Google para cadastrar e gerenciar seus grupos.</p>
+          <p class="text-xs text-slate-300 mt-0.5">Crie uma conta rápida ou entre com seu e-mail para cadastrar e gerenciar seus grupos.</p>
         </div>
 
         <button id="btnGoogleLogin" type="button" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm shadow flex items-center justify-center gap-2.5 transition">
@@ -410,7 +410,7 @@
         <div>
           <label class="block text-xs font-semibold text-slate-300 mb-1">Link do Grupo ou Canal (t.me/...)</label>
           <div class="flex gap-2">
-            <input id="groupLinkInput" type="url" required placeholder="https://t.me/seugrupo" class="flex-1 px-3 py-2 rounded-xl bg-[#0b1426] border border-slate-700 text-sm text-white" />
+            <input id="groupLinkInput" type="text" required placeholder="https://t.me/seugrupo" class="flex-1 px-3 py-2 rounded-xl bg-[#0b1426] border border-slate-700 text-sm text-white" />
             <button id="btnFetchTelegram" type="button" class="px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs whitespace-nowrap shadow">
               ⚡ Puxar Dados
             </button>
@@ -481,13 +481,13 @@
         <span class="text-xl">👑</span>
         <div>
           <h3 class="text-base sm:text-lg font-extrabold text-white">Painel do Administrador</h3>
-          <p class="text-xs text-amber-300">Aprovação de grupos, controle de Destaques, Bots Oficiais e Banners.</p>
+          <p class="text-xs text-amber-300">Aprovação de grupos e controle de Destaques Oficiais.</p>
         </div>
       </div>
 
       <div class="grid grid-cols-3 gap-1.5 bg-[#0b1426] p-1.5 rounded-xl border border-slate-800 text-xs font-bold">
         <button id="adminTabPending" class="py-2 rounded-lg bg-amber-500 text-slate-950">⏳ Pendentes</button>
-        <button id="adminTabHighlights" class="py-2 rounded-lg text-slate-300 hover:bg-slate-800">⭐ Destaques & Bots</button>
+        <button id="adminTabHighlights" class="py-2 rounded-lg text-slate-300 hover:bg-slate-800">⭐ Destaques</button>
         <button id="adminTabAll" class="py-2 rounded-lg text-slate-300 hover:bg-slate-800">📋 Todos no Ar</button>
       </div>
 
@@ -498,9 +498,9 @@
       <div id="adminViewHighlights" class="hidden space-y-4">
         <div class="bg-[#0b1426] p-3.5 rounded-xl border border-amber-500/30 space-y-3">
           <div class="flex items-center justify-between flex-wrap gap-2">
-            <h4 class="text-sm font-extrabold text-amber-300">Adicionar / Editar Destaque, Bot ou Banner</h4>
-            <button id="btnSeedDefaultHighlights" type="button" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 text-amber-300 text-[11px] font-bold">
-              ⚡ Carregar Open Chat + Desiré para Editar
+            <h4 id="hlFormHeading" class="text-sm font-extrabold text-amber-300">Adicionar ou Editar Destaque</h4>
+            <button id="btnClearHlForm" type="button" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] font-bold">
+              + Limpar / Novo
             </button>
           </div>
 
@@ -508,19 +508,19 @@
             <input type="hidden" id="hlEditId" value="" />
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
               <div>
-                <label class="block text-[11px] text-slate-300 mb-0.5">Tipo do Item</label>
+                <label class="block text-[11px] text-slate-300 mb-0.5"> etiqueta do Card</label>
                 <select id="hlType" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white">
                   <option value="Grupo Oficial">Grupo Oficial</option>
-                  <option value="Bot Oficial">🤖 Bot Oficial</option>
                   <option value="Canal Oficial">📢 Canal Oficial</option>
-                  <option value="Banner">🖼️ Banner Publicitário</option>
+                  <option value="Bot Oficial">🤖 Bot Oficial</option>
+                  <option value="Destaque">⭐ Destaque</option>
                 </select>
               </div>
               <div>
                 <label class="block text-[11px] text-slate-300 mb-0.5">Onde Exibir no Site?</label>
                 <select id="hlPlacement" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white">
                   <option value="top_main">1. Topo Principal (Destaque #1)</option>
-                  <option value="top_sub">2. Abaixo do Principal (Desiré / Bots)</option>
+                  <option value="top_sub">2. Abaixo do Principal (Destaque #2)</option>
                   <option value="sidebar">3. Menu Lateral (Gaveta ☰)</option>
                 </select>
               </div>
@@ -532,32 +532,33 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
-                <label class="block text-[11px] text-slate-300 mb-0.5">Nome Completo (Ex: Open Chat Brasil)</label>
-                <input id="hlTitle" type="text" required placeholder="Nome do Grupo, Bot ou Banner" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
-              </div>
-              <div>
-                <label class="block text-[11px] text-slate-300 mb-0.5">Link de Destino (https://t.me/...)</label>
+                <label class="block text-[11px] text-slate-300 mb-0.5">Link do Telegram (t.me/...)</label>
                 <div class="flex gap-1.5">
-                  <input id="hlLink" type="url" required placeholder="https://t.me/..." class="flex-1 px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
+                  <input id="hlLink" type="text" required placeholder="https://t.me/..." class="flex-1 px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
                   <button id="btnFetchHlMeta" type="button" class="px-2.5 py-1.5 rounded-lg bg-blue-600 text-white text-[11px] font-bold">⚡ Puxar</button>
                 </div>
+                <p id="hlFetchStatus" class="text-[10px] text-sky-300 mt-0.5 hidden"></p>
+              </div>
+              <div>
+                <label class="block text-[11px] text-slate-300 mb-0.5">Nome Completo</label>
+                <input id="hlTitle" type="text" required placeholder="Ex: Open Chat Brasil" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
               </div>
             </div>
 
             <div>
-              <label class="block text-[11px] text-slate-300 mb-0.5">Descrição de Chamada</label>
-              <input id="hlDesc" type="text" required placeholder="Ex: O maior grupo de bate-papo e amizades do Brasil!" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
+              <label class="block text-[11px] text-slate-300 mb-0.5">Frase de Chamada (Descrição curta)</label>
+              <input id="hlDesc" type="text" placeholder="Ex: Nosso grupo oficial em 1º lugar! Entre para conversar e fazer amizades." class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
             </div>
 
-            <div class="flex items-center gap-3 pt-1">
+            <div class="flex items-center gap-3 pt-1 flex-wrap">
               <img id="hlImgPreview" src="/logo.png" class="w-11 h-11 rounded-xl object-cover border border-slate-700 bg-slate-900" />
               <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-300 font-bold text-xs border border-slate-700">
-                📱 Escolher Imagem do Celular
+                📱 Foto do Celular
                 <input id="hlFileInput" type="file" accept="image/*" class="hidden" />
               </label>
               <input type="hidden" id="hlImgData" value="" />
-              <button type="submit" class="ml-auto px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow">
-                Salvar Destaque
+              <button id="btnSaveHighlight" type="submit" class="ml-auto px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow-lg">
+                💾 Salvar Destaque
               </button>
             </div>
           </form>
@@ -567,6 +568,9 @@
       </div>
 
       <div id="adminViewAll" class="hidden space-y-2.5">
+        <p class="text-[11px] text-slate-300 bg-[#0b1426] p-2.5 rounded-xl border border-slate-800">
+          💡 <strong>Dica rápida:</strong> Toque em <strong>⭐ Topo #1</strong> ou <strong>⭐ Destaque #2</strong> em qualquer grupo abaixo para colocá-lo imediatamente no topo do site!
+        </p>
         <div id="adminAllGroupsList" class="space-y-2"></div>
       </div>
     </div>
@@ -589,6 +593,7 @@
       getFirestore,
       collection,
       addDoc,
+      setDoc,
       updateDoc,
       deleteDoc,
       doc,
@@ -665,6 +670,15 @@
     const groupsCounter = document.getElementById("groupsCounter");
     const emptyState = document.getElementById("emptyState");
     const searchInput = document.getElementById("searchInput");
+
+    function normalizeTelegramLink(raw) {
+      let s = (raw || "").trim();
+      if (!s) return "";
+      if (!/^https?:\/\//i.test(s)) {
+        s = "https://" + s.replace(/^\/+/, "");
+      }
+      return s;
+    }
 
     function initCategories() {
       categoryListNav.innerHTML = "";
@@ -837,8 +851,8 @@
     }
 
     async function fetchTelegramMetadata(url) {
-      if (!url || !url.includes("t.me/")) return null;
-      const cleanUrl = url.trim();
+      const cleanUrl = normalizeTelegramLink(url);
+      if (!cleanUrl || !cleanUrl.includes("t.me/")) return null;
       const proxies = [
         { url: `https://api.allorigins.win/get?url=${encodeURIComponent(cleanUrl)}`, type: "json" },
         { url: `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(cleanUrl)}`, type: "text" },
@@ -856,8 +870,9 @@
                           docHtml.querySelector('meta[name="twitter:title"]')?.getAttribute("content") || "";
           const ogImage = docHtml.querySelector('meta[property="og:image"]')?.getAttribute("content") ||
                           docHtml.querySelector('meta[name="twitter:image"]')?.getAttribute("content") || "";
+          const ogDesc = docHtml.querySelector('meta[property="og:description"]')?.getAttribute("content") || "";
           if (ogTitle && !ogTitle.startsWith("Telegram: Contact") && !ogTitle.startsWith("Telegram: Join")) {
-            return { title: ogTitle.trim(), image: ogImage.trim() };
+            return { title: ogTitle.trim(), image: ogImage.trim(), description: ogDesc.trim() };
           }
         } catch (_) {}
       }
@@ -869,7 +884,7 @@
     let fetchDebounce = null;
 
     async function handleAutoFetchUserForm() {
-      const link = groupLinkInput.value.trim();
+      const link = normalizeTelegramLink(groupLinkInput.value);
       if (!link.includes("t.me/")) return;
 
       fetchStatusText.textContent = "⏳ Puxando nome completo e foto do Telegram...";
@@ -884,7 +899,7 @@
         }
         fetchStatusText.textContent = "✅ Nome completo e foto carregados automaticamente!";
       } else {
-        fetchStatusText.textContent = "ℹ️ Link de convite privado: digite o nome completo abaixo e escolha a foto.";
+        fetchStatusText.textContent = "ℹ️ Link privado: digite o nome completo abaixo e escolha a foto.";
       }
     }
 
@@ -999,7 +1014,7 @@
         }
         closeAllModals(true);
       } catch (err) {
-        errEl.textContent = "Verifique seu e-mail e senha (ou clique na aba 'Criar Conta' se for seu primeiro acesso).";
+        errEl.textContent = "Verifique seu e-mail e senha.";
         errEl.classList.remove("hidden");
       }
     });
@@ -1066,7 +1081,7 @@
       const editId = document.getElementById("editGroupId").value;
       const type = document.getElementById("groupTypeInput").value;
       const category = document.getElementById("groupCategoryInput").value;
-      const link = document.getElementById("groupLinkInput").value.trim();
+      const link = normalizeTelegramLink(document.getElementById("groupLinkInput").value);
       const name = document.getElementById("groupNameInput").value.trim();
       const image = document.getElementById("groupImgUrlInput").value || DEFAULT_ICON;
       const ownerName = currentUser.displayName || currentUser.email.split("@")[0];
@@ -1087,7 +1102,7 @@
             status: isAdminUser ? "approved" : "pending",
             updatedAt: serverTimestamp()
           });
-          alert(isAdminUser ? "Grupo atualizado!" : "✅ Alterações salvas! Seu grupo foi enviado para nova análise do Administrador.");
+          alert(isAdminUser ? "✅ Grupo atualizado!" : "✅ Alterações salvas!");
         } else {
           const now = new Date();
           await addDoc(collection(db, "groups"), {
@@ -1105,7 +1120,7 @@
             timeStr: now.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }),
             createdAt: serverTimestamp()
           });
-          alert(isAdminUser ? "Grupo publicado diretamente!" : "✅ Grupo cadastrado com sucesso! Ele aparecerá no site assim que for aprovado pelo Administrador.");
+          alert(isAdminUser ? "✅ Grupo publicado diretamente!" : "✅ Grupo enviado para aprovação!");
         }
         closeAllModals(true);
       } catch (err) {
@@ -1129,6 +1144,7 @@
         const tB = b.createdAt?.seconds || 0;
         return tB - tA;
       });
+      renderHighlights();
       renderPublicGroups();
       if (isAdminUser) updateAdminUI();
     });
@@ -1151,32 +1167,65 @@
       const sidebarContainer = document.getElementById("sidebarHighlightsContainer");
       const sidebarList = document.getElementById("sidebarHighlightsList");
 
-      const activeList = allHighlights.length > 0 ? allHighlights : [
-        {
-          id: "default_openchat",
-          type: "Grupo Oficial",
-          placement: "top_main",
-          order: 1,
-          title: "Open Chat Brasil 🇧🇷",
-          description: "Nosso grupo oficial em 1º lugar! Entre para conversar, fazer amizades e interagir com toda a comunidade do Brasil.",
-          link: "https://t.me/",
-          image: DEFAULT_ICON
-        },
-        {
-          id: "default_desire",
-          type: "Grupo Oficial",
-          placement: "top_sub",
-          order: 2,
-          title: "Desiré Chat 💬",
-          description: "Grupo oficial parceiro! Bate-papo ativo, interação diária e novas amizades no Telegram.",
-          link: "https://t.me/",
-          image: DEFAULT_ICON
-        }
-      ];
+      let topMain = allHighlights.filter(h => h.placement === "top_main");
+      let topSub = allHighlights.filter(h => h.placement === "top_sub");
+      const sideItems = allHighlights.filter(h => h.placement === "sidebar");
 
-      const topMain = activeList.filter(h => h.placement === "top_main");
-      const topSub = activeList.filter(h => h.placement === "top_sub");
-      const sideItems = activeList.filter(h => h.placement === "sidebar");
+      // Se ainda não houver Destaque #1 salvo em Destaques, puxa automaticamente o Open Chat Brasil cadastrado em Grupos!
+      if (topMain.length === 0) {
+        const openChatGroup = allGroups.find(g => (g.name || "").toLowerCase().includes("open chat"));
+        if (openChatGroup) {
+          topMain = [{
+            id: "auto_openchat",
+            type: "Grupo Oficial",
+            placement: "top_main",
+            order: 1,
+            title: openChatGroup.name,
+            description: openChatGroup.description,
+            link: openChatGroup.link,
+            image: openChatGroup.image || DEFAULT_ICON
+          }];
+        } else {
+          topMain = [{
+            id: "default_openchat",
+            type: "Grupo Oficial",
+            placement: "top_main",
+            order: 1,
+            title: "Open Chat Brasil 🇧🇷",
+            description: "Nosso grupo oficial em 1º lugar! Entre para conversar, fazer amizades e interagir com toda a comunidade do Brasil.",
+            link: "https://t.me/",
+            image: DEFAULT_ICON
+          }];
+        }
+      }
+
+      // Se não houver Destaque #2, verifica se o Desiré Chat está em Grupos ou exibe o card padrão
+      if (topSub.length === 0) {
+        const desireGroup = allGroups.find(g => (g.name || "").toLowerCase().includes("desir"));
+        if (desireGroup) {
+          topSub = [{
+            id: "auto_desire",
+            type: "Grupo Oficial",
+            placement: "top_sub",
+            order: 2,
+            title: desireGroup.name,
+            description: desireGroup.description,
+            link: desireGroup.link,
+            image: desireGroup.image || DEFAULT_ICON
+          }];
+        } else {
+          topSub = [{
+            id: "default_desire",
+            type: "Grupo Oficial",
+            placement: "top_sub",
+            order: 2,
+            title: "Desiré Chat 💬",
+            description: "Grupo oficial parceiro! Bate-papo ativo, interação diária e novas amizades no Telegram.",
+            link: "https://t.me/",
+            image: DEFAULT_ICON
+          }];
+        }
+      }
 
       primaryContainer.innerHTML = "";
       topMain.forEach(item => {
@@ -1187,7 +1236,7 @@
             <img src="${item.image || DEFAULT_ICON}" alt="${item.title}" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-amber-400 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-1.5 flex-wrap mb-1">
-                <span class="px-2 py-0.5 rounded-md bg-amber-400 text-slate-950 font-black text-[10px] uppercase">👑 DESTAQUE #1 • ${item.type || "OFICIAL"}</span>
+                <span class="px-2 py-0.5 rounded-md bg-amber-400 text-slate-950 font-black text-[10px] uppercase">👑 DESTAQUE #1 • ${item.type || "GRUPO OFICIAL"}</span>
               </div>
               <h3 class="text-base sm:text-lg font-black text-white break-words leading-snug">${item.title}</h3>
               <p class="text-xs text-slate-200 line-clamp-2 mt-0.5">${item.description || ""}</p>
@@ -1209,7 +1258,7 @@
           <div class="flex items-center gap-3 min-w-0 flex-1">
             <img src="${item.image || DEFAULT_ICON}" alt="${item.title}" class="w-14 h-14 rounded-xl object-cover border border-sky-400/50 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
             <div class="min-w-0 flex-1">
-              <span class="inline-block px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold text-[10px] uppercase mb-0.5">${item.type || "Destaque"}</span>
+              <span class="inline-block px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold text-[10px] uppercase mb-0.5">${item.type || "Grupo Oficial"}</span>
               <h3 class="text-sm sm:text-base font-extrabold text-white break-words leading-snug">${item.title}</h3>
               <p class="text-xs text-slate-300 line-clamp-2 mt-0.5">${item.description || ""}</p>
             </div>
@@ -1395,6 +1444,26 @@
       adminViewHighlights.classList.add("hidden");
     });
 
+    async function promoteGroupToHighlight(g, placement) {
+      if (!isAdminUser) return;
+      try {
+        await addDoc(collection(db, "highlights"), {
+          type: "Grupo Oficial",
+          placement: placement,
+          order: placement === "top_main" ? 1 : 2,
+          title: g.name,
+          link: g.link,
+          description: g.description || "Grupo oficial em destaque no TeleHub Brasil.",
+          image: g.image || DEFAULT_ICON
+        });
+        closeAllModals(false);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        alert(`✅ "${g.name}" agora está em Destaque no Topo!`);
+      } catch (err) {
+        alert("Erro ao destacar grupo: " + err.message);
+      }
+    }
+
     function updateAdminUI() {
       const pending = allGroups.filter(g => g.status === "pending");
       const badge = document.getElementById("adminPendingBadge");
@@ -1447,20 +1516,24 @@
       allList.innerHTML = "";
       allGroups.forEach(g => {
         const row = document.createElement("div");
-        row.className = "bg-[#0b1426] border border-slate-800 rounded-xl p-2.5 flex items-center justify-between gap-2";
+        row.className = "bg-[#0b1426] border border-slate-800 rounded-xl p-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2";
         row.innerHTML = `
           <div class="flex items-center gap-2 min-w-0 flex-1">
-            <img src="${g.image || DEFAULT_ICON}" class="w-9 h-9 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
+            <img src="${g.image || DEFAULT_ICON}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
             <div class="min-w-0 flex-1">
               <p class="text-xs font-bold text-white break-words">${g.name}</p>
               <p class="text-[10px] text-slate-400">${g.category} • ${g.status === "approved" ? "No Ar" : "Pendente"}</p>
             </div>
           </div>
-          <div class="flex items-center gap-1.5 flex-shrink-0">
-            <button class="btn-adm-edit px-2.5 py-1 rounded bg-blue-600 text-white text-[11px] font-bold">Editar</button>
-            <button class="btn-adm-del px-2.5 py-1 rounded bg-red-600 text-white text-[11px] font-bold">Excluir</button>
+          <div class="flex items-center gap-1.5 flex-wrap flex-shrink-0">
+            <button class="btn-adm-top1 px-2 py-1 rounded bg-amber-500 text-slate-950 text-[10px] font-extrabold">⭐ Topo #1</button>
+            <button class="btn-adm-top2 px-2 py-1 rounded bg-sky-500/30 text-sky-300 border border-sky-400/30 text-[10px] font-bold">⭐ Destaque #2</button>
+            <button class="btn-adm-edit px-2 py-1 rounded bg-blue-600 text-white text-[10px] font-bold">Editar</button>
+            <button class="btn-adm-del px-2 py-1 rounded bg-red-600 text-white text-[10px] font-bold">Excluir</button>
           </div>
         `;
+        row.querySelector(".btn-adm-top1").addEventListener("click", () => promoteGroupToHighlight(g, "top_main"));
+        row.querySelector(".btn-adm-top2").addEventListener("click", () => promoteGroupToHighlight(g, "top_sub"));
         row.querySelector(".btn-adm-edit").addEventListener("click", () => {
           closeAllModals(false);
           openRegisterGroupModal(g);
@@ -1474,29 +1547,44 @@
       });
     }
 
-    document.getElementById("btnFetchHlMeta").addEventListener("click", async () => {
-      const url = document.getElementById("hlLink").value.trim();
+    function resetHighlightForm() {
+      document.getElementById("highlightForm").reset();
+      document.getElementById("hlEditId").value = "";
+      document.getElementById("hlImgPreview").src = DEFAULT_ICON;
+      document.getElementById("hlImgData").value = "";
+      document.getElementById("hlFormHeading").textContent = "Adicionar ou Editar Destaque";
+      document.getElementById("hlFetchStatus").classList.add("hidden");
+    }
+
+    document.getElementById("btnClearHlForm").addEventListener("click", resetHighlightForm);
+
+    async function handleFetchHlMetadata() {
+      const url = normalizeTelegramLink(document.getElementById("hlLink").value);
+      if (!url.includes("t.me/")) return;
+      const statusEl = document.getElementById("hlFetchStatus");
+      statusEl.textContent = "⏳ Puxando nome e foto...";
+      statusEl.classList.remove("hidden");
+
       const meta = await fetchTelegramMetadata(url);
       if (meta && meta.title) {
         document.getElementById("hlTitle").value = meta.title;
+        if (meta.description && !document.getElementById("hlDesc").value) {
+          document.getElementById("hlDesc").value = meta.description;
+        }
         if (meta.image) {
           document.getElementById("hlImgPreview").src = meta.image;
           document.getElementById("hlImgData").value = meta.image;
         }
+        statusEl.textContent = "✅ Dados carregados! Clique em Salvar Destaque.";
+      } else {
+        statusEl.textContent = "ℹ️ Digite o nome abaixo e clique em Salvar Destaque.";
       }
-    });
+    }
 
-    document.getElementById("hlLink").addEventListener("input", async (e) => {
-      const url = e.target.value.trim();
-      if (url.includes("t.me/")) {
-        const meta = await fetchTelegramMetadata(url);
-        if (meta && meta.title) {
-          document.getElementById("hlTitle").value = meta.title;
-          if (meta.image) {
-            document.getElementById("hlImgPreview").src = meta.image;
-            document.getElementById("hlImgData").value = meta.image;
-          }
-        }
+    document.getElementById("btnFetchHlMeta").addEventListener("click", handleFetchHlMetadata);
+    document.getElementById("hlLink").addEventListener("input", () => {
+      if (document.getElementById("hlLink").value.includes("t.me/")) {
+        handleFetchHlMetadata();
       }
     });
 
@@ -1512,49 +1600,42 @@
       e.preventDefault();
       if (!isAdminUser) return;
 
-      const editId = document.getElementById("hlEditId").value;
-      const payload = {
-        type: document.getElementById("hlType").value,
-        placement: document.getElementById("hlPlacement").value,
-        order: Number(document.getElementById("hlOrder").value) || 1,
-        title: document.getElementById("hlTitle").value.trim(),
-        link: document.getElementById("hlLink").value.trim(),
-        description: document.getElementById("hlDesc").value.trim(),
-        image: document.getElementById("hlImgData").value || DEFAULT_ICON
-      };
+      const btn = document.getElementById("btnSaveHighlight");
+      btn.disabled = true;
+      btn.textContent = "Salvando...";
 
-      if (editId) {
-        await updateDoc(doc(db, "highlights", editId), payload);
-      } else {
-        await addDoc(collection(db, "highlights"), payload);
+      try {
+        const editId = document.getElementById("hlEditId").value;
+        const title = document.getElementById("hlTitle").value.trim();
+        const link = normalizeTelegramLink(document.getElementById("hlLink").value);
+        const desc = document.getElementById("hlDesc").value.trim() || "Grupo oficial em destaque no TeleHub Brasil! Entre agora e participe.";
+
+        const payload = {
+          type: document.getElementById("hlType").value,
+          placement: document.getElementById("hlPlacement").value,
+          order: Number(document.getElementById("hlOrder").value) || 1,
+          title,
+          link,
+          description: desc,
+          image: document.getElementById("hlImgData").value || DEFAULT_ICON
+        };
+
+        if (editId && allHighlights.some(h => h.id === editId)) {
+          await setDoc(doc(db, "highlights", editId), payload, { merge: true });
+        } else {
+          await addDoc(collection(db, "highlights"), payload);
+        }
+
+        resetHighlightForm();
+        closeAllModals(false);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        alert(`✅ "${title}" salvo nos Destaques com sucesso!`);
+      } catch (err) {
+        alert("Erro ao salvar destaque: " + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "💾 Salvar Destaque";
       }
-      document.getElementById("highlightForm").reset();
-      document.getElementById("hlEditId").value = "";
-      document.getElementById("hlImgPreview").src = DEFAULT_ICON;
-      document.getElementById("hlImgData").value = "";
-    });
-
-    document.getElementById("btnSeedDefaultHighlights").addEventListener("click", async () => {
-      if (!isAdminUser) return;
-      await addDoc(collection(db, "highlights"), {
-        type: "Grupo Oficial",
-        placement: "top_main",
-        order: 1,
-        title: "Open Chat Brasil 🇧🇷",
-        description: "Nosso grupo oficial em 1º lugar! Entre para conversar, fazer amizades e interagir com toda a comunidade do Brasil.",
-        link: "https://t.me/",
-        image: DEFAULT_ICON
-      });
-      await addDoc(collection(db, "highlights"), {
-        type: "Grupo Oficial",
-        placement: "top_sub",
-        order: 2,
-        title: "Desiré Chat 💬",
-        description: "Grupo oficial parceiro! Bate-papo ativo, interação diária e novas amizades no Telegram.",
-        link: "https://t.me/",
-        image: DEFAULT_ICON
-      });
-      alert("Pronto! Clique em 'Editar' ao lado de Open Chat Brasil e Desiré Chat abaixo para colar o link oficial de cada um.");
     });
 
     function renderAdminHighlights() {
@@ -1567,8 +1648,8 @@
           <div class="flex items-center gap-2.5 min-w-0 flex-1">
             <img src="${item.image || DEFAULT_ICON}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
             <div class="min-w-0 flex-1">
-              <p class="text-xs font-extrabold text-amber-300 break-words">[Ordem #${item.order}] ${item.title}</p>
-              <p class="text-[10px] text-slate-400">${item.type} • Posição: ${item.placement}</p>
+              <p class="text-xs font-extrabold text-amber-300 break-words">[#${item.order}] ${item.title}</p>
+              <p class="text-[10px] text-slate-400">${item.type} • ${item.placement === "top_main" ? "Topo #1" : item.placement === "top_sub" ? "Destaque #2" : "Menu Lateral"}</p>
             </div>
           </div>
           <div class="flex gap-1.5 flex-shrink-0">
@@ -1579,16 +1660,20 @@
         row.querySelector(".btn-hl-edit").addEventListener("click", () => {
           document.getElementById("hlEditId").value = item.id;
           document.getElementById("hlType").value = item.type || "Grupo Oficial";
-          document.getElementById("hlPlacement").value = item.placement || "top_sub";
+          document.getElementById("hlPlacement").value = item.placement || "top_main";
           document.getElementById("hlOrder").value = item.order || 1;
           document.getElementById("hlTitle").value = item.title || "";
           document.getElementById("hlLink").value = item.link || "";
           document.getElementById("hlDesc").value = item.description || "";
           document.getElementById("hlImgPreview").src = item.image || DEFAULT_ICON;
           document.getElementById("hlImgData").value = item.image || "";
+          document.getElementById("hlFormHeading").textContent = `Editando: ${item.title}`;
         });
         row.querySelector(".btn-hl-del").addEventListener("click", async () => {
           if (confirm(`Remover destaque "${item.title}"?`)) {
+            if (document.getElementById("hlEditId").value === item.id) {
+              resetHighlightForm();
+            }
             await deleteDoc(doc(db, "highlights", item.id));
           }
         });

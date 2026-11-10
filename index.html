@@ -535,8 +535,8 @@
                 </select>
               </div>
               <div>
-                <label class="block text-[11px] text-slate-300 mb-0.5">Posição (2, 3, 4...)</label>
-                <input id="hlOrder" type="number" value="3" min="1" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
+                <label class="block text-[11px] text-slate-300 mb-0.5">Posição (1, 2, 3...)</label>
+                <input id="hlOrder" type="number" value="1" min="1" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
               </div>
             </div>
 
@@ -623,7 +623,6 @@
     const auth = getAuth(app);
     const db = getFirestore(app);
 
-    // LISTA DE CATEGORIAS COM ADULTO (+18) INCLUÍDA
     const CATEGORIES = [
       "Amizade e Bate-Papo",
       "Namoro, Amor e Romance",
@@ -683,6 +682,7 @@
     function normalizeTelegramLink(raw) {
       let s = (raw || "").trim();
       if (!s) return "";
+      s = s.replace(/^@/, "https://t.me/");
       if (!/^https?:\/\//i.test(s)) {
         s = "https://" + s.replace(/^\/+/, "");
       }
@@ -866,77 +866,125 @@
       });
     }
 
+    // ===============================================================
+    // BUSCADOR TURBO DE METADADOS DO TELEGRAM (4 LEITORES SIMULTÂNEOS)
+    // ===============================================================
+    function fetchWithTimeout(url, timeoutMs = 4200) {
+      const ctrl = new AbortController();
+      const id = setTimeout(() => ctrl.abort(), timeoutMs);
+      return fetch(url, { signal: ctrl.signal }).finally(() => clearTimeout(id));
+    }
+
+    function parseTelegramHtmlString(html) {
+      if (!html) return null;
+      const parser = new DOMParser();
+      const docHtml = parser.parseFromString(html, "text/html");
+
+      const rawTitle =
+        docHtml.querySelector(".tgme_page_title")?.textContent ||
+        docHtml.querySelector('meta[property="og:title"]')?.getAttribute("content") ||
+        docHtml.querySelector('meta[name="twitter:title"]')?.getAttribute("content") ||
+        "";
+
+      const rawImage =
+        docHtml.querySelector(".tgme_page_photo_image")?.getAttribute("src") ||
+        docHtml.querySelector('meta[property="og:image"]')?.getAttribute("content") ||
+        docHtml.querySelector('meta[name="twitter:image"]')?.getAttribute("content") ||
+        "";
+
+      const rawDesc =
+        docHtml.querySelector(".tgme_page_description")?.textContent ||
+        docHtml.querySelector('meta[property="og:description"]')?.getAttribute("content") ||
+        docHtml.querySelector('meta[name="twitter:description"]')?.getAttribute("content") ||
+        "";
+
+      const title = rawTitle.replace(/\s+/g, " ").trim();
+      if (!title || title.startsWith("Telegram: Contact") || title.startsWith("Telegram: Join") || title === "Telegram") {
+        return null;
+      }
+
+      return {
+        title,
+        image: (rawImage || "").trim(),
+        description: (rawDesc || "").replace(/\s+/g, " ").trim()
+      };
+    }
+
     async function fetchTelegramMetadata(url) {
       const cleanUrl = normalizeTelegramLink(url);
       if (!cleanUrl || !cleanUrl.includes("t.me/")) return null;
-      const proxies = [
-        { url: `https://api.allorigins.win/get?url=${encodeURIComponent(cleanUrl)}`, type: "json" },
-        { url: `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(cleanUrl)}`, type: "text" },
-        { url: `https://corsproxy.io/?${encodeURIComponent(cleanUrl)}`, type: "text" }
-      ];
-      for (const p of proxies) {
-        try {
-          const res = await fetch(p.url);
-          if (!res.ok) continue;
-          const html = p.type === "json" ? (await res.json()).contents : await res.text();
-          if (!html) continue;
-          const parser = new DOMParser();
-          const docHtml = parser.parseFromString(html, "text/html");
-          const ogTitle = docHtml.querySelector('meta[property="og:title"]')?.getAttribute("content") ||
-                          docHtml.querySelector('meta[name="twitter:title"]')?.getAttribute("content") || "";
-          const ogImage = docHtml.querySelector('meta[property="og:image"]')?.getAttribute("content") ||
-                          docHtml.querySelector('meta[name="twitter:image"]')?.getAttribute("content") || "";
-          const ogDesc = docHtml.querySelector('meta[property="og:description"]')?.getAttribute("content") || "";
-          if (ogTitle && !ogTitle.startsWith("Telegram: Contact") && !ogTitle.startsWith("Telegram: Join")) {
-            return { title: ogTitle.trim(), image: ogImage.trim(), description: ogDesc.trim() };
-          }
-        } catch (_) {}
+
+      // 1. Se já existir em AllGroups ou Highlights com esse link, aproveita na hora
+      const existingGroup = allGroups.find(g => normalizeTelegramLink(g.link).toLowerCase() === cleanUrl.toLowerCase());
+      if (existingGroup && existingGroup.name) {
+        return {
+          title: existingGroup.name,
+          image: existingGroup.image || "",
+          description: existingGroup.description || ""
+        };
       }
-      return null;
+
+      // 2. Dispara 4 leitores em paralelo com timeout curto (o mais rápido ganha!)
+      const tasks = [
+        // Leitor 1: Microlink API (Especialista em OpenGraph)
+        (async () => {
+          const res = await fetchWithTimeout(`https://api.microlink.io/?url=${encodeURIComponent(cleanUrl)}`, 4000);
+          if (!res.ok) throw new Error("Microlink fail");
+          const json = await res.json();
+          const title = (json?.data?.title || "").trim();
+          if (!title || title.startsWith("Telegram: Contact") || title.startsWith("Telegram: Join") || title === "Telegram") {
+            throw new Error("Generic title");
+          }
+          return {
+            title,
+            image: (json?.data?.image?.url || "").trim(),
+            description: (json?.data?.description || "").trim()
+          };
+        })(),
+
+        // Leitor 2: AllOrigins JSON
+        (async () => {
+          const res = await fetchWithTimeout(`https://api.allorigins.win/get?url=${encodeURIComponent(cleanUrl)}`, 4200);
+          if (!res.ok) throw new Error("AllOrigins fail");
+          const data = await res.json();
+          const parsed = parseTelegramHtmlString(data?.contents);
+          if (!parsed) throw new Error("Empty parse");
+          return parsed;
+        })(),
+
+        // Leitor 3: CodeTabs Proxy
+        (async () => {
+          const res = await fetchWithTimeout(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(cleanUrl)}`, 4200);
+          if (!res.ok) throw new Error("CodeTabs fail");
+          const html = await res.text();
+          const parsed = parseTelegramHtmlString(html);
+          if (!parsed) throw new Error("Empty parse");
+          return parsed;
+        })(),
+
+        // Leitor 4: CorsProxy
+        (async () => {
+          const res = await fetchWithTimeout(`https://corsproxy.io/?${encodeURIComponent(cleanUrl)}`, 4200);
+          if (!res.ok) throw new Error("CorsProxy fail");
+          const html = await res.text();
+          const parsed = parseTelegramHtmlString(html);
+          if (!parsed) throw new Error("Empty parse");
+          return parsed;
+        })()
+      ];
+
+      try {
+        return await Promise.any(tasks);
+      } catch (_) {
+        return null;
+      }
     }
 
     const groupLinkInput = document.getElementById("groupLinkInput");
     const fetchStatusText = document.getElementById("fetchStatusText");
-    let fetchDebounce = null;
-
-    async function handleAutoFetchUserForm() {
-      const link = normalizeTelegramLink(groupLinkInput.value);
-      if (!link.includes("t.me/")) return;
-
-      fetchStatusText.textContent = "⏳ Puxando nome completo e foto do Telegram...";
-      fetchStatusText.classList.remove("hidden");
-
-      const meta = await fetchTelegramMetadata(link);
-      if (meta && meta.title) {
-        document.getElementById("groupNameInput").value = meta.title;
-        if (meta.image) {
-          document.getElementById("groupImgPreview").src = meta.image;
-          document.getElementById("groupImgUrlInput").value = meta.image;
-        }
-        fetchStatusText.textContent = "✅ Nome completo e foto carregados automaticamente!";
-      } else {
-        fetchStatusText.textContent = "ℹ️ Link privado: digite o nome completo abaixo e escolha a foto.";
-      }
-    }
-
-    document.getElementById("btnFetchTelegram").addEventListener("click", handleAutoFetchUserForm);
-    groupLinkInput.addEventListener("input", () => {
-      clearTimeout(fetchDebounce);
-      if (groupLinkInput.value.includes("t.me/")) {
-        fetchDebounce = setTimeout(handleAutoFetchUserForm, 600);
-      }
-    });
-
-    document.getElementById("groupFileInput").addEventListener("change", async (e) => {
-      const file = e.target.files?.[0];
-      if (!file) return;
-      const dataUrl = await compressImageFile(file, 260);
-      document.getElementById("groupImgPreview").src = dataUrl;
-      document.getElementById("groupImgUrlInput").value = dataUrl;
-    });
-
     const groupDescInput = document.getElementById("groupDescInput");
     const charCountBadge = document.getElementById("charCountBadge");
+    let fetchDebounce = null;
 
     function updateCharCounter() {
       const len = groupDescInput.value.trim().length;
@@ -948,6 +996,46 @@
       }
     }
     groupDescInput.addEventListener("input", updateCharCounter);
+
+    async function handleAutoFetchUserForm() {
+      const link = normalizeTelegramLink(groupLinkInput.value);
+      if (!link.includes("t.me/") || link.endsWith("t.me/")) return;
+
+      fetchStatusText.textContent = "⏳ Puxando nome completo e foto do Telegram...";
+      fetchStatusText.classList.remove("hidden");
+
+      const meta = await fetchTelegramMetadata(link);
+      if (meta && meta.title) {
+        document.getElementById("groupNameInput").value = meta.title;
+        if (meta.description && !groupDescInput.value.trim()) {
+          groupDescInput.value = meta.description;
+          updateCharCounter();
+        }
+        if (meta.image) {
+          document.getElementById("groupImgPreview").src = meta.image;
+          document.getElementById("groupImgUrlInput").value = meta.image;
+        }
+        fetchStatusText.textContent = "✅ Nome completo e foto carregados automaticamente!";
+      } else {
+        fetchStatusText.textContent = "ℹ️ Digite o nome completo abaixo e escolha a foto do celular.";
+      }
+    }
+
+    document.getElementById("btnFetchTelegram").addEventListener("click", handleAutoFetchUserForm);
+    groupLinkInput.addEventListener("input", () => {
+      clearTimeout(fetchDebounce);
+      if (groupLinkInput.value.includes("t.me/")) {
+        fetchDebounce = setTimeout(handleAutoFetchUserForm, 450);
+      }
+    });
+
+    document.getElementById("groupFileInput").addEventListener("change", async (e) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+      const dataUrl = await compressImageFile(file, 260);
+      document.getElementById("groupImgPreview").src = dataUrl;
+      document.getElementById("groupImgUrlInput").value = dataUrl;
+    });
 
     onAuthStateChanged(auth, (user) => {
       currentUser = user;
@@ -984,7 +1072,6 @@
       renderHighlights();
     });
 
-    // Remove automaticamente qualquer card fantasma sem link ("https://t.me/") que tenha ficado salvo
     async function cleanupBrokenHighlights() {
       if (!isAdminUser) return;
       for (const item of allHighlights) {
@@ -996,13 +1083,18 @@
       }
     }
 
-    // Botão "+ Cadastrar Destaque" na página inicial (Exclusivo Admin)
     document.getElementById("btnQuickAddHighlight").addEventListener("click", () => {
       if (!isAdminUser) return;
       resetHighlightForm();
-      document.getElementById("hlPlacement").value = "top_sub";
-      const validSubCount = allHighlights.filter(h => isValidHighlightItem(h) && h.placement === "top_sub").length;
-      document.getElementById("hlOrder").value = validSubCount + 2;
+      const hasTopMain = allHighlights.some(h => isValidHighlightItem(h) && h.placement === "top_main");
+      if (!hasTopMain) {
+        document.getElementById("hlPlacement").value = "top_main";
+        document.getElementById("hlOrder").value = 1;
+      } else {
+        document.getElementById("hlPlacement").value = "top_sub";
+        const validSubCount = allHighlights.filter(h => isValidHighlightItem(h) && h.placement === "top_sub").length;
+        document.getElementById("hlOrder").value = validSubCount + 2;
+      }
       openModal("modalAdmin");
       document.getElementById("adminTabHighlights").click();
       setTimeout(() => document.getElementById("hlLink").focus(), 150);
@@ -1202,14 +1294,12 @@
       const sidebarList = document.getElementById("sidebarHighlightsList");
       const topSection = document.getElementById("topHighlightsSection");
 
-      // Filtra apenas destaques reais e válidos (ignora qualquer rascunho sem link)
       const validHighlights = allHighlights.filter(isValidHighlightItem);
 
       let topMain = validHighlights.filter(h => h.placement === "top_main");
       let topSub = validHighlights.filter(h => h.placement === "top_sub");
       const sideItems = validHighlights.filter(h => h.placement === "sidebar");
 
-      // Garante que o Open Chat Brasil esteja sempre em 1º lugar se já estiver cadastrado
       if (topMain.length === 0) {
         const openChatGroup = allGroups.find(g => (g.name || "").toLowerCase().includes("open chat") && g.link);
         if (openChatGroup) {
@@ -1226,7 +1316,6 @@
         }
       }
 
-      // Se o Desire Chat foi cadastrado como grupo normal e ainda não está em topSub, puxa ele para 2º lugar
       const hasDesireInSub = topSub.some(h => (h.title || "").toLowerCase().includes("desir"));
       if (!hasDesireInSub) {
         const desireGroup = allGroups.find(g => (g.name || "").toLowerCase().includes("desir") && g.link);
@@ -1244,7 +1333,6 @@
         }
       }
 
-      // Ordena para que Desire Chat fique sempre no topo da lista secundária (2º lugar geral), seguido dos demais por ordem
       topSub.sort((a, b) => {
         const aIsDesire = (a.title || "").toLowerCase().includes("desir") ? 0 : 1;
         const bIsDesire = (b.title || "").toLowerCase().includes("desir") ? 0 : 1;
@@ -1577,11 +1665,13 @@
             </div>
           </div>
           <div class="flex items-center gap-1.5 flex-wrap flex-shrink-0">
-            <button class="btn-adm-sub px-2 py-1 rounded bg-amber-500 text-slate-950 text-[10px] font-extrabold">⭐ Destacar</button>
+            <button class="btn-adm-top1 px-2 py-1 rounded bg-amber-500 text-slate-950 text-[10px] font-extrabold">👑 Topo #1</button>
+            <button class="btn-adm-sub px-2 py-1 rounded bg-sky-500/30 text-sky-300 border border-sky-400/30 text-[10px] font-bold">⭐ Destacar</button>
             <button class="btn-adm-edit px-2 py-1 rounded bg-blue-600 text-white text-[10px] font-bold">Editar</button>
             <button class="btn-adm-del px-2 py-1 rounded bg-red-600 text-white text-[10px] font-bold">Excluir</button>
           </div>
         `;
+        row.querySelector(".btn-adm-top1").addEventListener("click", () => promoteGroupToHighlight(g, "top_main"));
         row.querySelector(".btn-adm-sub").addEventListener("click", () => promoteGroupToHighlight(g, "top_sub"));
         row.querySelector(".btn-adm-edit").addEventListener("click", () => {
           closeAllModals(false);
@@ -1610,9 +1700,10 @@
 
     document.getElementById("btnClearHlForm").addEventListener("click", resetHighlightForm);
 
+    let hlFetchDebounce = null;
     async function handleFetchHlMetadata() {
       const url = normalizeTelegramLink(document.getElementById("hlLink").value);
-      if (!url.includes("t.me/")) return;
+      if (!url.includes("t.me/") || url.endsWith("t.me/")) return;
       const statusEl = document.getElementById("hlFetchStatus");
       statusEl.textContent = "⏳ Puxando nome e foto...";
       statusEl.classList.remove("hidden");
@@ -1620,23 +1711,24 @@
       const meta = await fetchTelegramMetadata(url);
       if (meta && meta.title) {
         document.getElementById("hlTitle").value = meta.title;
-        if (meta.description && !document.getElementById("hlDesc").value) {
+        if (meta.description && !document.getElementById("hlDesc").value.trim()) {
           document.getElementById("hlDesc").value = meta.description;
         }
         if (meta.image) {
           document.getElementById("hlImgPreview").src = meta.image;
           document.getElementById("hlImgData").value = meta.image;
         }
-        statusEl.textContent = "✅ Dados carregados! Clique em Salvar Destaque.";
+        statusEl.textContent = "✅ Nome e foto carregados! Toque em Salvar Destaque.";
       } else {
-        statusEl.textContent = "ℹ️ Digite o nome abaixo e clique em Salvar Destaque.";
+        statusEl.textContent = "ℹ️ Digite o nome completo ao lado e toque em Salvar Destaque.";
       }
     }
 
     document.getElementById("btnFetchHlMeta").addEventListener("click", handleFetchHlMetadata);
     document.getElementById("hlLink").addEventListener("input", () => {
+      clearTimeout(hlFetchDebounce);
       if (document.getElementById("hlLink").value.includes("t.me/")) {
-        handleFetchHlMetadata();
+        hlFetchDebounce = setTimeout(handleFetchHlMetadata, 450);
       }
     });
 
@@ -1670,7 +1762,7 @@
         const payload = {
           type: document.getElementById("hlType").value,
           placement: document.getElementById("hlPlacement").value,
-          order: Number(document.getElementById("hlOrder").value) || 2,
+          order: Number(document.getElementById("hlOrder").value) || 1,
           title,
           link,
           description: desc,

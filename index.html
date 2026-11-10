@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>TeleHub Brasil | Grupos do Telegram e Canais (Lista Oficial)</title>
-  <meta name="description" content="Encontre e divulgue os melhores Grupos do Telegram e Canais no TeleHub Brasil. Diretório atualizado diariamente com grupos de amizade, namoro, filmes, estudos, ofertas e mais." />
+  <meta name="description" content="Encontre e divulgue os melhores Grupos do Telegram e Canais no TeleHub Brasil. Diretório atualizado diariamente com grupos de amizade, namoro, amor e romance, filmes, estudos, ofertas e mais." />
   <meta name="keywords" content="grupos do telegram, grupos telegram brasil, links de grupos telegram, canais do telegram, divulgar grupo telegram, telehub brasil, open chat brasil" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://www.telehubbrasil.com.br/" />
@@ -25,7 +25,7 @@
   <meta name="twitter:description" content="Acesse e divulgue os melhores Grupos e Canais do Telegram no maior diretório do Brasil." />
   <meta name="twitter:image" content="https://www.telehubbrasil.com.br/banner.png" />
 
-  <!-- Favicon (Usa logo.png se existir ou ícone SVG idêntico embutido) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/logo.png" />
   <link rel="apple-touch-icon" href="/logo.png" />
 
@@ -71,12 +71,6 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    .line-clamp-1 {
-      display: -webkit-box;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
     .custom-scroll::-webkit-scrollbar {
       width: 6px;
     }
@@ -103,8 +97,7 @@
         <!-- Clicar na Logo/Nome volta sempre para a Página Inicial -->
         <a href="#home" id="brandHomeLink" class="flex items-center gap-2.5 group">
           <div class="w-10 h-10 rounded-xl overflow-hidden shadow-md border border-blue-400/30 flex-shrink-0 bg-gradient-to-br from-sky-400 to-blue-700 flex items-center justify-center relative">
-            <img src="/logo.png" alt="TeleHub Brasil" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <!-- Ícone Idêntico Embutido caso logo.png ainda não tenha sido enviado -->
+            <img src="/logo.png" alt="TeleHub Brasil" class="w-10 h-10 object-cover rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div style="display:none;" class="w-full h-full items-center justify-center relative">
               <div class="w-7 h-6 bg-white rounded-full flex items-center justify-center shadow-inner relative">
                 <span class="text-blue-700 font-black text-base leading-none">T</span>
@@ -125,7 +118,7 @@
 
       <!-- Direita: Botões de Ação -->
       <div class="flex items-center gap-2">
-        <!-- Botão Painel Admin (Oculto para visitantes, visível apenas para monteiro.brms@gmail.com) -->
+        <!-- Botão Painel Admin (Visível apenas para monteiro.brms@gmail.com) -->
         <button id="btnAdminPanel" class="hidden px-2.5 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm shadow flex items-center gap-1 transition">
           <span>👑 Admin</span>
           <span id="adminPendingBadge" class="hidden px-1.5 py-0.5 text-[10px] rounded-full bg-red-600 text-white font-extrabold">0</span>
@@ -171,7 +164,7 @@
           </button>
         </div>
 
-        <!-- Destaques/Banners do Menu Lateral (Controlados pelo Admin) -->
+        <!-- Destaques/Banners do Menu Lateral -->
         <div id="sidebarHighlightsContainer" class="mt-3 space-y-2 hidden">
           <p class="text-[11px] font-bold uppercase tracking-wider text-amber-400 px-1">Destaques</p>
           <div id="sidebarHighlightsList" class="space-y-2"></div>
@@ -222,7 +215,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO DE DESTAQUES OFICIAIS NO TOPO (Open Chat Brasil #1, Desiré Chat #2, etc.) -->
+    <!-- SEÇÃO DE DESTAQUES OFICIAIS NO TOPO -->
     <section id="topHighlightsSection" class="space-y-3">
       <div class="flex items-center justify-between px-1">
         <h2 class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
@@ -235,11 +228,14 @@
       <div id="secondaryHighlightsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"></div>
     </section>
 
-    <!-- GRADE DE GRUPOS E CANAIS DO PÚBLICO (2 COLUNAS LADO A LADO) -->
+    <!-- GRADE DE TODOS OS GRUPOS (2 COLUNAS LADO A LADO, VISUAL CLEAN) -->
     <section class="space-y-3">
       <div class="flex items-center justify-between px-1">
         <h1 id="publicSectionTitle" class="text-sm sm:text-base font-extrabold text-white flex items-center gap-2">
-          <span>🔥 Grupos e Canais do Telegram</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+          </svg>
+          <span>Todos os Grupos</span>
         </h1>
         <span id="groupsCounter" class="text-xs text-slate-400 font-medium">Carregando...</span>
       </div>
@@ -249,7 +245,7 @@
 
       <!-- Estado vazio -->
       <div id="emptyState" class="hidden bg-[#13203c]/70 border border-slate-800 rounded-2xl p-8 text-center space-y-3">
-        <p class="text-base font-bold text-slate-200">Nenhum grupo encontrado nesta seleção.</p>
+        <p class="text-base font-bold text-slate-200">Nenhum grupo cadastrado nesta seção ainda.</p>
         <p class="text-xs text-slate-400 max-w-md mx-auto">Seja o primeiro a divulgar seu grupo ou canal do Telegram gratuitamente!</p>
         <button id="btnEmptyRegister" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs shadow">
           + Cadastrar Meu Grupo Agora
@@ -265,16 +261,13 @@
     <p>Todos os grupos passam por moderação antes de serem exibidos publicamente.</p>
   </footer>
 
-  <!-- ========================================================= -->
-  <!-- MODAL 1: VER GRUPO (DETALHES COMPLETOS + ENTRAR NO GRUPO) -->
-  <!-- ========================================================= -->
+  <!-- MODAL 1: VER GRUPO -->
   <div id="modalViewGroup" class="fixed inset-0 bg-black/80 backdrop-blur-xs z-50 hidden items-center justify-center p-3 overflow-y-auto">
     <div class="bg-[#13203c] border border-blue-400/30 rounded-2xl max-w-md w-full p-4 sm:p-5 shadow-2xl space-y-4 relative my-auto">
       <button id="btnCloseViewModal" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800/90 text-slate-300 hover:text-white flex items-center justify-center font-bold">
         ✕
       </button>
 
-      <!-- Cabeçalho com Foto e Título -->
       <div class="flex items-center gap-3.5 pr-6">
         <img id="viewGroupImg" src="" alt="Foto do Grupo" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-sky-400/40 bg-slate-900 flex-shrink-0" />
         <div class="min-w-0">
@@ -286,7 +279,6 @@
         </div>
       </div>
 
-      <!-- Dados de Auditoria (Quem cadastrou, Data e Hora) -->
       <div class="bg-[#0b1426] rounded-xl p-3 border border-slate-800 grid grid-cols-3 gap-2 text-center">
         <div>
           <span class="block text-[10px] text-slate-400 uppercase">Cadastrado por</span>
@@ -302,36 +294,30 @@
         </div>
       </div>
 
-      <!-- Descrição Completa -->
       <div>
         <span class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Descrição Completa</span>
         <div id="viewGroupDesc" class="bg-[#0b1426]/90 border border-slate-800 rounded-xl p-3 text-xs sm:text-sm text-slate-200 whitespace-pre-line max-h-52 overflow-y-auto custom-scroll leading-relaxed"></div>
       </div>
 
-      <!-- Botão Principal: Entrar no Grupo -->
       <a id="viewGroupJoinBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-extrabold text-sm sm:text-base text-center shadow-lg shadow-green-600/30 flex items-center justify-center gap-2 transition active:scale-95">
         <span>🚀 Entrar no Grupo Agora</span>
       </a>
     </div>
   </div>
 
-  <!-- ========================================================= -->
-  <!-- MODAL 2: LOGIN / CRIAR CONTA (GOOGLE OU E-MAIL/SENHA)     -->
-  <!-- ========================================================= -->
+  <!-- MODAL 2: LOGIN / CONTA -->
   <div id="modalAuth" class="fixed inset-0 bg-black/80 backdrop-blur-xs z-50 hidden items-center justify-center p-3 overflow-y-auto">
     <div class="bg-[#13203c] border border-blue-400/30 rounded-2xl max-w-md w-full p-5 shadow-2xl space-y-4 relative my-auto">
       <button id="btnCloseAuthModal" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">
         ✕
       </button>
 
-      <!-- Visão para Visitante Deslogado -->
       <div id="authLoggedOutView" class="space-y-4">
         <div>
           <h3 class="text-lg font-extrabold text-white">Acesse sua Conta</h3>
           <p class="text-xs text-slate-300 mt-0.5">Crie uma conta rápida ou entre com o Google para cadastrar e gerenciar seus grupos.</p>
         </div>
 
-        <!-- Botão Entrar com Google -->
         <button id="btnGoogleLogin" type="button" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm shadow flex items-center justify-center gap-2.5 transition">
           <svg class="w-5 h-5" viewBox="0 0 24 24">
             <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
@@ -348,7 +334,6 @@
           <div class="h-px bg-slate-700 flex-1"></div>
         </div>
 
-        <!-- Abas Login / Cadastro -->
         <div class="grid grid-cols-2 gap-1 bg-[#0b1426] p-1 rounded-xl border border-slate-800">
           <button id="tabLoginBtn" type="button" class="py-1.5 rounded-lg bg-blue-600 text-white font-bold text-xs">Já tenho conta</button>
           <button id="tabRegisterBtn" type="button" class="py-1.5 rounded-lg text-slate-300 font-bold text-xs">Criar Conta</button>
@@ -374,7 +359,6 @@
         </form>
       </div>
 
-      <!-- Visão para Usuário Logado -->
       <div id="authLoggedInView" class="hidden space-y-4">
         <div class="bg-[#0b1426] p-3.5 rounded-xl border border-slate-800">
           <p class="text-xs text-slate-400">Conectado como:</p>
@@ -394,9 +378,7 @@
     </div>
   </div>
 
-  <!-- ========================================================= -->
-  <!-- MODAL 3: CADASTRAR OU EDITAR GRUPO / CANAL                -->
-  <!-- ========================================================= -->
+  <!-- MODAL 3: CADASTRAR OU EDITAR GRUPO / CANAL -->
   <div id="modalGroupForm" class="fixed inset-0 bg-black/80 backdrop-blur-xs z-50 hidden items-center justify-center p-3 overflow-y-auto">
     <div class="bg-[#13203c] border border-blue-400/30 rounded-2xl max-w-lg w-full p-4 sm:p-5 shadow-2xl space-y-4 relative my-auto max-h-[92vh] overflow-y-auto custom-scroll">
       <button id="btnCloseGroupForm" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">
@@ -405,13 +387,12 @@
 
       <div>
         <h3 id="groupFormTitle" class="text-lg font-extrabold text-white">Cadastrar Grupo ou Canal</h3>
-        <p class="text-xs text-slate-300 mt-0.5">Cole o link do Telegram para puxar o nome e a foto automaticamente ou escolha uma foto do seu celular.</p>
+        <p class="text-xs text-slate-300 mt-0.5">Cole o link do Telegram para puxar o nome completo e a foto automaticamente, ou escolha uma imagem do celular.</p>
       </div>
 
       <form id="groupForm" class="space-y-3.5">
         <input type="hidden" id="editGroupId" value="" />
 
-        <!-- Tipo: Grupo ou Canal (Usuários não podem cadastrar Bots) -->
         <div class="grid grid-cols-2 gap-2">
           <div>
             <label class="block text-xs font-semibold text-slate-300 mb-1">Tipo</label>
@@ -426,7 +407,6 @@
           </div>
         </div>
 
-        <!-- Link do Telegram + Botão de Puxar Dados -->
         <div>
           <label class="block text-xs font-semibold text-slate-300 mb-1">Link do Grupo ou Canal (t.me/...)</label>
           <div class="flex gap-2">
@@ -438,13 +418,11 @@
           <p id="fetchStatusText" class="text-[11px] text-sky-300 mt-1 hidden"></p>
         </div>
 
-        <!-- Nome do Grupo -->
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Nome do Grupo / Canal</label>
-          <input id="groupNameInput" type="text" required maxlength="75" placeholder="Nome oficial do grupo" class="w-full px-3 py-2 rounded-xl bg-[#0b1426] border border-slate-700 text-sm text-white" />
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Nome Completo do Grupo / Canal</label>
+          <input id="groupNameInput" type="text" required maxlength="150" placeholder="Nome oficial completo do grupo" class="w-full px-3 py-2 rounded-xl bg-[#0b1426] border border-slate-700 text-sm text-white" />
         </div>
 
-        <!-- Imagem do Grupo (Automática ou Escolher do Celular) -->
         <div class="bg-[#0b1426] p-3 rounded-xl border border-slate-800 flex items-center gap-3">
           <img id="groupImgPreview" src="/logo.png" alt="Preview" class="w-14 h-14 rounded-xl object-cover border border-slate-700 bg-slate-900 flex-shrink-0" />
           <div class="flex-1 space-y-1.5">
@@ -459,7 +437,6 @@
           </div>
         </div>
 
-        <!-- Descrição com Mínimo de 100 Caracteres -->
         <div>
           <div class="flex items-center justify-between mb-1">
             <label class="text-xs font-semibold text-slate-300">Descrição Completa (Mínimo 100 letras)</label>
@@ -479,9 +456,7 @@
     </div>
   </div>
 
-  <!-- ========================================================= -->
-  <!-- MODAL 4: MEUS GRUPOS (USUÁRIO EDITAR SEUS GRUPOS)         -->
-  <!-- ========================================================= -->
+  <!-- MODAL 4: MEUS GRUPOS -->
   <div id="modalMyGroups" class="fixed inset-0 bg-black/80 backdrop-blur-xs z-50 hidden items-center justify-center p-3 overflow-y-auto">
     <div class="bg-[#13203c] border border-blue-400/30 rounded-2xl max-w-lg w-full p-4 sm:p-5 shadow-2xl space-y-4 relative my-auto max-h-[90vh] overflow-y-auto custom-scroll">
       <button id="btnCloseMyGroups" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">
@@ -495,9 +470,7 @@
     </div>
   </div>
 
-  <!-- ========================================================= -->
-  <!-- MODAL 5: PAINEL DO ADMINISTRADOR (EXCLUSIVO DONO)         -->
-  <!-- ========================================================= -->
+  <!-- MODAL 5: PAINEL DO ADMINISTRADOR -->
   <div id="modalAdmin" class="fixed inset-0 bg-black/85 backdrop-blur-xs z-50 hidden items-center justify-center p-2 sm:p-4 overflow-y-auto">
     <div class="bg-[#13203c] border border-amber-400/40 rounded-2xl max-w-3xl w-full p-4 sm:p-5 shadow-2xl space-y-4 relative my-auto max-h-[94vh] overflow-y-auto custom-scroll">
       <button id="btnCloseAdmin" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">
@@ -512,25 +485,22 @@
         </div>
       </div>
 
-      <!-- Abas do Painel Admin -->
       <div class="grid grid-cols-3 gap-1.5 bg-[#0b1426] p-1.5 rounded-xl border border-slate-800 text-xs font-bold">
         <button id="adminTabPending" class="py-2 rounded-lg bg-amber-500 text-slate-950">⏳ Pendentes</button>
         <button id="adminTabHighlights" class="py-2 rounded-lg text-slate-300 hover:bg-slate-800">⭐ Destaques & Bots</button>
         <button id="adminTabAll" class="py-2 rounded-lg text-slate-300 hover:bg-slate-800">📋 Todos no Ar</button>
       </div>
 
-      <!-- ABA 1: FILA DE APROVAÇÃO -->
       <div id="adminViewPending" class="space-y-3">
         <div id="adminPendingList" class="space-y-2.5"></div>
       </div>
 
-      <!-- ABA 2: GERENCIAR DESTAQUES, BOTS E BANNERS (ESCOLHER POSIÇÃO) -->
       <div id="adminViewHighlights" class="hidden space-y-4">
         <div class="bg-[#0b1426] p-3.5 rounded-xl border border-amber-500/30 space-y-3">
           <div class="flex items-center justify-between flex-wrap gap-2">
             <h4 class="text-sm font-extrabold text-amber-300">Adicionar / Editar Destaque, Bot ou Banner</h4>
             <button id="btnSeedDefaultHighlights" type="button" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 text-amber-300 text-[11px] font-bold">
-              ⚡ Carregar Open Chat + Desiré Padrão
+              ⚡ Carregar Open Chat + Desiré para Editar
             </button>
           </div>
 
@@ -562,7 +532,7 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
-                <label class="block text-[11px] text-slate-300 mb-0.5">Nome (Ex: Open Chat Brasil)</label>
+                <label class="block text-[11px] text-slate-300 mb-0.5">Nome Completo (Ex: Open Chat Brasil)</label>
                 <input id="hlTitle" type="text" required placeholder="Nome do Grupo, Bot ou Banner" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
               </div>
               <div>
@@ -575,7 +545,7 @@
             </div>
 
             <div>
-              <label class="block text-[11px] text-slate-300 mb-0.5">Descrição Curta de Chamada</label>
+              <label class="block text-[11px] text-slate-300 mb-0.5">Descrição de Chamada</label>
               <input id="hlDesc" type="text" required placeholder="Ex: O maior grupo de bate-papo e amizades do Brasil!" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
             </div>
 
@@ -596,14 +566,13 @@
         <div id="adminHighlightsList" class="space-y-2"></div>
       </div>
 
-      <!-- ABA 3: TODOS OS GRUPOS PUBLICADOS -->
       <div id="adminViewAll" class="hidden space-y-2.5">
         <div id="adminAllGroupsList" class="space-y-2"></div>
       </div>
     </div>
   </div>
 
-  <!-- SCRIPTS E LÓGICA DO SISTEMA (FIREBASE + HISTORY API + TELEGRAM META) -->
+  <!-- SCRIPTS E LÓGICA DO SISTEMA -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
     import {
@@ -627,7 +596,6 @@
       serverTimestamp
     } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 
-    // CONFIGURAÇÃO OFICIAL DO SEU FIREBASE
     const firebaseConfig = {
       apiKey: "AIzaSyARUMLKmdX0YjhELNzfcuMgAruTaMlgfOU",
       authDomain: "telehub-brasil.firebaseapp.com",
@@ -643,10 +611,9 @@
     const auth = getAuth(app);
     const db = getFirestore(app);
 
-    // LISTA DE CATEGORIAS
     const CATEGORIES = [
       "Amizade e Bate-Papo",
-      "Namoro e Relacionamento",
+      "Namoro, Amor e Romance",
       "Filmes, Séries e TV",
       "Jogos e Gamers",
       "Ofertas, Cupons e Promoções",
@@ -662,7 +629,6 @@
       "Outros"
     ];
 
-    // Ícone SVG padrão em Base64 (Idêntico à logo aprovada)
     const DEFAULT_ICON = "data:image/svg+xml;utf8," + encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
         <defs>
@@ -679,7 +645,12 @@
       </svg>
     `);
 
-    // ESTADO GLOBAL
+    const DIRECTORY_ICON_HTML = `
+      <svg class="w-4 h-4 sm:w-5 sm:h-5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+      </svg>
+    `;
+
     let currentUser = null;
     let isAdminUser = false;
     let allGroups = [];
@@ -688,7 +659,6 @@
     let categoryOpenedFromDrawer = false;
     let isRegisterMode = false;
 
-    // ELEMENTOS DOM
     const categoryListNav = document.getElementById("categoryListNav");
     const groupCategoryInput = document.getElementById("groupCategoryInput");
     const groupsGrid = document.getElementById("groupsGrid");
@@ -696,7 +666,6 @@
     const emptyState = document.getElementById("emptyState");
     const searchInput = document.getElementById("searchInput");
 
-    // Inicializar Categorias no Menu Lateral e no Select do Formulário
     function initCategories() {
       categoryListNav.innerHTML = "";
       groupCategoryInput.innerHTML = "";
@@ -716,9 +685,6 @@
     }
     initCategories();
 
-    // =========================================================================
-    // NAVEGAÇÃO INTELIGENTE E BOTÃO "VOLTAR" DO CELULAR (HISTORY API)
-    // =========================================================================
     const drawerOverlay = document.getElementById("drawerOverlay");
 
     function openDrawer(pushHist = true) {
@@ -740,7 +706,6 @@
       categoryOpenedFromDrawer = true;
       updateCategoryUI();
       renderPublicGroups();
-      // Empurra estado para que o botão Voltar do celular volte para o menu lateral
       history.pushState({ view: "category", category: cat, fromDrawer: true }, "", `#categoria-${encodeURIComponent(cat)}`);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -769,15 +734,14 @@
         bar.classList.remove("hidden");
         nameEl.textContent = selectedCategory;
         topSection.classList.add("hidden");
-        titleEl.innerHTML = `<span>📂 Categoria: ${selectedCategory}</span>`;
+        titleEl.innerHTML = `${DIRECTORY_ICON_HTML}<span>${selectedCategory}</span>`;
       } else {
         bar.classList.add("hidden");
         topSection.classList.remove("hidden");
-        titleEl.innerHTML = `<span>🔥 Grupos e Canais do Telegram</span>`;
+        titleEl.innerHTML = `${DIRECTORY_ICON_HTML}<span>Todos os Grupos</span>`;
       }
     }
 
-    // Controle de Modais com suporte ao botão Voltar do celular
     function openModal(modalId) {
       const el = document.getElementById(modalId);
       el.classList.remove("hidden");
@@ -796,11 +760,9 @@
       }
     }
 
-    // Quando o usuário aperta a setinha "Voltar" do próprio celular:
     window.addEventListener("popstate", (event) => {
       closeAllModals(false);
 
-      // Se estava vendo uma categoria escolhida pelo menu lateral e clicou em Voltar, reabre o Menu Lateral!
       if (categoryOpenedFromDrawer && (!event.state || event.state.modal === "drawer")) {
         selectedCategory = null;
         categoryOpenedFromDrawer = false;
@@ -825,7 +787,6 @@
       }
     });
 
-    // Eventos do Topo e Menu
     document.getElementById("btnOpenDrawer").addEventListener("click", () => openDrawer(true));
     document.getElementById("btnCloseDrawer").addEventListener("click", () => {
       closeDrawerOnly();
@@ -851,9 +812,6 @@
     });
     document.getElementById("btnClearCategory").addEventListener("click", () => resetToHome(true));
 
-    // =========================================================================
-    // COMPRESSÃO DE IMAGEM DO CELULAR E BUSCA AUTOMÁTICA DE DADOS DO TELEGRAM
-    // =========================================================================
     function compressImageFile(file, maxSize = 260) {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -878,23 +836,26 @@
       });
     }
 
-    // Puxar Nome e Foto automaticamente pelo link do Telegram
     async function fetchTelegramMetadata(url) {
       if (!url || !url.includes("t.me/")) return null;
+      const cleanUrl = url.trim();
       const proxies = [
-        `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
-        `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
+        { url: `https://api.allorigins.win/get?url=${encodeURIComponent(cleanUrl)}`, type: "json" },
+        { url: `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(cleanUrl)}`, type: "text" },
+        { url: `https://corsproxy.io/?${encodeURIComponent(cleanUrl)}`, type: "text" }
       ];
-      for (const proxyUrl of proxies) {
+      for (const p of proxies) {
         try {
-          const res = await fetch(proxyUrl);
+          const res = await fetch(p.url);
           if (!res.ok) continue;
-          const data = proxyUrl.includes("allorigins") ? (await res.json()).contents : await res.text();
-          if (!data) continue;
+          const html = p.type === "json" ? (await res.json()).contents : await res.text();
+          if (!html) continue;
           const parser = new DOMParser();
-          const docHtml = parser.parseFromString(data, "text/html");
-          const ogTitle = docHtml.querySelector('meta[property="og:title"]')?.getAttribute("content") || "";
-          const ogImage = docHtml.querySelector('meta[property="og:image"]')?.getAttribute("content") || "";
+          const docHtml = parser.parseFromString(html, "text/html");
+          const ogTitle = docHtml.querySelector('meta[property="og:title"]')?.getAttribute("content") ||
+                          docHtml.querySelector('meta[name="twitter:title"]')?.getAttribute("content") || "";
+          const ogImage = docHtml.querySelector('meta[property="og:image"]')?.getAttribute("content") ||
+                          docHtml.querySelector('meta[name="twitter:image"]')?.getAttribute("content") || "";
           if (ogTitle && !ogTitle.startsWith("Telegram: Contact") && !ogTitle.startsWith("Telegram: Join")) {
             return { title: ogTitle.trim(), image: ogImage.trim() };
           }
@@ -903,18 +864,15 @@
       return null;
     }
 
-    // Eventos de Puxar Dados no Formulário do Usuário
     const groupLinkInput = document.getElementById("groupLinkInput");
     const fetchStatusText = document.getElementById("fetchStatusText");
+    let fetchDebounce = null;
 
     async function handleAutoFetchUserForm() {
       const link = groupLinkInput.value.trim();
-      if (!link.includes("t.me/")) {
-        fetchStatusText.textContent = "Digite um link válido do Telegram (https://t.me/...)";
-        fetchStatusText.classList.remove("hidden");
-        return;
-      }
-      fetchStatusText.textContent = "⏳ Buscando nome e foto do grupo no Telegram...";
+      if (!link.includes("t.me/")) return;
+
+      fetchStatusText.textContent = "⏳ Puxando nome completo e foto do Telegram...";
       fetchStatusText.classList.remove("hidden");
 
       const meta = await fetchTelegramMetadata(link);
@@ -924,16 +882,20 @@
           document.getElementById("groupImgPreview").src = meta.image;
           document.getElementById("groupImgUrlInput").value = meta.image;
         }
-        fetchStatusText.textContent = "✅ Nome e foto carregados automaticamente!";
+        fetchStatusText.textContent = "✅ Nome completo e foto carregados automaticamente!";
       } else {
-        fetchStatusText.textContent = "ℹ️ Link privado: digite o nome abaixo e escolha a foto do celular.";
+        fetchStatusText.textContent = "ℹ️ Link de convite privado: digite o nome completo abaixo e escolha a foto.";
       }
     }
 
     document.getElementById("btnFetchTelegram").addEventListener("click", handleAutoFetchUserForm);
-    groupLinkInput.addEventListener("change", handleAutoFetchUserForm);
+    groupLinkInput.addEventListener("input", () => {
+      clearTimeout(fetchDebounce);
+      if (groupLinkInput.value.includes("t.me/")) {
+        fetchDebounce = setTimeout(handleAutoFetchUserForm, 600);
+      }
+    });
 
-    // Upload de foto pelo celular (Formulário de Grupo)
     document.getElementById("groupFileInput").addEventListener("change", async (e) => {
       const file = e.target.files?.[0];
       if (!file) return;
@@ -942,7 +904,6 @@
       document.getElementById("groupImgUrlInput").value = dataUrl;
     });
 
-    // Contador de Mínimo 100 Caracteres na Descrição
     const groupDescInput = document.getElementById("groupDescInput");
     const charCountBadge = document.getElementById("charCountBadge");
 
@@ -957,9 +918,6 @@
     }
     groupDescInput.addEventListener("input", updateCharCounter);
 
-    // =========================================================================
-    // AUTENTICAÇÃO (GOOGLE E E-MAIL/SENHA)
-    // =========================================================================
     onAuthStateChanged(auth, (user) => {
       currentUser = user;
       isAdminUser = !!(user && user.email && user.email.toLowerCase() === ADMIN_EMAIL.toLowerCase());
@@ -990,7 +948,6 @@
       }
     });
 
-    // Alternar abas Login / Criar Conta
     const tabLoginBtn = document.getElementById("tabLoginBtn");
     const tabRegisterBtn = document.getElementById("tabRegisterBtn");
     const fieldRegisterNameWrap = document.getElementById("fieldRegisterNameWrap");
@@ -1020,7 +977,7 @@
         await signInWithPopup(auth, provider);
         closeAllModals(true);
       } catch (err) {
-        errEl.textContent = "Erro ao conectar com Google. Verifique se o domínio já está autorizado no Firebase.";
+        errEl.textContent = "Use seu e-mail e senha abaixo para entrar.";
         errEl.classList.remove("hidden");
       }
     });
@@ -1042,7 +999,7 @@
         }
         closeAllModals(true);
       } catch (err) {
-        errEl.textContent = "Verifique seu e-mail e senha (mínimo 6 caracteres).";
+        errEl.textContent = "Verifique seu e-mail e senha (ou clique na aba 'Criar Conta' se for seu primeiro acesso).";
         errEl.classList.remove("hidden");
       }
     });
@@ -1052,7 +1009,6 @@
       closeAllModals(true);
     });
 
-    // Botões de abrir modais
     document.getElementById("btnUserAuth").addEventListener("click", () => openModal("modalAuth"));
     document.getElementById("btnCloseAuthModal").addEventListener("click", () => closeAllModals(true));
     document.getElementById("btnCloseViewModal").addEventListener("click", () => closeAllModals(true));
@@ -1079,7 +1035,7 @@
         document.getElementById("groupDescInput").value = groupToEdit.description || "";
         document.getElementById("groupImgPreview").src = groupToEdit.image || DEFAULT_ICON;
         document.getElementById("groupImgUrlInput").value = groupToEdit.image || "";
-        document.getElementById("btnSubmitGroup").textContent = "Salvar Alterações (Enviar para Nova Análise)";
+        document.getElementById("btnSubmitGroup").textContent = "Salvar Alterações";
       } else {
         document.getElementById("groupFormTitle").textContent = "Cadastrar Grupo ou Canal";
         document.getElementById("editGroupId").value = "";
@@ -1094,9 +1050,6 @@
     document.getElementById("btnNewGroup").addEventListener("click", () => openRegisterGroupModal(null));
     document.getElementById("btnEmptyRegister").addEventListener("click", () => openRegisterGroupModal(null));
 
-    // =========================================================================
-    // SALVAR OU EDITAR GRUPO NO FIRESTORE (COM TRAVA DE 100 CARACTERES)
-    // =========================================================================
     document.getElementById("groupForm").addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!currentUser) {
@@ -1124,7 +1077,6 @@
 
       try {
         if (editId) {
-          // Quando edita, volta automaticamente para 'pending' (Nova Análise do Admin)
           await updateDoc(doc(db, "groups", editId), {
             type,
             category,
@@ -1163,9 +1115,6 @@
       }
     });
 
-    // =========================================================================
-    // LEITURA EM TEMPO REAL DO BANCO DE DADOS (DESTAQUES + GRUPOS)
-    // =========================================================================
     onSnapshot(collection(db, "highlights"), (snap) => {
       allHighlights = snap.docs.map(d => ({ id: d.id, ...d.data() }));
       allHighlights.sort((a, b) => (Number(a.order) || 1) - (Number(b.order) || 1));
@@ -1184,14 +1133,24 @@
       if (isAdminUser) updateAdminUI();
     });
 
-    // Renderizar Destaques Oficiais (Open Chat Brasil #1, Desiré Chat #2, Menu Lateral, etc.)
+    function handleHighlightClick(e, link) {
+      if (!link || link === "https://t.me/" || link === "#") {
+        e.preventDefault();
+        if (isAdminUser) {
+          openModal("modalAdmin");
+          document.getElementById("adminTabHighlights").click();
+        } else {
+          alert("O link oficial deste grupo em destaque está sendo atualizado pelo Administrador.");
+        }
+      }
+    }
+
     function renderHighlights() {
       const primaryContainer = document.getElementById("primaryHighlightContainer");
       const secondaryContainer = document.getElementById("secondaryHighlightsContainer");
       const sidebarContainer = document.getElementById("sidebarHighlightsContainer");
       const sidebarList = document.getElementById("sidebarHighlightsList");
 
-      // Se o Admin ainda não cadastrou no banco, mostra Open Chat Brasil (#1) e Desiré Chat (#2) padrão
       const activeList = allHighlights.length > 0 ? allHighlights : [
         {
           id: "default_openchat",
@@ -1219,51 +1178,50 @@
       const topSub = activeList.filter(h => h.placement === "top_sub");
       const sideItems = activeList.filter(h => h.placement === "sidebar");
 
-      // 1. Destaque Principal no Topo (Open Chat Brasil)
       primaryContainer.innerHTML = "";
       topMain.forEach(item => {
         const card = document.createElement("div");
         card.className = "bg-gradient-to-r from-[#162a52] via-[#1a3366] to-[#13203c] border-2 border-amber-400/60 rounded-2xl p-3.5 sm:p-4 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3";
         card.innerHTML = `
-          <div class="flex items-center gap-3.5 min-w-0">
+          <div class="flex items-center gap-3.5 min-w-0 w-full">
             <img src="${item.image || DEFAULT_ICON}" alt="${item.title}" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-amber-400 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
-            <div class="min-w-0">
+            <div class="min-w-0 flex-1">
               <div class="flex items-center gap-1.5 flex-wrap mb-1">
                 <span class="px-2 py-0.5 rounded-md bg-amber-400 text-slate-950 font-black text-[10px] uppercase">👑 DESTAQUE #1 • ${item.type || "OFICIAL"}</span>
               </div>
-              <h3 class="text-base sm:text-lg font-black text-white truncate">${item.title}</h3>
+              <h3 class="text-base sm:text-lg font-black text-white break-words leading-snug">${item.title}</h3>
               <p class="text-xs text-slate-200 line-clamp-2 mt-0.5">${item.description || ""}</p>
             </div>
           </div>
-          <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs sm:text-sm text-center whitespace-nowrap shadow-md transition">
+          <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="hl-action-btn w-full sm:w-auto px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs sm:text-sm text-center whitespace-nowrap shadow-md transition">
             Entrar Agora →
           </a>
         `;
+        card.querySelector(".hl-action-btn").addEventListener("click", (e) => handleHighlightClick(e, item.link));
         primaryContainer.appendChild(card);
       });
 
-      // 2. Destaques Secundários Abaixo do Open Chat (Desiré Chat, TeleHub Divulgações, Bot do TeleHub)
       secondaryContainer.innerHTML = "";
       topSub.forEach(item => {
         const card = document.createElement("div");
-        card.className = "bg-[#152647] border border-sky-400/40 rounded-2xl p-3 shadow-lg flex items-center justify-between gap-3";
+        card.className = "bg-[#152647] border border-sky-400/40 rounded-2xl p-3.5 shadow-lg flex items-center justify-between gap-3";
         card.innerHTML = `
-          <div class="flex items-center gap-3 min-w-0">
-            <img src="${item.image || DEFAULT_ICON}" alt="${item.title}" class="w-13 h-13 sm:w-14 sm:h-14 rounded-xl object-cover border border-sky-400/50 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
-            <div class="min-w-0">
-              <span class="inline-block px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold text-[10px] uppercase mb-0.5">${item.type || "Destaque"}</span>
-              <h3 class="text-sm font-extrabold text-white truncate">${item.title}</h3>
-              <p class="text-[11px] text-slate-300 line-clamp-1">${item.description || ""}</p>
+          <div class="flex items-center gap-3 min-w-0 flex-1">
+            <img src="${item.image || DEFAULT_ICON}" alt="${item.title}" class="w-14 h-14 rounded-xl object-cover border border-sky-400/50 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
+            <div class="min-w-0 flex-1">
+              <span class="inline-block px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold text-[10px] uppercase mb-0.5">${item.type || "Destaque"}</span>
+              <h3 class="text-sm sm:text-base font-extrabold text-white break-words leading-snug">${item.title}</h3>
+              <p class="text-xs text-slate-300 line-clamp-2 mt-0.5">${item.description || ""}</p>
             </div>
           </div>
-          <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs whitespace-nowrap shadow">
-            Acessar
+          <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="hl-action-btn px-3.5 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs whitespace-nowrap shadow flex-shrink-0">
+            Acessar →
           </a>
         `;
+        card.querySelector(".hl-action-btn").addEventListener("click", (e) => handleHighlightClick(e, item.link));
         secondaryContainer.appendChild(card);
       });
 
-      // 3. Destaques no Menu Lateral
       if (sideItems.length > 0) {
         sidebarContainer.classList.remove("hidden");
         sidebarList.innerHTML = "";
@@ -1274,12 +1232,13 @@
           a.rel = "noopener noreferrer";
           a.className = "flex items-center gap-2.5 p-2 rounded-xl bg-amber-500/10 border border-amber-400/30 hover:bg-amber-500/20 transition";
           a.innerHTML = `
-            <img src="${item.image || DEFAULT_ICON}" class="w-9 h-9 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
-            <div class="min-w-0">
-              <p class="text-xs font-extrabold text-amber-300 truncate">${item.title}</p>
-              <p class="text-[10px] text-slate-300 truncate">${item.description || ""}</p>
+            <img src="${item.image || DEFAULT_ICON}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
+            <div class="min-w-0 flex-1">
+              <p class="text-xs font-extrabold text-amber-300 break-words">${item.title}</p>
+              <p class="text-[10px] text-slate-300 line-clamp-1">${item.description || ""}</p>
             </div>
           `;
+          a.addEventListener("click", (e) => handleHighlightClick(e, item.link));
           sidebarList.appendChild(a);
         });
       } else {
@@ -1287,7 +1246,6 @@
       }
     }
 
-    // Renderizar Grade 2 Colunas (Esquerda e Direita) de Grupos Aprovados
     function renderPublicGroups() {
       const search = searchInput.value.trim().toLowerCase();
       const approved = allGroups.filter(g => {
@@ -1316,11 +1274,11 @@
         card.className = "bg-[#13203c] border border-blue-500/20 hover:border-sky-400/50 rounded-2xl p-3 flex flex-col justify-between shadow-md transition";
         card.innerHTML = `
           <div>
-            <div class="flex items-center gap-2.5 mb-2">
+            <div class="flex items-start gap-2.5 mb-2">
               <img src="${g.image || DEFAULT_ICON}" alt="Grupo de Telegram ${g.name}" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover border border-slate-700 bg-slate-900 flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
               <div class="min-w-0 flex-1">
                 <span class="inline-block px-1.5 py-0.5 rounded bg-blue-600/25 text-sky-300 font-bold text-[9px] sm:text-[10px] uppercase truncate max-w-full">${g.category || "Geral"}</span>
-                <h3 class="text-xs sm:text-sm font-extrabold text-white line-clamp-1 mt-0.5">${g.name}</h3>
+                <h3 class="text-xs sm:text-sm font-extrabold text-white break-words leading-snug mt-0.5">${g.name}</h3>
               </div>
             </div>
             <p class="text-[11px] sm:text-xs text-slate-300 line-clamp-2 leading-relaxed mb-3">${g.description || ""}</p>
@@ -1336,7 +1294,6 @@
 
     searchInput.addEventListener("input", renderPublicGroups);
 
-    // Abrir Janela "Ver Grupo" com todos os detalhes exigidos
     function openViewGroupModal(g) {
       document.getElementById("viewGroupImg").src = g.image || DEFAULT_ICON;
       document.getElementById("viewGroupTypeBadge").textContent = g.type || "Grupo";
@@ -1351,9 +1308,6 @@
       openModal("modalViewGroup");
     }
 
-    // =========================================================================
-    // MEUS GRUPOS (USUÁRIO VER E EDITAR SEUS PRÓPRIOS GRUPOS)
-    // =========================================================================
     function openMyGroupsModal() {
       closeDrawerOnly();
       if (!currentUser) {
@@ -1372,16 +1326,16 @@
           const row = document.createElement("div");
           row.className = "bg-[#0b1426] border border-slate-800 rounded-xl p-3 flex items-center justify-between gap-2";
           row.innerHTML = `
-            <div class="flex items-center gap-2.5 min-w-0">
+            <div class="flex items-center gap-2.5 min-w-0 flex-1">
               <img src="${g.image || DEFAULT_ICON}" class="w-11 h-11 rounded-xl object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
-              <div class="min-w-0">
-                <p class="text-xs sm:text-sm font-bold text-white truncate">${g.name}</p>
+              <div class="min-w-0 flex-1">
+                <p class="text-xs sm:text-sm font-bold text-white break-words">${g.name}</p>
                 <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${isApproved ? "bg-emerald-500/20 text-emerald-300" : "bg-amber-500/20 text-amber-300"}">
                   ${isApproved ? "✅ Aprovado no Ar" : "⏳ Em Análise pelo Admin"}
                 </span>
               </div>
             </div>
-            <button class="btn-edit-mine px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs">
+            <button class="btn-edit-mine px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex-shrink-0">
               ✏️ Editar
             </button>
           `;
@@ -1401,9 +1355,6 @@
       openMyGroupsModal();
     });
 
-    // =========================================================================
-    // PAINEL DO ADMINISTRADOR (EXCLUSIVO MONTEIRO.BRMS@GMAIL.COM)
-    // =========================================================================
     document.getElementById("btnAdminPanel").addEventListener("click", () => {
       if (!isAdminUser) return;
       updateAdminUI();
@@ -1454,7 +1405,6 @@
         badge.classList.add("hidden");
       }
 
-      // Renderizar Pendentes
       const pendList = document.getElementById("adminPendingList");
       pendList.innerHTML = "";
       if (pending.length === 0) {
@@ -1466,14 +1416,14 @@
           item.innerHTML = `
             <div class="flex items-start justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <img src="${g.image || DEFAULT_ICON}" class="w-12 h-12 rounded-xl object-cover" onerror="this.src='${DEFAULT_ICON}'" />
+                <img src="${g.image || DEFAULT_ICON}" class="w-12 h-12 rounded-xl object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
                 <div>
                   <span class="text-[10px] font-bold text-amber-300 uppercase">${g.type || "Grupo"} • ${g.category}</span>
-                  <h4 class="text-sm font-extrabold text-white">${g.name}</h4>
+                  <h4 class="text-sm font-extrabold text-white break-words">${g.name}</h4>
                   <p class="text-[11px] text-slate-400">Por: ${g.ownerName || "Usuário"} (${g.dateStr || ""} às ${g.timeStr || ""})</p>
                 </div>
               </div>
-              <a href="${g.link}" target="_blank" class="px-2.5 py-1 rounded bg-slate-800 text-sky-300 text-xs font-bold">Testar Link ↗</a>
+              <a href="${g.link}" target="_blank" class="px-2.5 py-1 rounded bg-slate-800 text-sky-300 text-xs font-bold whitespace-nowrap">Testar Link ↗</a>
             </div>
             <p class="text-xs text-slate-200 bg-[#13203c] p-2.5 rounded-lg">${g.description}</p>
             <div class="flex gap-2 pt-1">
@@ -1493,21 +1443,20 @@
         });
       }
 
-      // Renderizar Todos Publicados
       const allList = document.getElementById("adminAllGroupsList");
       allList.innerHTML = "";
       allGroups.forEach(g => {
         const row = document.createElement("div");
         row.className = "bg-[#0b1426] border border-slate-800 rounded-xl p-2.5 flex items-center justify-between gap-2";
         row.innerHTML = `
-          <div class="flex items-center gap-2 min-w-0">
-            <img src="${g.image || DEFAULT_ICON}" class="w-9 h-9 rounded-lg object-cover" onerror="this.src='${DEFAULT_ICON}'" />
-            <div class="min-w-0">
-              <p class="text-xs font-bold text-white truncate">${g.name}</p>
+          <div class="flex items-center gap-2 min-w-0 flex-1">
+            <img src="${g.image || DEFAULT_ICON}" class="w-9 h-9 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
+            <div class="min-w-0 flex-1">
+              <p class="text-xs font-bold text-white break-words">${g.name}</p>
               <p class="text-[10px] text-slate-400">${g.category} • ${g.status === "approved" ? "No Ar" : "Pendente"}</p>
             </div>
           </div>
-          <div class="flex items-center gap-1.5">
+          <div class="flex items-center gap-1.5 flex-shrink-0">
             <button class="btn-adm-edit px-2.5 py-1 rounded bg-blue-600 text-white text-[11px] font-bold">Editar</button>
             <button class="btn-adm-del px-2.5 py-1 rounded bg-red-600 text-white text-[11px] font-bold">Excluir</button>
           </div>
@@ -1525,9 +1474,6 @@
       });
     }
 
-    // =========================================================================
-    // GERENCIAMENTO DE DESTAQUES, BOTS E BANNERS NO PAINEL ADMIN
-    // =========================================================================
     document.getElementById("btnFetchHlMeta").addEventListener("click", async () => {
       const url = document.getElementById("hlLink").value.trim();
       const meta = await fetchTelegramMetadata(url);
@@ -1536,6 +1482,20 @@
         if (meta.image) {
           document.getElementById("hlImgPreview").src = meta.image;
           document.getElementById("hlImgData").value = meta.image;
+        }
+      }
+    });
+
+    document.getElementById("hlLink").addEventListener("input", async (e) => {
+      const url = e.target.value.trim();
+      if (url.includes("t.me/")) {
+        const meta = await fetchTelegramMetadata(url);
+        if (meta && meta.title) {
+          document.getElementById("hlTitle").value = meta.title;
+          if (meta.image) {
+            document.getElementById("hlImgPreview").src = meta.image;
+            document.getElementById("hlImgData").value = meta.image;
+          }
         }
       }
     });
@@ -1574,7 +1534,6 @@
       document.getElementById("hlImgData").value = "";
     });
 
-    // Botão 1 clique para criar Open Chat Brasil (#1) e Desiré Chat (#2) no banco
     document.getElementById("btnSeedDefaultHighlights").addEventListener("click", async () => {
       if (!isAdminUser) return;
       await addDoc(collection(db, "highlights"), {
@@ -1582,7 +1541,7 @@
         placement: "top_main",
         order: 1,
         title: "Open Chat Brasil 🇧🇷",
-        description: "O grupo oficial #1 do TeleHub Brasil! Entre para conversar e fazer amizades.",
+        description: "Nosso grupo oficial em 1º lugar! Entre para conversar, fazer amizades e interagir com toda a comunidade do Brasil.",
         link: "https://t.me/",
         image: DEFAULT_ICON
       });
@@ -1591,11 +1550,11 @@
         placement: "top_sub",
         order: 2,
         title: "Desiré Chat 💬",
-        description: "Grupo oficial parceiro! Bate-papo descontraído e novas amizades todos os dias.",
+        description: "Grupo oficial parceiro! Bate-papo ativo, interação diária e novas amizades no Telegram.",
         link: "https://t.me/",
         image: DEFAULT_ICON
       });
-      alert("Open Chat Brasil (#1) e Desiré Chat (#2) adicionados! Agora você pode clicar em Editar ao lado deles para colocar o link e foto oficiais.");
+      alert("Pronto! Clique em 'Editar' ao lado de Open Chat Brasil e Desiré Chat abaixo para colar o link oficial de cada um.");
     });
 
     function renderAdminHighlights() {
@@ -1605,14 +1564,14 @@
         const row = document.createElement("div");
         row.className = "bg-[#0b1426] border border-slate-800 rounded-xl p-2.5 flex items-center justify-between gap-2";
         row.innerHTML = `
-          <div class="flex items-center gap-2.5 min-w-0">
-            <img src="${item.image || DEFAULT_ICON}" class="w-10 h-10 rounded-lg object-cover" onerror="this.src='${DEFAULT_ICON}'" />
-            <div class="min-w-0">
-              <p class="text-xs font-extrabold text-amber-300 truncate">[Ordem #${item.order}] ${item.title}</p>
+          <div class="flex items-center gap-2.5 min-w-0 flex-1">
+            <img src="${item.image || DEFAULT_ICON}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
+            <div class="min-w-0 flex-1">
+              <p class="text-xs font-extrabold text-amber-300 break-words">[Ordem #${item.order}] ${item.title}</p>
               <p class="text-[10px] text-slate-400">${item.type} • Posição: ${item.placement}</p>
             </div>
           </div>
-          <div class="flex gap-1.5">
+          <div class="flex gap-1.5 flex-shrink-0">
             <button class="btn-hl-edit px-2.5 py-1 rounded bg-blue-600 text-white text-[11px] font-bold">Editar</button>
             <button class="btn-hl-del px-2.5 py-1 rounded bg-red-600 text-white text-[11px] font-bold">✕</button>
           </div>

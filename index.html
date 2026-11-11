@@ -7,23 +7,25 @@
   <meta name="description" content="Encontre e divulgue os melhores Grupos do Telegram e Canais no TeleHub Brasil. Diretório atualizado diariamente com grupos de amizade, namoro, amor e romance, adulto, filmes, estudos, ofertas e mais." />
   <meta name="keywords" content="grupos do telegram, grupos telegram brasil, links de grupos telegram, canais do telegram, divulgar grupo telegram, telehub brasil, open chat brasil" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="canonical" href="https://www.telehubbrasil.com.br/" />
+  <link rel="canonical" href="https://telehubbrasil.com.br/" />
 
-  <!-- Open Graph / WhatsApp / Telegram Preview -->
+  <!-- Open Graph / WhatsApp / Telegram Preview (Com Imagem Garantida para o Telegram puxar a Prévia!) -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.telehubbrasil.com.br/" />
+  <meta property="og:url" content="https://telehubbrasil.com.br/" />
   <meta property="og:site_name" content="TeleHub Brasil" />
-  <meta property="og:title" content="TeleHub Brasil | Grupos do Telegram" />
-  <meta property="og:description" content="Acesse e divulgue os melhores Grupos e Canais do Telegram no maior diretório do Brasil." />
-  <meta property="og:image" content="https://www.telehubbrasil.com.br/banner.png" />
+  <meta property="og:title" content="TeleHub Brasil 🇧🇷 | Diretório Oficial de Grupos do Telegram" />
+  <meta property="og:description" content="Acesse e divulgue gratuitamente os melhores Grupos e Canais do Telegram no Brasil. Amizade, Namoro, Filmes, Ofertas e muito mais!" />
+  <meta property="og:image" content="https://placehold.co/1200x630/0b1426/38bdf8.png?text=TeleHub+Brasil%0AGrupos+do+Telegram&font=montserrat" />
+  <meta property="og:image:secure_url" content="https://placehold.co/1200x630/0b1426/38bdf8.png?text=TeleHub+Brasil%0AGrupos+do+Telegram&font=montserrat" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter / Telegram Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TeleHub Brasil | Grupos do Telegram" />
+  <meta name="twitter:title" content="TeleHub Brasil 🇧🇷 | Grupos do Telegram" />
   <meta name="twitter:description" content="Acesse e divulgue os melhores Grupos e Canais do Telegram no maior diretório do Brasil." />
-  <meta name="twitter:image" content="https://www.telehubbrasil.com.br/banner.png" />
+  <meta name="twitter:image" content="https://placehold.co/1200x630/0b1426/38bdf8.png?text=TeleHub+Brasil%0AGrupos+do+Telegram&font=montserrat" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/logo.png" />
@@ -36,7 +38,7 @@
     "@type": "WebSite",
     "name": "TeleHub Brasil",
     "alternateName": "Diretório de Grupos do Telegram Brasil",
-    "url": "https://www.telehubbrasil.com.br/",
+    "url": "https://telehubbrasil.com.br/",
     "description": "Diretório oficial para encontrar e divulgar grupos e canais do Telegram no Brasil.",
     "inLanguage": "pt-BR"
   }
@@ -144,7 +146,6 @@
   <div id="drawerOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-200">
     <aside id="drawerContent" class="w-72 max-w-[85vw] bg-[#0f1d38] h-full border-r border-blue-500/20 flex flex-col justify-between p-4 overflow-y-auto custom-scroll">
       <div>
-        <!-- Topo do Menu Lateral -->
         <div class="flex items-center justify-between pb-4 border-b border-slate-700/70">
           <div class="flex items-center gap-2">
             <span class="text-base font-extrabold text-white">Categorias e Menu</span>
@@ -154,7 +155,6 @@
           </button>
         </div>
 
-        <!-- Atalhos do Usuário no Menu -->
         <div class="mt-3 space-y-1.5 pb-3 border-b border-slate-800">
           <button id="drawerHomeBtn" class="w-full text-left px-3 py-2.5 rounded-xl bg-blue-600/20 text-sky-300 font-bold text-sm flex items-center justify-between hover:bg-blue-600/30 transition">
             <span>🏠 Página Inicial (Todos)</span>
@@ -164,20 +164,17 @@
           </button>
         </div>
 
-        <!-- Destaques do Menu Lateral -->
         <div id="sidebarHighlightsContainer" class="mt-3 space-y-2 hidden">
           <p class="text-[11px] font-bold uppercase tracking-wider text-amber-400 px-1">Destaques</p>
           <div id="sidebarHighlightsList" class="space-y-2"></div>
         </div>
 
-        <!-- Lista de Categorias -->
         <div class="mt-4">
           <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-2 mb-2">Categorias de Grupos</p>
           <nav id="categoryListNav" class="space-y-1"></nav>
         </div>
       </div>
 
-      <!-- Rodapé do Menu -->
       <div class="pt-4 border-t border-slate-800 mt-6 text-center">
         <p class="text-xs text-slate-400">© 2026 TeleHub Brasil</p>
       </div>
@@ -198,7 +195,7 @@
         </div>
       </div>
 
-      <!-- Barra de Categoria Ativa (Com botão Voltar para o Menu) -->
+      <!-- Barra de Categoria Ativa -->
       <div id="activeCategoryBar" class="hidden mt-3 pt-3 border-t border-slate-800 flex items-center justify-between flex-wrap gap-2">
         <div class="flex items-center gap-2">
           <span class="text-xs text-slate-300">Categoria:</span>
@@ -215,7 +212,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO DE DESTAQUES OFICIAIS NO TOPO (UM ABAIXO DO OUTRO) -->
+    <!-- SEÇÃO DE DESTAQUES OFICIAIS NO TOPO -->
     <section id="topHighlightsSection" class="space-y-3">
       <div class="flex items-center justify-between px-1">
         <h2 class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
@@ -229,7 +226,7 @@
       <!-- Destaques Seguintes Um Abaixo do Outro (2º Desire Chat, 3º, 4º...) -->
       <div id="secondaryHighlightsContainer" class="space-y-2.5"></div>
 
-      <!-- CAIXINHA EXCLUSIVA DO ADMIN (TOTALMENTE INVISÍVEL PARA VISITANTES) -->
+      <!-- CAIXINHA EXCLUSIVA DO ADMIN (INVISÍVEL PARA VISITANTES) -->
       <div id="adminQuickAddHighlightWrap" class="hidden pt-1">
         <button id="btnQuickAddHighlight" type="button" class="w-full py-3.5 px-4 rounded-2xl border-2 border-dashed border-amber-400/50 hover:border-amber-400 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 transition active:scale-95 shadow-lg">
           <span>➕ Cadastrar Destaque</span>
@@ -238,7 +235,7 @@
       </div>
     </section>
 
-    <!-- GRADE DE TODOS OS GRUPOS (2 COLUNAS LADO A LADO, VISUAL CLEAN) -->
+    <!-- GRADE DE TODOS OS GRUPOS (2 COLUNAS LADO A LADO) -->
     <section class="space-y-3">
       <div class="flex items-center justify-between px-1">
         <h1 id="publicSectionTitle" class="text-sm sm:text-base font-extrabold text-white flex items-center gap-2">
@@ -250,10 +247,8 @@
         <span id="groupsCounter" class="text-xs text-slate-400 font-medium">Carregando...</span>
       </div>
 
-      <!-- Grid 2 Colunas (Esquerda e Direita mesmo no celular) -->
       <div id="groupsGrid" class="grid grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-4"></div>
 
-      <!-- Estado vazio -->
       <div id="emptyState" class="hidden bg-[#13203c]/70 border border-slate-800 rounded-2xl p-8 text-center space-y-3">
         <p class="text-base font-bold text-slate-200">Nenhum grupo cadastrado nesta seção ainda.</p>
         <p class="text-xs text-slate-400 max-w-md mx-auto">Seja o primeiro a divulgar seu grupo ou canal do Telegram gratuitamente!</p>
@@ -397,7 +392,7 @@
 
       <div>
         <h3 id="groupFormTitle" class="text-lg font-extrabold text-white">Cadastrar Grupo ou Canal</h3>
-        <p class="text-xs text-slate-300 mt-0.5">Cole o link do Telegram para puxar o nome completo e a foto automaticamente, ou escolha uma imagem do celular.</p>
+        <p class="text-xs text-slate-300 mt-0.5">Cole o link do Telegram para puxar o nome completo e a foto permanentemente, ou escolha uma imagem do celular.</p>
       </div>
 
       <form id="groupForm" class="space-y-3.5">
@@ -436,7 +431,7 @@
         <div class="bg-[#0b1426] p-3 rounded-xl border border-slate-800 flex items-center gap-3">
           <img id="groupImgPreview" src="/logo.png" alt="Preview" class="w-14 h-14 rounded-xl object-cover border border-slate-700 bg-slate-900 flex-shrink-0" />
           <div class="flex-1 space-y-1.5">
-            <label class="block text-xs font-semibold text-slate-200">Imagem do Grupo</label>
+            <label class="block text-xs font-semibold text-slate-200">Imagem do Grupo (Salva Permanente)</label>
             <div class="flex flex-wrap gap-2">
               <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-300 font-bold text-xs border border-slate-700 inline-block">
                 📱 Escolher Foto do Celular
@@ -558,6 +553,11 @@
             <div>
               <label class="block text-[11px] text-slate-300 mb-0.5">Descrição de Chamada</label>
               <input id="hlDesc" type="text" placeholder="Descrição que aparecerá no card de destaque" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
+            </div>
+
+            <div class="flex items-center gap-2 pt-1">
+              <input id="hlAlsoInPublic" type="checkbox" checked class="w-4 h-4 rounded bg-slate-900 border-slate-700 text-amber-500" />
+              <label for="hlAlsoInPublic" class="text-[11px] text-slate-200 font-medium">Exibir também na grade "Todos os Grupos" lá embaixo</label>
             </div>
 
             <div class="flex items-center gap-3 pt-1 flex-wrap">
@@ -866,9 +866,31 @@
       });
     }
 
-    // ===============================================================
-    // BUSCADOR TURBO DE METADADOS DO TELEGRAM (4 LEITORES SIMULTÂNEOS)
-    // ===============================================================
+    // Converte URL de imagem externa do Telegram em Base64 permanente para nunca expirar!
+    async function convertRemoteImageToPermanentBase64(imageUrl, maxSize = 240) {
+      if (!imageUrl || imageUrl.startsWith("data:")) return imageUrl || "";
+      const proxyUrls = [
+        `https://wsrv.nl/?url=${encodeURIComponent(imageUrl)}&w=${maxSize}&h=${maxSize}&fit=cover&output=jpg`,
+        `https://corsproxy.io/?${encodeURIComponent(imageUrl)}`
+      ];
+      for (const pUrl of proxyUrls) {
+        try {
+          const res = await fetchWithTimeout(pUrl, 3500);
+          if (!res.ok) continue;
+          const blob = await res.blob();
+          const base64 = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.readAsDataURL(blob);
+          });
+          if (base64 && typeof base64 === "string" && base64.startsWith("data:image")) {
+            return base64;
+          }
+        } catch (_) {}
+      }
+      return imageUrl;
+    }
+
     function fetchWithTimeout(url, timeoutMs = 4200) {
       const ctrl = new AbortController();
       const id = setTimeout(() => ctrl.abort(), timeoutMs);
@@ -914,19 +936,7 @@
       const cleanUrl = normalizeTelegramLink(url);
       if (!cleanUrl || !cleanUrl.includes("t.me/")) return null;
 
-      // 1. Se já existir em AllGroups ou Highlights com esse link, aproveita na hora
-      const existingGroup = allGroups.find(g => normalizeTelegramLink(g.link).toLowerCase() === cleanUrl.toLowerCase());
-      if (existingGroup && existingGroup.name) {
-        return {
-          title: existingGroup.name,
-          image: existingGroup.image || "",
-          description: existingGroup.description || ""
-        };
-      }
-
-      // 2. Dispara 4 leitores em paralelo com timeout curto (o mais rápido ganha!)
       const tasks = [
-        // Leitor 1: Microlink API (Especialista em OpenGraph)
         (async () => {
           const res = await fetchWithTimeout(`https://api.microlink.io/?url=${encodeURIComponent(cleanUrl)}`, 4000);
           if (!res.ok) throw new Error("Microlink fail");
@@ -941,8 +951,6 @@
             description: (json?.data?.description || "").trim()
           };
         })(),
-
-        // Leitor 2: AllOrigins JSON
         (async () => {
           const res = await fetchWithTimeout(`https://api.allorigins.win/get?url=${encodeURIComponent(cleanUrl)}`, 4200);
           if (!res.ok) throw new Error("AllOrigins fail");
@@ -951,8 +959,6 @@
           if (!parsed) throw new Error("Empty parse");
           return parsed;
         })(),
-
-        // Leitor 3: CodeTabs Proxy
         (async () => {
           const res = await fetchWithTimeout(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(cleanUrl)}`, 4200);
           if (!res.ok) throw new Error("CodeTabs fail");
@@ -961,8 +967,6 @@
           if (!parsed) throw new Error("Empty parse");
           return parsed;
         })(),
-
-        // Leitor 4: CorsProxy
         (async () => {
           const res = await fetchWithTimeout(`https://corsproxy.io/?${encodeURIComponent(cleanUrl)}`, 4200);
           if (!res.ok) throw new Error("CorsProxy fail");
@@ -974,7 +978,11 @@
       ];
 
       try {
-        return await Promise.any(tasks);
+        const result = await Promise.any(tasks);
+        if (result && result.image) {
+          result.image = await convertRemoteImageToPermanentBase64(result.image);
+        }
+        return result;
       } catch (_) {
         return null;
       }
@@ -1001,7 +1009,7 @@
       const link = normalizeTelegramLink(groupLinkInput.value);
       if (!link.includes("t.me/") || link.endsWith("t.me/")) return;
 
-      fetchStatusText.textContent = "⏳ Puxando nome completo e foto do Telegram...";
+      fetchStatusText.textContent = "⏳ Puxando nome completo e salvando foto permanente...";
       fetchStatusText.classList.remove("hidden");
 
       const meta = await fetchTelegramMetadata(link);
@@ -1015,7 +1023,7 @@
           document.getElementById("groupImgPreview").src = meta.image;
           document.getElementById("groupImgUrlInput").value = meta.image;
         }
-        fetchStatusText.textContent = "✅ Nome completo e foto carregados automaticamente!";
+        fetchStatusText.textContent = "✅ Nome e foto salvos permanentemente!";
       } else {
         fetchStatusText.textContent = "ℹ️ Digite o nome completo abaixo e escolha a foto do celular.";
       }
@@ -1064,6 +1072,7 @@
         btnAdmin.classList.remove("hidden");
         adminQuickAddWrap.classList.remove("hidden");
         cleanupBrokenHighlights();
+        repairExpiringHighlightImages();
         updateAdminUI();
       } else {
         btnAdmin.classList.add("hidden");
@@ -1081,6 +1090,24 @@
           } catch (_) {}
         }
       }
+    }
+
+    // Repara automaticamente fotos de destaques que estavam com link temporário do Telegram
+    let repairingImages = false;
+    async function repairExpiringHighlightImages() {
+      if (!isAdminUser || repairingImages) return;
+      repairingImages = true;
+      try {
+        for (const item of allHighlights) {
+          if (item.link && (!item.image || item.image.includes("telesco.pe") || item.image.includes("telegram.org"))) {
+            const meta = await fetchTelegramMetadata(item.link);
+            if (meta && meta.image && meta.image.startsWith("data:image")) {
+              await updateDoc(doc(db, "highlights", item.id), { image: meta.image });
+            }
+          }
+        }
+      } catch (_) {}
+      repairingImages = false;
     }
 
     document.getElementById("btnQuickAddHighlight").addEventListener("click", () => {
@@ -1220,14 +1247,18 @@
       const category = document.getElementById("groupCategoryInput").value;
       const link = normalizeTelegramLink(document.getElementById("groupLinkInput").value);
       const name = document.getElementById("groupNameInput").value.trim();
-      const image = document.getElementById("groupImgUrlInput").value || DEFAULT_ICON;
+      let image = document.getElementById("groupImgUrlInput").value || DEFAULT_ICON;
       const ownerName = currentUser.displayName || currentUser.email.split("@")[0];
 
       const btn = document.getElementById("btnSubmitGroup");
       btn.disabled = true;
-      btn.textContent = "Enviando...";
+      btn.textContent = "Salvando...";
 
       try {
+        if (image && !image.startsWith("data:")) {
+          image = await convertRemoteImageToPermanentBase64(image);
+        }
+
         if (editId) {
           await updateDoc(doc(db, "groups", editId), {
             type,
@@ -1270,9 +1301,16 @@
     onSnapshot(collection(db, "highlights"), (snap) => {
       allHighlights = snap.docs.map(d => ({ id: d.id, ...d.data() }));
       allHighlights.sort((a, b) => (Number(a.order) || 1) - (Number(b.order) || 1));
-      if (isAdminUser) cleanupBrokenHighlights();
+      if (isAdminUser) {
+        cleanupBrokenHighlights();
+        repairExpiringHighlightImages();
+      }
       renderHighlights();
+      renderPublicGroups();
       if (isAdminUser) renderAdminHighlights();
+    }, (err) => {
+      console.error("Erro highlights:", err);
+      renderHighlights();
     });
 
     onSnapshot(collection(db, "groups"), (snap) => {
@@ -1285,7 +1323,20 @@
       renderHighlights();
       renderPublicGroups();
       if (isAdminUser) updateAdminUI();
+    }, (err) => {
+      console.error("Erro groups:", err);
+      renderPublicGroups();
     });
+
+    function getBestImageUrl(rawImg) {
+      if (!rawImg) return DEFAULT_ICON;
+      if (rawImg.startsWith("data:") || rawImg.startsWith("/")) return rawImg;
+      // Proxy de imagem global caso ainda seja um link externo antigo do Telegram
+      if (rawImg.includes("telesco.pe") || rawImg.includes("telegram.org")) {
+        return `https://wsrv.nl/?url=${encodeURIComponent(rawImg)}&w=240&h=240&fit=cover`;
+      }
+      return rawImg;
+    }
 
     function renderHighlights() {
       const primaryContainer = document.getElementById("primaryHighlightContainer");
@@ -1342,11 +1393,12 @@
 
       primaryContainer.innerHTML = "";
       topMain.forEach(item => {
+        const imgSrc = getBestImageUrl(item.image);
         const card = document.createElement("div");
         card.className = "bg-gradient-to-r from-[#162a52] via-[#1a3366] to-[#13203c] border-2 border-amber-400/60 rounded-2xl p-3.5 sm:p-4 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 relative";
         card.innerHTML = `
           <div class="flex items-center gap-3.5 min-w-0 w-full">
-            <img src="${item.image || DEFAULT_ICON}" alt="${item.title}" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-amber-400 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
+            <img src="${imgSrc}" alt="${item.title}" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-amber-400 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-1.5 flex-wrap mb-1">
                 <span class="px-2 py-0.5 rounded-md bg-amber-400 text-slate-950 font-black text-[10px] uppercase">👑 DESTAQUE #1 • ${item.type || "GRUPO OFICIAL"}</span>
@@ -1374,11 +1426,12 @@
 
       secondaryContainer.innerHTML = "";
       topSub.forEach((item, idx) => {
+        const imgSrc = getBestImageUrl(item.image);
         const card = document.createElement("div");
         card.className = "bg-[#152647] border border-sky-400/40 rounded-2xl p-3.5 shadow-lg flex items-center justify-between gap-3";
         card.innerHTML = `
           <div class="flex items-center gap-3 min-w-0 flex-1">
-            <img src="${item.image || DEFAULT_ICON}" alt="${item.title}" class="w-14 h-14 rounded-xl object-cover border border-sky-400/50 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
+            <img src="${imgSrc}" alt="${item.title}" class="w-14 h-14 rounded-xl object-cover border border-sky-400/50 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
             <div class="min-w-0 flex-1">
               <span class="inline-block px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold text-[10px] uppercase mb-0.5">DESTAQUE #${idx + 2} • ${item.type || "GRUPO OFICIAL"}</span>
               <h3 class="text-sm sm:text-base font-extrabold text-white break-words leading-snug">${item.title}</h3>
@@ -1414,13 +1467,14 @@
         sidebarContainer.classList.remove("hidden");
         sidebarList.innerHTML = "";
         sideItems.forEach(item => {
+          const imgSrc = getBestImageUrl(item.image);
           const a = document.createElement("a");
           a.href = item.link;
           a.target = "_blank";
           a.rel = "noopener noreferrer";
           a.className = "flex items-center gap-2.5 p-2 rounded-xl bg-amber-500/10 border border-amber-400/30 hover:bg-amber-500/20 transition";
           a.innerHTML = `
-            <img src="${item.image || DEFAULT_ICON}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
+            <img src="${imgSrc}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
             <div class="min-w-0 flex-1">
               <p class="text-xs font-extrabold text-amber-300 break-words">${item.title}</p>
               <p class="text-[10px] text-slate-300 line-clamp-1">${item.description || ""}</p>
@@ -1435,8 +1489,34 @@
 
     function renderPublicGroups() {
       const search = searchInput.value.trim().toLowerCase();
-      const approved = allGroups.filter(g => {
-        if (g.status !== "approved") return false;
+
+      // Combina grupos aprovados + destaques (para que a grade Todos os Grupos nunca fique zerada se você cadastrou pelos Destaques!)
+      const combinedList = [...allGroups.filter(g => g.status === "approved")];
+
+      allHighlights.filter(isValidHighlightItem).forEach(h => {
+        const alreadyExists = combinedList.some(g =>
+          normalizeTelegramLink(g.link).toLowerCase() === normalizeTelegramLink(h.link).toLowerCase() ||
+          (g.name || "").toLowerCase() === (h.title || "").toLowerCase()
+        );
+        if (!alreadyExists) {
+          const guessedCat = (h.title || "").toLowerCase().includes("desir") ? "Adulto (+18)" : "Amizade e Bate-Papo";
+          combinedList.push({
+            id: h.id,
+            type: "Grupo",
+            category: h.category || guessedCat,
+            name: h.title,
+            description: h.description || "Grupo oficial verificado no diretório TeleHub Brasil.",
+            link: h.link,
+            image: h.image || DEFAULT_ICON,
+            ownerName: "Oficial",
+            dateStr: "Verificado",
+            timeStr: "Ativo",
+            status: "approved"
+          });
+        }
+      });
+
+      const approved = combinedList.filter(g => {
         if (selectedCategory && g.category !== selectedCategory) return false;
         if (search) {
           const matchName = (g.name || "").toLowerCase().includes(search);
@@ -1457,14 +1537,15 @@
       emptyState.classList.add("hidden");
 
       approved.forEach(g => {
+        const imgSrc = getBestImageUrl(g.image);
         const card = document.createElement("article");
         card.className = "bg-[#13203c] border border-blue-500/20 hover:border-sky-400/50 rounded-2xl p-3 flex flex-col justify-between shadow-md transition";
         card.innerHTML = `
           <div>
             <div class="flex items-start gap-2.5 mb-2">
-              <img src="${g.image || DEFAULT_ICON}" alt="Grupo de Telegram ${g.name}" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover border border-slate-700 bg-slate-900 flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
+              <img src="${imgSrc}" alt="Grupo de Telegram ${g.name}" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover border border-slate-700 bg-slate-900 flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
               <div class="min-w-0 flex-1">
-                <span class="inline-block px-1.5 py-0.5 rounded bg-blue-600/25 text-sky-300 font-bold text-[9px] sm:text-[10px] uppercase truncate max-w-full">${g.category || "Geral"}</span>
+                <span class="inline-block px-1.5 py-0.5 rounded bg-blue-600/25 text-sky-300 font-bold text-[9px] sm:text-[10px] uppercase truncate max-w-full">${g.category || "Amizade e Bate-Papo"}</span>
                 <h3 class="text-xs sm:text-sm font-extrabold text-white break-words leading-snug mt-0.5">${g.name}</h3>
               </div>
             </div>
@@ -1482,7 +1563,7 @@
     searchInput.addEventListener("input", renderPublicGroups);
 
     function openViewGroupModal(g) {
-      document.getElementById("viewGroupImg").src = g.image || DEFAULT_ICON;
+      document.getElementById("viewGroupImg").src = getBestImageUrl(g.image);
       document.getElementById("viewGroupTypeBadge").textContent = g.type || "Grupo";
       document.getElementById("viewGroupCategoryBadge").textContent = g.category || "Geral";
       document.getElementById("viewGroupTitle").textContent = g.name || "";
@@ -1514,7 +1595,7 @@
           row.className = "bg-[#0b1426] border border-slate-800 rounded-xl p-3 flex items-center justify-between gap-2";
           row.innerHTML = `
             <div class="flex items-center gap-2.5 min-w-0 flex-1">
-              <img src="${g.image || DEFAULT_ICON}" class="w-11 h-11 rounded-xl object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
+              <img src="${getBestImageUrl(g.image)}" class="w-11 h-11 rounded-xl object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
               <div class="min-w-0 flex-1">
                 <p class="text-xs sm:text-sm font-bold text-white break-words">${g.name}</p>
                 <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${isApproved ? "bg-emerald-500/20 text-emerald-300" : "bg-amber-500/20 text-amber-300"}">
@@ -1624,7 +1705,7 @@
           item.innerHTML = `
             <div class="flex items-start justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <img src="${g.image || DEFAULT_ICON}" class="w-12 h-12 rounded-xl object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
+                <img src="${getBestImageUrl(g.image)}" class="w-12 h-12 rounded-xl object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
                 <div>
                   <span class="text-[10px] font-bold text-amber-300 uppercase">${g.type || "Grupo"} • ${g.category}</span>
                   <h4 class="text-sm font-extrabold text-white break-words">${g.name}</h4>
@@ -1658,7 +1739,7 @@
         row.className = "bg-[#0b1426] border border-slate-800 rounded-xl p-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2";
         row.innerHTML = `
           <div class="flex items-center gap-2 min-w-0 flex-1">
-            <img src="${g.image || DEFAULT_ICON}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
+            <img src="${getBestImageUrl(g.image)}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
             <div class="min-w-0 flex-1">
               <p class="text-xs font-bold text-white break-words">${g.name}</p>
               <p class="text-[10px] text-slate-400">${g.category} • ${g.status === "approved" ? "No Ar" : "Pendente"}</p>
@@ -1705,7 +1786,7 @@
       const url = normalizeTelegramLink(document.getElementById("hlLink").value);
       if (!url.includes("t.me/") || url.endsWith("t.me/")) return;
       const statusEl = document.getElementById("hlFetchStatus");
-      statusEl.textContent = "⏳ Puxando nome e foto...";
+      statusEl.textContent = "⏳ Puxando nome e salvando foto permanente...";
       statusEl.classList.remove("hidden");
 
       const meta = await fetchTelegramMetadata(url);
@@ -1718,7 +1799,7 @@
           document.getElementById("hlImgPreview").src = meta.image;
           document.getElementById("hlImgData").value = meta.image;
         }
-        statusEl.textContent = "✅ Nome e foto carregados! Toque em Salvar Destaque.";
+        statusEl.textContent = "✅ Nome e foto permanente carregados! Toque em Salvar Destaque.";
       } else {
         statusEl.textContent = "ℹ️ Digite o nome completo ao lado e toque em Salvar Destaque.";
       }
@@ -1758,6 +1839,11 @@
         const editId = document.getElementById("hlEditId").value;
         const title = document.getElementById("hlTitle").value.trim();
         const desc = document.getElementById("hlDesc").value.trim() || "Grupo em destaque no TeleHub Brasil! Entre agora e participe.";
+        let imgData = document.getElementById("hlImgData").value || DEFAULT_ICON;
+
+        if (imgData && !imgData.startsWith("data:")) {
+          imgData = await convertRemoteImageToPermanentBase64(imgData);
+        }
 
         const payload = {
           type: document.getElementById("hlType").value,
@@ -1766,7 +1852,7 @@
           title,
           link,
           description: desc,
-          image: document.getElementById("hlImgData").value || DEFAULT_ICON
+          image: imgData
         };
 
         if (editId && allHighlights.some(h => h.id === editId)) {
@@ -1778,7 +1864,7 @@
         resetHighlightForm();
         closeAllModals(false);
         window.scrollTo({ top: 0, behavior: "smooth" });
-        alert(`✅ "${title}" salvo nos Destaques!`);
+        alert(`✅ "${title}" salvo com foto permanente!`);
       } catch (err) {
         alert("Erro ao salvar destaque: " + err.message);
       } finally {
@@ -1797,7 +1883,7 @@
         row.className = "bg-[#0b1426] border border-slate-800 rounded-xl p-2.5 flex items-center justify-between gap-2";
         row.innerHTML = `
           <div class="flex items-center gap-2.5 min-w-0 flex-1">
-            <img src="${item.image || DEFAULT_ICON}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
+            <img src="${getBestImageUrl(item.image)}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
             <div class="min-w-0 flex-1">
               <p class="text-xs font-extrabold text-amber-300 break-words">[#${item.order}] ${item.title}</p>
               <p class="text-[10px] text-slate-400">${item.type} • ${item.placement === "top_main" ? "1º Lugar" : item.placement === "top_sub" ? "Lista de Destaques" : "Menu Lateral"}</p>
@@ -1816,7 +1902,7 @@
           document.getElementById("hlTitle").value = item.title || "";
           document.getElementById("hlLink").value = item.link || "";
           document.getElementById("hlDesc").value = item.description || "";
-          document.getElementById("hlImgPreview").src = item.image || DEFAULT_ICON;
+          document.getElementById("hlImgPreview").src = getBestImageUrl(item.image);
           document.getElementById("hlImgData").value = item.image || "";
           document.getElementById("hlFormHeading").textContent = `Editando: ${item.title}`;
         });

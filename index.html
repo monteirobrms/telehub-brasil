@@ -9,7 +9,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://telehubbrasil.com.br/" />
 
-  <!-- Open Graph / WhatsApp / Telegram Preview (Com Imagem Garantida para o Telegram puxar a Prévia!) -->
+  <!-- Open Graph / WhatsApp / Telegram Preview -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://telehubbrasil.com.br/" />
   <meta property="og:site_name" content="TeleHub Brasil" />
@@ -31,7 +31,7 @@
   <link rel="icon" type="image/png" href="/logo.png" />
   <link rel="apple-touch-icon" href="/logo.png" />
 
-  <!-- Schema.org JSON-LD para SEO Avançado no Google -->
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -88,7 +88,7 @@
   <header class="sticky top-0 z-40 bg-[#0f1d38]/95 backdrop-blur-md border-b border-blue-500/20 shadow-lg">
     <div class="max-w-5xl mx-auto px-2.5 sm:px-3 h-16 flex items-center justify-between gap-1.5">
       
-      <!-- Esquerda: Botão 3 Tracinhos (Menu Lateral) + Logo Clicável -->
+      <!-- Esquerda: Botão 3 Tracinhos + Logo -->
       <div class="flex items-center gap-2 min-w-0">
         <button id="btnOpenDrawer" aria-label="Abrir Menu de Categorias" class="p-2 rounded-xl bg-blue-600/20 hover:bg-blue-600/40 text-blue-300 border border-blue-400/20 transition active:scale-95 flex-shrink-0">
           <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
@@ -96,7 +96,6 @@
           </svg>
         </button>
 
-        <!-- Clicar na Logo/Nome volta sempre para a Página Inicial -->
         <a href="#home" id="brandHomeLink" class="flex items-center gap-2 group min-w-0">
           <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-md border border-blue-400/30 flex-shrink-0 bg-gradient-to-br from-sky-400 to-blue-700 flex items-center justify-center relative">
             <img src="/logo.png" alt="TeleHub Brasil" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
@@ -120,18 +119,15 @@
 
       <!-- Direita: Botões de Ação -->
       <div class="flex items-center gap-1.5 flex-shrink-0">
-        <!-- Botão Painel Admin (Visível apenas para monteiro.brms@gmail.com) -->
         <button id="btnAdminPanel" class="hidden px-2.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow flex items-center gap-1 transition whitespace-nowrap">
           <span>👑 Admin</span>
           <span id="adminPendingBadge" class="hidden px-1.5 py-0.5 text-[10px] rounded-full bg-red-600 text-white font-extrabold">0</span>
         </button>
 
-        <!-- Botão Cadastrar Grupo/Canal -->
         <button id="btnNewGroup" class="px-2.5 sm:px-3 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-xs sm:text-sm shadow-md shadow-blue-600/30 transition active:scale-95 whitespace-nowrap">
           + Cadastrar
         </button>
 
-        <!-- Botão Conta / Login -->
         <button id="btnUserAuth" class="p-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold transition flex items-center gap-1.5">
           <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
@@ -162,11 +158,6 @@
           <button id="drawerMyGroupsBtn" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-800/80 text-slate-200 font-medium text-sm flex items-center justify-between transition">
             <span>📂 Meus Grupos (Editar)</span>
           </button>
-        </div>
-
-        <div id="sidebarHighlightsContainer" class="mt-3 space-y-2 hidden">
-          <p class="text-[11px] font-bold uppercase tracking-wider text-amber-400 px-1">Destaques</p>
-          <div id="sidebarHighlightsList" class="space-y-2"></div>
         </div>
 
         <div class="mt-4">
@@ -212,30 +203,33 @@
       </div>
     </section>
 
-    <!-- SEÇÃO DE DESTAQUES OFICIAIS NO TOPO -->
+    <!-- SEÇÃO DE DESTAQUES NO TOPO -->
     <section id="topHighlightsSection" class="space-y-3">
       <div class="flex items-center justify-between px-1">
         <h2 class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
           <span>★ Grupos Oficiais em Destaque</span>
         </h2>
+        <button id="btnClearAllHighlightsMain" type="button" class="hidden px-2.5 py-1 rounded-lg bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white text-[10px] font-bold border border-red-500/30 transition">
+          🗑️ Esvaziar Destaques
+        </button>
       </div>
 
-      <!-- Destaque #1 Principal (Open Chat Brasil) -->
+      <!-- 1º da Fila (Card Dourado: "👑 DESTAQUE • GRUPO OFICIAL") -->
       <div id="primaryHighlightContainer" class="space-y-2.5"></div>
 
-      <!-- Destaques Seguintes Um Abaixo do Outro (2º Desire Chat, 3º, 4º...) -->
+      <!-- 2º em diante (Card Azul: apenas "★ DESTAQUE") -->
       <div id="secondaryHighlightsContainer" class="space-y-2.5"></div>
 
       <!-- CAIXINHA EXCLUSIVA DO ADMIN (INVISÍVEL PARA VISITANTES) -->
       <div id="adminQuickAddHighlightWrap" class="hidden pt-1">
         <button id="btnQuickAddHighlight" type="button" class="w-full py-3.5 px-4 rounded-2xl border-2 border-dashed border-amber-400/50 hover:border-amber-400 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 transition active:scale-95 shadow-lg">
           <span>➕ Cadastrar Destaque</span>
-          <span class="px-2 py-0.5 rounded-md bg-amber-400/20 text-amber-200 text-[10px] font-bold">🔒 Só você vê este botão</span>
+          <span class="px-2 py-0.5 rounded-md bg-amber-400/20 text-amber-200 text-[10px] font-bold">🔒 Só você vê</span>
         </button>
       </div>
     </section>
 
-    <!-- GRADE DE TODOS OS GRUPOS (2 COLUNAS LADO A LADO) -->
+    <!-- GRADE DE TODOS OS GRUPOS (100% SEPARADA DOS DESTAQUES) -->
     <section class="space-y-3">
       <div class="flex items-center justify-between px-1">
         <h1 id="publicSectionTitle" class="text-sm sm:text-base font-extrabold text-white flex items-center gap-2">
@@ -244,7 +238,7 @@
           </svg>
           <span>Todos os Grupos</span>
         </h1>
-        <span id="groupsCounter" class="text-xs text-slate-400 font-medium">Carregando...</span>
+        <span id="groupsCounter" class="text-xs text-slate-400 font-medium">0 grupos</span>
       </div>
 
       <div id="groupsGrid" class="grid grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-4"></div>
@@ -383,7 +377,7 @@
     </div>
   </div>
 
-  <!-- MODAL 3: CADASTRAR OU EDITAR GRUPO / CANAL -->
+  <!-- MODAL 3: CADASTRAR OU EDITAR GRUPO NORMAL (TODOS OS GRUPOS) -->
   <div id="modalGroupForm" class="fixed inset-0 bg-black/80 backdrop-blur-xs z-50 hidden items-center justify-center p-3 overflow-y-auto">
     <div class="bg-[#13203c] border border-blue-400/30 rounded-2xl max-w-lg w-full p-4 sm:p-5 shadow-2xl space-y-4 relative my-auto max-h-[92vh] overflow-y-auto custom-scroll">
       <button id="btnCloseGroupForm" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">
@@ -392,7 +386,7 @@
 
       <div>
         <h3 id="groupFormTitle" class="text-lg font-extrabold text-white">Cadastrar Grupo ou Canal</h3>
-        <p class="text-xs text-slate-300 mt-0.5">Cole o link do Telegram para puxar o nome completo e a foto permanentemente, ou escolha uma imagem do celular.</p>
+        <p class="text-xs text-slate-300 mt-0.5">Cole o link do Telegram para puxar o nome completo e a foto automaticamente.</p>
       </div>
 
       <form id="groupForm" class="space-y-3.5">
@@ -431,7 +425,7 @@
         <div class="bg-[#0b1426] p-3 rounded-xl border border-slate-800 flex items-center gap-3">
           <img id="groupImgPreview" src="/logo.png" alt="Preview" class="w-14 h-14 rounded-xl object-cover border border-slate-700 bg-slate-900 flex-shrink-0" />
           <div class="flex-1 space-y-1.5">
-            <label class="block text-xs font-semibold text-slate-200">Imagem do Grupo (Salva Permanente)</label>
+            <label class="block text-xs font-semibold text-slate-200">Imagem do Grupo</label>
             <div class="flex flex-wrap gap-2">
               <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-300 font-bold text-xs border border-slate-700 inline-block">
                 📱 Escolher Foto do Celular
@@ -475,9 +469,9 @@
     </div>
   </div>
 
-  <!-- MODAL 5: PAINEL DO ADMINISTRADOR -->
+  <!-- MODAL 5: PAINEL DO ADMINISTRADOR (SIMPLES E LIMPO) -->
   <div id="modalAdmin" class="fixed inset-0 bg-black/85 backdrop-blur-xs z-50 hidden items-center justify-center p-2 sm:p-4 overflow-y-auto">
-    <div class="bg-[#13203c] border border-amber-400/40 rounded-2xl max-w-3xl w-full p-4 sm:p-5 shadow-2xl space-y-4 relative my-auto max-h-[94vh] overflow-y-auto custom-scroll">
+    <div class="bg-[#13203c] border border-amber-400/40 rounded-2xl max-w-2xl w-full p-4 sm:p-5 shadow-2xl space-y-4 relative my-auto max-h-[94vh] overflow-y-auto custom-scroll">
       <button id="btnCloseAdmin" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">
         ✕
       </button>
@@ -486,97 +480,80 @@
         <span class="text-xl">👑</span>
         <div>
           <h3 class="text-base sm:text-lg font-extrabold text-white">Painel do Administrador</h3>
-          <p class="text-xs text-amber-300">Aprovação de grupos e controle de Destaques Oficiais.</p>
+          <p class="text-xs text-amber-300">Controle de Destaques e Aprovação de Grupos.</p>
         </div>
       </div>
 
       <div class="grid grid-cols-3 gap-1.5 bg-[#0b1426] p-1.5 rounded-xl border border-slate-800 text-xs font-bold">
-        <button id="adminTabPending" class="py-2 rounded-lg bg-amber-500 text-slate-950">⏳ Pendentes</button>
-        <button id="adminTabHighlights" class="py-2 rounded-lg text-slate-300 hover:bg-slate-800">⭐ Destaques</button>
+        <button id="adminTabHighlights" class="py-2 rounded-lg bg-amber-500 text-slate-950">⭐ Destaques</button>
+        <button id="adminTabPending" class="py-2 rounded-lg text-slate-300 hover:bg-slate-800">⏳ Pendentes</button>
         <button id="adminTabAll" class="py-2 rounded-lg text-slate-300 hover:bg-slate-800">📋 Todos no Ar</button>
       </div>
 
-      <div id="adminViewPending" class="space-y-3">
-        <div id="adminPendingList" class="space-y-2.5"></div>
-      </div>
-
-      <div id="adminViewHighlights" class="hidden space-y-4">
+      <!-- ABA 1: CADASTRAR EM DESTAQUE (COM FILA AUTOMÁTICA) -->
+      <div id="adminViewHighlights" class="space-y-4">
         <div class="bg-[#0b1426] p-3.5 rounded-xl border border-amber-500/30 space-y-3">
           <div class="flex items-center justify-between flex-wrap gap-2">
-            <h4 id="hlFormHeading" class="text-sm font-extrabold text-amber-300">Cadastrar Novo Grupo em Destaque</h4>
+            <h4 id="hlFormHeading" class="text-sm font-extrabold text-amber-300">Cadastrar Grupo em Destaque</h4>
             <button id="btnClearHlForm" type="button" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] font-bold">
-              + Limpar / Novo
+              Limpar Campos
             </button>
           </div>
 
-          <form id="highlightForm" class="space-y-2.5">
+          <form id="highlightForm" class="space-y-3">
             <input type="hidden" id="hlEditId" value="" />
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-              <div>
-                <label class="block text-[11px] text-slate-300 mb-0.5">Etiqueta do Card</label>
-                <select id="hlType" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white">
-                  <option value="Grupo Oficial">Grupo Oficial</option>
-                  <option value="Destaque">⭐ Destaque</option>
-                  <option value="Canal Oficial">📢 Canal Oficial</option>
-                  <option value="Bot Oficial">🤖 Bot Oficial</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-[11px] text-slate-300 mb-0.5">Onde Exibir no Site?</label>
-                <select id="hlPlacement" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white">
-                  <option value="top_sub">Lista de Destaques (Abaixo do 1º)</option>
-                  <option value="top_main">Topo Principal (1º Lugar)</option>
-                  <option value="sidebar">Menu Lateral (Gaveta ☰)</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-[11px] text-slate-300 mb-0.5">Posição (1, 2, 3...)</label>
-                <input id="hlOrder" type="number" value="1" min="1" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
-              </div>
-            </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <div>
-                <label class="block text-[11px] text-slate-300 mb-0.5">Link do Telegram (t.me/...)</label>
-                <div class="flex gap-1.5">
-                  <input id="hlLink" type="text" required placeholder="https://t.me/..." class="flex-1 px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
-                  <button id="btnFetchHlMeta" type="button" class="px-2.5 py-1.5 rounded-lg bg-blue-600 text-white text-[11px] font-bold">⚡ Puxar</button>
-                </div>
-                <p id="hlFetchStatus" class="text-[10px] text-sky-300 mt-0.5 hidden"></p>
-              </div>
-              <div>
-                <label class="block text-[11px] text-slate-300 mb-0.5">Nome Completo do Grupo</label>
-                <input id="hlTitle" type="text" required placeholder="Nome completo do grupo" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
-              </div>
+            <div>
+              <label class="block text-xs font-bold text-amber-300 mb-1">Posição na Fila de Destaques</label>
+              <select id="hlPositionSelect" class="w-full px-3 py-2.5 rounded-xl bg-[#13203c] border border-amber-400/40 text-xs sm:text-sm font-bold text-white"></select>
+              <p class="text-[10px] text-slate-400 mt-1">Se colocar em 1º lugar, quem estava em 1º passa para 2º e quem estava em 2º passa para 3º automaticamente.</p>
             </div>
 
             <div>
-              <label class="block text-[11px] text-slate-300 mb-0.5">Descrição de Chamada</label>
-              <input id="hlDesc" type="text" placeholder="Descrição que aparecerá no card de destaque" class="w-full px-2.5 py-2 rounded-lg bg-[#13203c] border border-slate-700 text-xs text-white" />
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Link do Grupo no Telegram (t.me/...)</label>
+              <div class="flex gap-1.5">
+                <input id="hlLink" type="text" required placeholder="https://t.me/..." class="flex-1 px-3 py-2 rounded-xl bg-[#13203c] border border-slate-700 text-xs sm:text-sm text-white" />
+                <button id="btnFetchHlMeta" type="button" class="px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold whitespace-nowrap">⚡ Puxar</button>
+              </div>
+              <p id="hlFetchStatus" class="text-[11px] text-sky-300 mt-1 hidden"></p>
             </div>
 
-            <div class="flex items-center gap-2 pt-1">
-              <input id="hlAlsoInPublic" type="checkbox" checked class="w-4 h-4 rounded bg-slate-900 border-slate-700 text-amber-500" />
-              <label for="hlAlsoInPublic" class="text-[11px] text-slate-200 font-medium">Exibir também na grade "Todos os Grupos" lá embaixo</label>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Nome do Grupo</label>
+              <input id="hlTitle" type="text" required placeholder="Nome completo do grupo" class="w-full px-3 py-2 rounded-xl bg-[#13203c] border border-slate-700 text-xs sm:text-sm text-white" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Descrição do Grupo</label>
+              <textarea id="hlDesc" rows="2" placeholder="Descrição que aparecerá no destaque..." class="w-full px-3 py-2 rounded-xl bg-[#13203c] border border-slate-700 text-xs sm:text-sm text-white custom-scroll"></textarea>
             </div>
 
             <div class="flex items-center gap-3 pt-1 flex-wrap">
-              <img id="hlImgPreview" src="/logo.png" class="w-11 h-11 rounded-xl object-cover border border-slate-700 bg-slate-900" />
-              <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-300 font-bold text-xs border border-slate-700">
+              <img id="hlImgPreview" src="/logo.png" class="w-12 h-12 rounded-xl object-cover border border-slate-700 bg-slate-900" />
+              <label class="cursor-pointer px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-sky-300 font-bold text-xs border border-slate-700">
                 📱 Foto do Celular
                 <input id="hlFileInput" type="file" accept="image/*" class="hidden" />
               </label>
               <input type="hidden" id="hlImgData" value="" />
-              <button id="btnSaveHighlight" type="submit" class="ml-auto px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow-lg">
-                💾 Salvar Destaque
+              <button id="btnSaveHighlight" type="submit" class="ml-auto px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs sm:text-sm shadow-lg">
+                💾 Salvar em Destaque
               </button>
             </div>
           </form>
         </div>
 
-        <div id="adminHighlightsList" class="space-y-2"></div>
+        <div class="space-y-2">
+          <p class="text-xs font-bold text-slate-300">Grupos em Destaque no Momento:</p>
+          <div id="adminHighlightsList" class="space-y-2"></div>
+        </div>
       </div>
 
+      <!-- ABA 2: PENDENTES -->
+      <div id="adminViewPending" class="hidden space-y-3">
+        <div id="adminPendingList" class="space-y-2.5"></div>
+      </div>
+
+      <!-- ABA 3: TODOS OS GRUPOS NORMAIS -->
       <div id="adminViewAll" class="hidden space-y-2.5">
         <div id="adminAllGroupsList" class="space-y-2"></div>
       </div>
@@ -585,6 +562,11 @@
 
   <!-- SCRIPTS E LÓGICA DO SISTEMA -->
   <script type="module">
+    // 1. Sempre força a URL oficial telehubbrasil.com.br (nunca deixa ficar em .vercel.app)
+    if (window.location.hostname.includes("vercel.app")) {
+      window.location.replace("https://telehubbrasil.com.br" + window.location.pathname + window.location.search + window.location.hash);
+    }
+
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
     import {
       getAuth,
@@ -600,7 +582,6 @@
       getFirestore,
       collection,
       addDoc,
-      setDoc,
       updateDoc,
       deleteDoc,
       doc,
@@ -866,7 +847,6 @@
       });
     }
 
-    // Converte URL de imagem externa do Telegram em Base64 permanente para nunca expirar!
     async function convertRemoteImageToPermanentBase64(imageUrl, maxSize = 240) {
       if (!imageUrl || imageUrl.startsWith("data:")) return imageUrl || "";
       const proxyUrls = [
@@ -1009,7 +989,7 @@
       const link = normalizeTelegramLink(groupLinkInput.value);
       if (!link.includes("t.me/") || link.endsWith("t.me/")) return;
 
-      fetchStatusText.textContent = "⏳ Puxando nome completo e salvando foto permanente...";
+      fetchStatusText.textContent = "⏳ Puxando nome completo e foto...";
       fetchStatusText.classList.remove("hidden");
 
       const meta = await fetchTelegramMetadata(link);
@@ -1023,9 +1003,9 @@
           document.getElementById("groupImgPreview").src = meta.image;
           document.getElementById("groupImgUrlInput").value = meta.image;
         }
-        fetchStatusText.textContent = "✅ Nome e foto salvos permanentemente!";
+        fetchStatusText.textContent = "✅ Nome e foto carregados!";
       } else {
-        fetchStatusText.textContent = "ℹ️ Digite o nome completo abaixo e escolha a foto do celular.";
+        fetchStatusText.textContent = "ℹ️ Digite o nome completo abaixo e escolha a foto.";
       }
     }
 
@@ -1052,6 +1032,7 @@
       const lblStatus = document.getElementById("lblUserStatus");
       const btnAdmin = document.getElementById("btnAdminPanel");
       const adminQuickAddWrap = document.getElementById("adminQuickAddHighlightWrap");
+      const btnClearAllMain = document.getElementById("btnClearAllHighlightsMain");
       const outView = document.getElementById("authLoggedOutView");
       const inView = document.getElementById("authLoggedInView");
 
@@ -1071,20 +1052,25 @@
       if (isAdminUser) {
         btnAdmin.classList.remove("hidden");
         adminQuickAddWrap.classList.remove("hidden");
-        cleanupBrokenHighlights();
-        repairExpiringHighlightImages();
+        btnClearAllMain.classList.remove("hidden");
+        autoResetOldHighlightsOnce();
         updateAdminUI();
       } else {
         btnAdmin.classList.add("hidden");
         adminQuickAddWrap.classList.add("hidden");
+        btnClearAllMain.classList.add("hidden");
       }
       renderHighlights();
     });
 
-    async function cleanupBrokenHighlights() {
-      if (!isAdminUser) return;
-      for (const item of allHighlights) {
-        if (!isValidHighlightItem(item)) {
+    // Limpa automaticamente 1 única vez os registros antigos bugados para o Admin cadastrar limpo do zero
+    let resetCheckDone = false;
+    async function autoResetOldHighlightsOnce() {
+      if (!isAdminUser || resetCheckDone || allHighlights.length === 0) return;
+      resetCheckDone = true;
+      if (!localStorage.getItem("telehub_clean_v5")) {
+        localStorage.setItem("telehub_clean_v5", "done");
+        for (const item of allHighlights) {
           try {
             await deleteDoc(doc(db, "highlights", item.id));
           } catch (_) {}
@@ -1092,36 +1078,22 @@
       }
     }
 
-    // Repara automaticamente fotos de destaques que estavam com link temporário do Telegram
-    let repairingImages = false;
-    async function repairExpiringHighlightImages() {
-      if (!isAdminUser || repairingImages) return;
-      repairingImages = true;
-      try {
-        for (const item of allHighlights) {
-          if (item.link && (!item.image || item.image.includes("telesco.pe") || item.image.includes("telegram.org"))) {
-            const meta = await fetchTelegramMetadata(item.link);
-            if (meta && meta.image && meta.image.startsWith("data:image")) {
-              await updateDoc(doc(db, "highlights", item.id), { image: meta.image });
-            }
-          }
-        }
-      } catch (_) {}
-      repairingImages = false;
-    }
+    document.getElementById("btnClearAllHighlightsMain").addEventListener("click", async () => {
+      if (!isAdminUser) return;
+      if (!confirm("Esvaziar todos os Destaques atuais para cadastrar tudo do zero?")) return;
+      for (const item of allHighlights) {
+        try {
+          await deleteDoc(doc(db, "highlights", item.id));
+        } catch (_) {}
+      }
+      resetHighlightForm();
+      openModal("modalAdmin");
+      document.getElementById("adminTabHighlights").click();
+    });
 
     document.getElementById("btnQuickAddHighlight").addEventListener("click", () => {
       if (!isAdminUser) return;
       resetHighlightForm();
-      const hasTopMain = allHighlights.some(h => isValidHighlightItem(h) && h.placement === "top_main");
-      if (!hasTopMain) {
-        document.getElementById("hlPlacement").value = "top_main";
-        document.getElementById("hlOrder").value = 1;
-      } else {
-        document.getElementById("hlPlacement").value = "top_sub";
-        const validSubCount = allHighlights.filter(h => isValidHighlightItem(h) && h.placement === "top_sub").length;
-        document.getElementById("hlOrder").value = validSubCount + 2;
-      }
       openModal("modalAdmin");
       document.getElementById("adminTabHighlights").click();
       setTimeout(() => document.getElementById("hlLink").focus(), 150);
@@ -1288,7 +1260,7 @@
             timeStr: now.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }),
             createdAt: serverTimestamp()
           });
-          alert(isAdminUser ? "✅ Grupo publicado diretamente!" : "✅ Grupo enviado para aprovação!");
+          alert(isAdminUser ? "✅ Grupo publicado em Todos os Grupos!" : "✅ Grupo enviado para aprovação!");
         }
         closeAllModals(true);
       } catch (err) {
@@ -1298,19 +1270,20 @@
       }
     });
 
+    function getSortedValidHighlights() {
+      const valid = allHighlights.filter(isValidHighlightItem);
+      valid.sort((a, b) => (Number(a.order) || 999) - (Number(b.order) || 999));
+      return valid;
+    }
+
     onSnapshot(collection(db, "highlights"), (snap) => {
       allHighlights = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-      allHighlights.sort((a, b) => (Number(a.order) || 1) - (Number(b.order) || 1));
+      if (isAdminUser) autoResetOldHighlightsOnce();
+      renderHighlights();
       if (isAdminUser) {
-        cleanupBrokenHighlights();
-        repairExpiringHighlightImages();
+        updatePositionSelectOptions();
+        renderAdminHighlights();
       }
-      renderHighlights();
-      renderPublicGroups();
-      if (isAdminUser) renderAdminHighlights();
-    }, (err) => {
-      console.error("Erro highlights:", err);
-      renderHighlights();
     });
 
     onSnapshot(collection(db, "groups"), (snap) => {
@@ -1320,203 +1293,123 @@
         const tB = b.createdAt?.seconds || 0;
         return tB - tA;
       });
-      renderHighlights();
       renderPublicGroups();
       if (isAdminUser) updateAdminUI();
-    }, (err) => {
-      console.error("Erro groups:", err);
-      renderPublicGroups();
     });
 
     function getBestImageUrl(rawImg) {
       if (!rawImg) return DEFAULT_ICON;
       if (rawImg.startsWith("data:") || rawImg.startsWith("/")) return rawImg;
-      // Proxy de imagem global caso ainda seja um link externo antigo do Telegram
       if (rawImg.includes("telesco.pe") || rawImg.includes("telegram.org")) {
         return `https://wsrv.nl/?url=${encodeURIComponent(rawImg)}&w=240&h=240&fit=cover`;
       }
       return rawImg;
     }
 
+    // =========================================================================
+    // RENDERIZAÇÃO LIMPA DOS DESTAQUES:
+    // - 1º da fila = Card Dourado com "👑 DESTAQUE • GRUPO OFICIAL" (Sem #1)
+    // - 2º em diante = Card Azul com apenas "★ DESTAQUE" (Sem #2 e sem Oficial)
+    // =========================================================================
     function renderHighlights() {
       const primaryContainer = document.getElementById("primaryHighlightContainer");
       const secondaryContainer = document.getElementById("secondaryHighlightsContainer");
-      const sidebarContainer = document.getElementById("sidebarHighlightsContainer");
-      const sidebarList = document.getElementById("sidebarHighlightsList");
       const topSection = document.getElementById("topHighlightsSection");
 
-      const validHighlights = allHighlights.filter(isValidHighlightItem);
-
-      let topMain = validHighlights.filter(h => h.placement === "top_main");
-      let topSub = validHighlights.filter(h => h.placement === "top_sub");
-      const sideItems = validHighlights.filter(h => h.placement === "sidebar");
-
-      if (topMain.length === 0) {
-        const openChatGroup = allGroups.find(g => (g.name || "").toLowerCase().includes("open chat") && g.link);
-        if (openChatGroup) {
-          topMain = [{
-            id: null,
-            type: "Grupo Oficial",
-            placement: "top_main",
-            order: 1,
-            title: openChatGroup.name,
-            description: openChatGroup.description,
-            link: openChatGroup.link,
-            image: openChatGroup.image || DEFAULT_ICON
-          }];
-        }
-      }
-
-      const hasDesireInSub = topSub.some(h => (h.title || "").toLowerCase().includes("desir"));
-      if (!hasDesireInSub) {
-        const desireGroup = allGroups.find(g => (g.name || "").toLowerCase().includes("desir") && g.link);
-        if (desireGroup) {
-          topSub.unshift({
-            id: null,
-            type: "Grupo Oficial",
-            placement: "top_sub",
-            order: 2,
-            title: desireGroup.name,
-            description: desireGroup.description,
-            link: desireGroup.link,
-            image: desireGroup.image || DEFAULT_ICON
-          });
-        }
-      }
-
-      topSub.sort((a, b) => {
-        const aIsDesire = (a.title || "").toLowerCase().includes("desir") ? 0 : 1;
-        const bIsDesire = (b.title || "").toLowerCase().includes("desir") ? 0 : 1;
-        if (aIsDesire !== bIsDesire) return aIsDesire - bIsDesire;
-        return (Number(a.order) || 2) - (Number(b.order) || 2);
-      });
+      const sorted = getSortedValidHighlights();
 
       primaryContainer.innerHTML = "";
-      topMain.forEach(item => {
-        const imgSrc = getBestImageUrl(item.image);
-        const card = document.createElement("div");
-        card.className = "bg-gradient-to-r from-[#162a52] via-[#1a3366] to-[#13203c] border-2 border-amber-400/60 rounded-2xl p-3.5 sm:p-4 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 relative";
-        card.innerHTML = `
+      secondaryContainer.innerHTML = "";
+
+      if (sorted.length > 0) {
+        const first = sorted[0];
+        const firstImg = getBestImageUrl(first.image);
+        const firstCard = document.createElement("div");
+        firstCard.className = "bg-gradient-to-r from-[#162a52] via-[#1a3366] to-[#13203c] border-2 border-amber-400/60 rounded-2xl p-3.5 sm:p-4 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 relative";
+        firstCard.innerHTML = `
           <div class="flex items-center gap-3.5 min-w-0 w-full">
-            <img src="${imgSrc}" alt="${item.title}" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-amber-400 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
+            <img src="${firstImg}" alt="${first.title}" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-amber-400 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-1.5 flex-wrap mb-1">
-                <span class="px-2 py-0.5 rounded-md bg-amber-400 text-slate-950 font-black text-[10px] uppercase">👑 DESTAQUE #1 • ${item.type || "GRUPO OFICIAL"}</span>
+                <span class="px-2 py-0.5 rounded-md bg-amber-400 text-slate-950 font-black text-[10px] uppercase">👑 DESTAQUE • GRUPO OFICIAL</span>
               </div>
-              <h3 class="text-base sm:text-lg font-black text-white break-words leading-snug">${item.title}</h3>
-              <p class="text-xs text-slate-200 line-clamp-2 mt-0.5">${item.description || ""}</p>
+              <h3 class="text-base sm:text-lg font-black text-white break-words leading-snug">${first.title}</h3>
+              <p class="text-xs text-slate-200 line-clamp-2 mt-0.5">${first.description || ""}</p>
             </div>
           </div>
           <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
-            ${isAdminUser && item.id ? `<button type="button" class="btn-del-hl px-2.5 py-2 rounded-xl bg-red-600/30 hover:bg-red-600 text-red-200 hover:text-white text-xs font-bold" title="Remover Destaque">🗑️</button>` : ""}
-            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs sm:text-sm text-center whitespace-nowrap shadow-md transition">
+            ${isAdminUser ? `<button type="button" class="btn-del-hl px-2.5 py-2 rounded-xl bg-red-600/30 hover:bg-red-600 text-red-200 hover:text-white text-xs font-bold" title="Remover Destaque">🗑️</button>` : ""}
+            <a href="${first.link}" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs sm:text-sm text-center whitespace-nowrap shadow-md transition">
               Entrar Agora →
             </a>
           </div>
         `;
-        if (isAdminUser && item.id) {
-          card.querySelector(".btn-del-hl")?.addEventListener("click", async () => {
-            if (confirm(`Remover "${item.title}" dos destaques?`)) {
-              await deleteDoc(doc(db, "highlights", item.id));
+        if (isAdminUser) {
+          firstCard.querySelector(".btn-del-hl")?.addEventListener("click", async () => {
+            if (confirm(`Remover "${first.title}" dos destaques?`)) {
+              await deleteDoc(doc(db, "highlights", first.id));
+              await normalizeHighlightOrders();
             }
           });
         }
-        primaryContainer.appendChild(card);
-      });
+        primaryContainer.appendChild(firstCard);
 
-      secondaryContainer.innerHTML = "";
-      topSub.forEach((item, idx) => {
-        const imgSrc = getBestImageUrl(item.image);
-        const card = document.createElement("div");
-        card.className = "bg-[#152647] border border-sky-400/40 rounded-2xl p-3.5 shadow-lg flex items-center justify-between gap-3";
-        card.innerHTML = `
-          <div class="flex items-center gap-3 min-w-0 flex-1">
-            <img src="${imgSrc}" alt="${item.title}" class="w-14 h-14 rounded-xl object-cover border border-sky-400/50 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
-            <div class="min-w-0 flex-1">
-              <span class="inline-block px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold text-[10px] uppercase mb-0.5">DESTAQUE #${idx + 2} • ${item.type || "GRUPO OFICIAL"}</span>
-              <h3 class="text-sm sm:text-base font-extrabold text-white break-words leading-snug">${item.title}</h3>
-              <p class="text-xs text-slate-300 line-clamp-2 mt-0.5">${item.description || ""}</p>
+        const others = sorted.slice(1);
+        others.forEach((item) => {
+          const imgSrc = getBestImageUrl(item.image);
+          const card = document.createElement("div");
+          card.className = "bg-[#152647] border border-sky-400/40 rounded-2xl p-3.5 shadow-lg flex items-center justify-between gap-3";
+          card.innerHTML = `
+            <div class="flex items-center gap-3 min-w-0 flex-1">
+              <img src="${imgSrc}" alt="${item.title}" class="w-14 h-14 rounded-xl object-cover border border-sky-400/50 flex-shrink-0 bg-slate-900" onerror="this.src='${DEFAULT_ICON}'" />
+              <div class="min-w-0 flex-1">
+                <span class="inline-block px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold text-[10px] uppercase mb-0.5">★ DESTAQUE</span>
+                <h3 class="text-sm sm:text-base font-extrabold text-white break-words leading-snug">${item.title}</h3>
+                <p class="text-xs text-slate-300 line-clamp-2 mt-0.5">${item.description || ""}</p>
+              </div>
             </div>
-          </div>
-          <div class="flex items-center gap-1.5 flex-shrink-0">
-            ${isAdminUser && item.id ? `<button type="button" class="btn-del-hl px-2.5 py-2 rounded-xl bg-red-600/30 hover:bg-red-600 text-red-200 hover:text-white text-xs font-bold" title="Remover Destaque">🗑️</button>` : ""}
-            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs whitespace-nowrap shadow">
-              Acessar →
-            </a>
-          </div>
-        `;
-        if (isAdminUser && item.id) {
-          card.querySelector(".btn-del-hl")?.addEventListener("click", async () => {
-            if (confirm(`Remover "${item.title}" dos destaques?`)) {
-              await deleteDoc(doc(db, "highlights", item.id));
-            }
-          });
-        }
-        secondaryContainer.appendChild(card);
-      });
+            <div class="flex items-center gap-1.5 flex-shrink-0">
+              ${isAdminUser ? `<button type="button" class="btn-del-hl px-2.5 py-2 rounded-xl bg-red-600/30 hover:bg-red-600 text-red-200 hover:text-white text-xs font-bold" title="Remover Destaque">🗑️</button>` : ""}
+              <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs whitespace-nowrap shadow">
+                Acessar →
+              </a>
+            </div>
+          `;
+          if (isAdminUser) {
+            card.querySelector(".btn-del-hl")?.addEventListener("click", async () => {
+              if (confirm(`Remover "${item.title}" dos destaques?`)) {
+                await deleteDoc(doc(db, "highlights", item.id));
+                await normalizeHighlightOrders();
+              }
+            });
+          }
+          secondaryContainer.appendChild(card);
+        });
+      }
 
       if (!selectedCategory) {
-        if (topMain.length === 0 && topSub.length === 0 && !isAdminUser) {
+        if (sorted.length === 0 && !isAdminUser) {
           topSection.classList.add("hidden");
         } else {
           topSection.classList.remove("hidden");
         }
       }
+    }
 
-      if (sideItems.length > 0) {
-        sidebarContainer.classList.remove("hidden");
-        sidebarList.innerHTML = "";
-        sideItems.forEach(item => {
-          const imgSrc = getBestImageUrl(item.image);
-          const a = document.createElement("a");
-          a.href = item.link;
-          a.target = "_blank";
-          a.rel = "noopener noreferrer";
-          a.className = "flex items-center gap-2.5 p-2 rounded-xl bg-amber-500/10 border border-amber-400/30 hover:bg-amber-500/20 transition";
-          a.innerHTML = `
-            <img src="${imgSrc}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
-            <div class="min-w-0 flex-1">
-              <p class="text-xs font-extrabold text-amber-300 break-words">${item.title}</p>
-              <p class="text-[10px] text-slate-300 line-clamp-1">${item.description || ""}</p>
-            </div>
-          `;
-          sidebarList.appendChild(a);
-        });
-      } else {
-        sidebarContainer.classList.add("hidden");
+    async function normalizeHighlightOrders() {
+      const sorted = getSortedValidHighlights();
+      for (let i = 0; i < sorted.length; i++) {
+        const expectedOrder = i + 1;
+        if (Number(sorted[i].order) !== expectedOrder) {
+          await updateDoc(doc(db, "highlights", sorted[i].id), { order: expectedOrder });
+        }
       }
     }
 
     function renderPublicGroups() {
       const search = searchInput.value.trim().toLowerCase();
-
-      // Combina grupos aprovados + destaques (para que a grade Todos os Grupos nunca fique zerada se você cadastrou pelos Destaques!)
-      const combinedList = [...allGroups.filter(g => g.status === "approved")];
-
-      allHighlights.filter(isValidHighlightItem).forEach(h => {
-        const alreadyExists = combinedList.some(g =>
-          normalizeTelegramLink(g.link).toLowerCase() === normalizeTelegramLink(h.link).toLowerCase() ||
-          (g.name || "").toLowerCase() === (h.title || "").toLowerCase()
-        );
-        if (!alreadyExists) {
-          const guessedCat = (h.title || "").toLowerCase().includes("desir") ? "Adulto (+18)" : "Amizade e Bate-Papo";
-          combinedList.push({
-            id: h.id,
-            type: "Grupo",
-            category: h.category || guessedCat,
-            name: h.title,
-            description: h.description || "Grupo oficial verificado no diretório TeleHub Brasil.",
-            link: h.link,
-            image: h.image || DEFAULT_ICON,
-            ownerName: "Oficial",
-            dateStr: "Verificado",
-            timeStr: "Ativo",
-            status: "approved"
-          });
-        }
-      });
-
-      const approved = combinedList.filter(g => {
+      const approved = allGroups.filter(g => {
+        if (g.status !== "approved") return false;
         if (selectedCategory && g.category !== selectedCategory) return false;
         if (search) {
           const matchName = (g.name || "").toLowerCase().includes(search);
@@ -1626,6 +1519,7 @@
     document.getElementById("btnAdminPanel").addEventListener("click", () => {
       if (!isAdminUser) return;
       updateAdminUI();
+      updatePositionSelectOptions();
       openModal("modalAdmin");
     });
 
@@ -1636,21 +1530,21 @@
     const adminViewHighlights = document.getElementById("adminViewHighlights");
     const adminViewAll = document.getElementById("adminViewAll");
 
-    adminTabPending.addEventListener("click", () => {
-      adminTabPending.className = "py-2 rounded-lg bg-amber-500 text-slate-950";
-      adminTabHighlights.className = "py-2 rounded-lg text-slate-300 hover:bg-slate-800";
-      adminTabAll.className = "py-2 rounded-lg text-slate-300 hover:bg-slate-800";
-      adminViewPending.classList.remove("hidden");
-      adminViewHighlights.classList.add("hidden");
-      adminViewAll.classList.add("hidden");
-    });
-
     adminTabHighlights.addEventListener("click", () => {
       adminTabHighlights.className = "py-2 rounded-lg bg-amber-500 text-slate-950";
       adminTabPending.className = "py-2 rounded-lg text-slate-300 hover:bg-slate-800";
       adminTabAll.className = "py-2 rounded-lg text-slate-300 hover:bg-slate-800";
       adminViewHighlights.classList.remove("hidden");
       adminViewPending.classList.add("hidden");
+      adminViewAll.classList.add("hidden");
+    });
+
+    adminTabPending.addEventListener("click", () => {
+      adminTabPending.className = "py-2 rounded-lg bg-amber-500 text-slate-950";
+      adminTabHighlights.className = "py-2 rounded-lg text-slate-300 hover:bg-slate-800";
+      adminTabAll.className = "py-2 rounded-lg text-slate-300 hover:bg-slate-800";
+      adminViewPending.classList.remove("hidden");
+      adminViewHighlights.classList.add("hidden");
       adminViewAll.classList.add("hidden");
     });
 
@@ -1663,24 +1557,32 @@
       adminViewHighlights.classList.add("hidden");
     });
 
-    async function promoteGroupToHighlight(g, placement) {
-      if (!isAdminUser) return;
-      try {
-        const validSubCount = allHighlights.filter(h => isValidHighlightItem(h) && h.placement === "top_sub").length;
-        await addDoc(collection(db, "highlights"), {
-          type: "Grupo Oficial",
-          placement: placement,
-          order: placement === "top_main" ? 1 : validSubCount + 2,
-          title: g.name,
-          link: g.link,
-          description: g.description || "Grupo em destaque no TeleHub Brasil.",
-          image: g.image || DEFAULT_ICON
-        });
-        closeAllModals(false);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        alert(`✅ "${g.name}" foi adicionado aos Destaques!`);
-      } catch (err) {
-        alert("Erro ao destacar grupo: " + err.message);
+    function updatePositionSelectOptions(selectedPos = null) {
+      const sel = document.getElementById("hlPositionSelect");
+      const sorted = getSortedValidHighlights();
+      const totalSlots = Math.max(sorted.length + 1, 3);
+      sel.innerHTML = "";
+
+      for (let i = 1; i <= totalSlots; i++) {
+        const opt = document.createElement("option");
+        opt.value = String(i);
+        const occupant = sorted[i - 1];
+        if (i === 1) {
+          opt.textContent = occupant
+            ? `Colocar em 1º Lugar (Empurra "${occupant.title.slice(0, 20)}" para 2º)`
+            : `Colocar em 1º Lugar (Destaque Oficial)`;
+        } else {
+          opt.textContent = occupant
+            ? `Colocar em ${i}º Lugar (Empurra "${occupant.title.slice(0, 20)}" para ${i + 1}º)`
+            : `Colocar em ${i}º Lugar`;
+        }
+        sel.appendChild(opt);
+      }
+
+      if (selectedPos) {
+        sel.value = String(selectedPos);
+      } else {
+        sel.value = String(sorted.length + 1);
       }
     }
 
@@ -1734,49 +1636,47 @@
 
       const allList = document.getElementById("adminAllGroupsList");
       allList.innerHTML = "";
-      allGroups.forEach(g => {
-        const row = document.createElement("div");
-        row.className = "bg-[#0b1426] border border-slate-800 rounded-xl p-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2";
-        row.innerHTML = `
-          <div class="flex items-center gap-2 min-w-0 flex-1">
-            <img src="${getBestImageUrl(g.image)}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
-            <div class="min-w-0 flex-1">
-              <p class="text-xs font-bold text-white break-words">${g.name}</p>
-              <p class="text-[10px] text-slate-400">${g.category} • ${g.status === "approved" ? "No Ar" : "Pendente"}</p>
+      if (allGroups.length === 0) {
+        allList.innerHTML = `<p class="text-xs text-slate-400 text-center py-6">Nenhum grupo cadastrado em Todos os Grupos.</p>`;
+      } else {
+        allGroups.forEach(g => {
+          const row = document.createElement("div");
+          row.className = "bg-[#0b1426] border border-slate-800 rounded-xl p-2.5 flex items-center justify-between gap-2";
+          row.innerHTML = `
+            <div class="flex items-center gap-2 min-w-0 flex-1">
+              <img src="${getBestImageUrl(g.image)}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
+              <div class="min-w-0 flex-1">
+                <p class="text-xs font-bold text-white break-words">${g.name}</p>
+                <p class="text-[10px] text-slate-400">${g.category} • ${g.status === "approved" ? "No Ar" : "Pendente"}</p>
+              </div>
             </div>
-          </div>
-          <div class="flex items-center gap-1.5 flex-wrap flex-shrink-0">
-            <button class="btn-adm-top1 px-2 py-1 rounded bg-amber-500 text-slate-950 text-[10px] font-extrabold">👑 Topo #1</button>
-            <button class="btn-adm-sub px-2 py-1 rounded bg-sky-500/30 text-sky-300 border border-sky-400/30 text-[10px] font-bold">⭐ Destacar</button>
-            <button class="btn-adm-edit px-2 py-1 rounded bg-blue-600 text-white text-[10px] font-bold">Editar</button>
-            <button class="btn-adm-del px-2 py-1 rounded bg-red-600 text-white text-[10px] font-bold">Excluir</button>
-          </div>
-        `;
-        row.querySelector(".btn-adm-top1").addEventListener("click", () => promoteGroupToHighlight(g, "top_main"));
-        row.querySelector(".btn-adm-sub").addEventListener("click", () => promoteGroupToHighlight(g, "top_sub"));
-        row.querySelector(".btn-adm-edit").addEventListener("click", () => {
-          closeAllModals(false);
-          openRegisterGroupModal(g);
+            <div class="flex items-center gap-1.5 flex-shrink-0">
+              <button class="btn-adm-edit px-2.5 py-1 rounded bg-blue-600 text-white text-[11px] font-bold">Editar</button>
+              <button class="btn-adm-del px-2.5 py-1 rounded bg-red-600 text-white text-[11px] font-bold">Excluir</button>
+            </div>
+          `;
+          row.querySelector(".btn-adm-edit").addEventListener("click", () => {
+            closeAllModals(false);
+            openRegisterGroupModal(g);
+          });
+          row.querySelector(".btn-adm-del").addEventListener("click", async () => {
+            if (confirm(`Excluir "${g.name}" de Todos os Grupos?`)) {
+              await deleteDoc(doc(db, "groups", g.id));
+            }
+          });
+          allList.appendChild(row);
         });
-        row.querySelector(".btn-adm-del").addEventListener("click", async () => {
-          if (confirm(`Excluir "${g.name}"?`)) {
-            await deleteDoc(doc(db, "groups", g.id));
-          }
-        });
-        allList.appendChild(row);
-      });
+      }
     }
 
     function resetHighlightForm() {
       document.getElementById("highlightForm").reset();
       document.getElementById("hlEditId").value = "";
-      document.getElementById("hlPlacement").value = "top_sub";
-      const validSubCount = allHighlights.filter(h => isValidHighlightItem(h) && h.placement === "top_sub").length;
-      document.getElementById("hlOrder").value = validSubCount + 2;
       document.getElementById("hlImgPreview").src = DEFAULT_ICON;
       document.getElementById("hlImgData").value = "";
-      document.getElementById("hlFormHeading").textContent = "Cadastrar Novo Grupo em Destaque";
+      document.getElementById("hlFormHeading").textContent = "Cadastrar Grupo em Destaque";
       document.getElementById("hlFetchStatus").classList.add("hidden");
+      updatePositionSelectOptions();
     }
 
     document.getElementById("btnClearHlForm").addEventListener("click", resetHighlightForm);
@@ -1786,22 +1686,22 @@
       const url = normalizeTelegramLink(document.getElementById("hlLink").value);
       if (!url.includes("t.me/") || url.endsWith("t.me/")) return;
       const statusEl = document.getElementById("hlFetchStatus");
-      statusEl.textContent = "⏳ Puxando nome e salvando foto permanente...";
+      statusEl.textContent = "⏳ Puxando nome, descrição e foto do grupo...";
       statusEl.classList.remove("hidden");
 
       const meta = await fetchTelegramMetadata(url);
       if (meta && meta.title) {
         document.getElementById("hlTitle").value = meta.title;
-        if (meta.description && !document.getElementById("hlDesc").value.trim()) {
+        if (meta.description) {
           document.getElementById("hlDesc").value = meta.description;
         }
         if (meta.image) {
           document.getElementById("hlImgPreview").src = meta.image;
           document.getElementById("hlImgData").value = meta.image;
         }
-        statusEl.textContent = "✅ Nome e foto permanente carregados! Toque em Salvar Destaque.";
+        statusEl.textContent = "✅ Tudo puxado! Escolha a posição acima e toque em Salvar.";
       } else {
-        statusEl.textContent = "ℹ️ Digite o nome completo ao lado e toque em Salvar Destaque.";
+        statusEl.textContent = "ℹ️ Digite o nome abaixo e escolha a foto do celular.";
       }
     }
 
@@ -1827,7 +1727,7 @@
 
       const link = normalizeTelegramLink(document.getElementById("hlLink").value);
       if (!link || link === "https://t.me/") {
-        alert("Cole o link completo do grupo no Telegram (ex: https://t.me/seugrupo).");
+        alert("Cole o link completo do grupo no Telegram.");
         return;
       }
 
@@ -1837,6 +1737,7 @@
 
       try {
         const editId = document.getElementById("hlEditId").value;
+        const targetPos = Math.max(1, Number(document.getElementById("hlPositionSelect").value) || 1);
         const title = document.getElementById("hlTitle").value.trim();
         const desc = document.getElementById("hlDesc").value.trim() || "Grupo em destaque no TeleHub Brasil! Entre agora e participe.";
         let imgData = document.getElementById("hlImgData").value || DEFAULT_ICON;
@@ -1845,48 +1746,70 @@
           imgData = await convertRemoteImageToPermanentBase64(imgData);
         }
 
-        const payload = {
-          type: document.getElementById("hlType").value,
-          placement: document.getElementById("hlPlacement").value,
-          order: Number(document.getElementById("hlOrder").value) || 1,
-          title,
-          link,
-          description: desc,
-          image: imgData
-        };
+        const currentList = getSortedValidHighlights().filter(h => h.id !== editId);
+        const insertIndex = Math.min(targetPos - 1, currentList.length);
 
-        if (editId && allHighlights.some(h => h.id === editId)) {
-          await setDoc(doc(db, "highlights", editId), payload, { merge: true });
+        let savedId = editId;
+        if (editId) {
+          await updateDoc(doc(db, "highlights", editId), {
+            title,
+            link,
+            description: desc,
+            image: imgData
+          });
         } else {
-          await addDoc(collection(db, "highlights"), payload);
+          const docRef = await addDoc(collection(db, "highlights"), {
+            title,
+            link,
+            description: desc,
+            image: imgData,
+            order: targetPos
+          });
+          savedId = docRef.id;
+        }
+
+        currentList.splice(insertIndex, 0, { id: savedId });
+
+        for (let i = 0; i < currentList.length; i++) {
+          const newOrder = i + 1;
+          await updateDoc(doc(db, "highlights", currentList[i].id), {
+            order: newOrder,
+            placement: newOrder === 1 ? "top_main" : "top_sub",
+            type: newOrder === 1 ? "Grupo Oficial" : "Destaque"
+          });
         }
 
         resetHighlightForm();
         closeAllModals(false);
         window.scrollTo({ top: 0, behavior: "smooth" });
-        alert(`✅ "${title}" salvo com foto permanente!`);
       } catch (err) {
         alert("Erro ao salvar destaque: " + err.message);
       } finally {
         btn.disabled = false;
-        btn.textContent = "💾 Salvar Destaque";
+        btn.textContent = "💾 Salvar em Destaque";
       }
     });
 
     function renderAdminHighlights() {
       const container = document.getElementById("adminHighlightsList");
       container.innerHTML = "";
-      const validList = allHighlights.filter(isValidHighlightItem);
+      const sorted = getSortedValidHighlights();
 
-      validList.forEach(item => {
+      if (sorted.length === 0) {
+        container.innerHTML = `<p class="text-xs text-slate-400 text-center py-4">A fila está vazia! Cole o link acima para cadastrar o 1º Destaque.</p>`;
+        return;
+      }
+
+      sorted.forEach((item, index) => {
+        const pos = index + 1;
         const row = document.createElement("div");
         row.className = "bg-[#0b1426] border border-slate-800 rounded-xl p-2.5 flex items-center justify-between gap-2";
         row.innerHTML = `
           <div class="flex items-center gap-2.5 min-w-0 flex-1">
             <img src="${getBestImageUrl(item.image)}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" onerror="this.src='${DEFAULT_ICON}'" />
             <div class="min-w-0 flex-1">
-              <p class="text-xs font-extrabold text-amber-300 break-words">[#${item.order}] ${item.title}</p>
-              <p class="text-[10px] text-slate-400">${item.type} • ${item.placement === "top_main" ? "1º Lugar" : item.placement === "top_sub" ? "Lista de Destaques" : "Menu Lateral"}</p>
+              <p class="text-xs font-extrabold text-amber-300 break-words">${pos}º Lugar • ${item.title}</p>
+              <p class="text-[10px] text-slate-400">${pos === 1 ? "👑 Destaque • Grupo Oficial" : "★ Destaque"}</p>
             </div>
           </div>
           <div class="flex gap-1.5 flex-shrink-0">
@@ -1896,22 +1819,21 @@
         `;
         row.querySelector(".btn-hl-edit").addEventListener("click", () => {
           document.getElementById("hlEditId").value = item.id;
-          document.getElementById("hlType").value = item.type || "Grupo Oficial";
-          document.getElementById("hlPlacement").value = item.placement || "top_sub";
-          document.getElementById("hlOrder").value = item.order || 2;
+          updatePositionSelectOptions(pos);
           document.getElementById("hlTitle").value = item.title || "";
           document.getElementById("hlLink").value = item.link || "";
           document.getElementById("hlDesc").value = item.description || "";
           document.getElementById("hlImgPreview").src = getBestImageUrl(item.image);
           document.getElementById("hlImgData").value = item.image || "";
-          document.getElementById("hlFormHeading").textContent = `Editando: ${item.title}`;
+          document.getElementById("hlFormHeading").textContent = `Editando (${pos}º Lugar): ${item.title}`;
         });
         row.querySelector(".btn-hl-del").addEventListener("click", async () => {
-          if (confirm(`Remover destaque "${item.title}"?`)) {
+          if (confirm(`Remover "${item.title}" dos destaques?`)) {
             if (document.getElementById("hlEditId").value === item.id) {
               resetHighlightForm();
             }
             await deleteDoc(doc(db, "highlights", item.id));
+            await normalizeHighlightOrders();
           }
         });
         container.appendChild(row);

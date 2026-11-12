@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>TeleHub Brasil | Grupos do Telegram e Canais (Lista Oficial)</title>
-  <meta name="description" content="Encontre e divulgue os melhores Grupos do Telegram e Canais no TeleHub Brasil. Diretório atualizado diariamente com grupos de amizade, namoro, amor e romance, adulto, filmes, estudos, ofertas e mais." />
-  <meta name="keywords" content="grupos do telegram, grupos telegram brasil, links de grupos telegram, canais do telegram, divulgar grupo telegram, telehub brasil, open chat brasil" />
+  <meta name="description" content="Encontre e divulgue os melhores Grupos do Telegram e Canais no TeleHub Brasil. Diretório atualizado diariamente com grupos de amizade, namoro, divulgações, redes sociais, jogos e apps, música, filmes, estudos, ofertas e mais." />
+  <meta name="keywords" content="grupos do telegram, grupos telegram brasil, links de grupos telegram, canais do telegram, divulgar grupo telegram, telehub brasil, open chat brasil, grupos de divulgação telegram" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="canonical" href="https://telehubbrasil.com.br/" />
+  <link rel="canonical" href="https://www.telehubbrasil.com.br/" />
 
   <!-- Open Graph / WhatsApp / Telegram Preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://telehubbrasil.com.br/" />
+  <meta property="og:url" content="https://www.telehubbrasil.com.br/" />
   <meta property="og:site_name" content="TeleHub Brasil" />
   <meta property="og:title" content="TeleHub Brasil 🇧🇷 | Diretório Oficial de Grupos do Telegram" />
-  <meta property="og:description" content="Acesse e divulgue gratuitamente os melhores Grupos e Canais do Telegram no Brasil. Amizade, Namoro, Filmes, Ofertas e muito mais!" />
+  <meta property="og:description" content="Acesse e divulgue gratuitamente os melhores Grupos e Canais do Telegram no Brasil. Amizade, Divulgações, Redes Sociais, Namoro, Filmes, Ofertas e muito mais!" />
   <meta property="og:image" content="https://placehold.co/1200x630/0b1426/38bdf8.png?text=TeleHub+Brasil%0AGrupos+do+Telegram&font=montserrat" />
   <meta property="og:image:secure_url" content="https://placehold.co/1200x630/0b1426/38bdf8.png?text=TeleHub+Brasil%0AGrupos+do+Telegram&font=montserrat" />
   <meta property="og:image:type" content="image/png" />
@@ -38,7 +38,7 @@
     "@type": "WebSite",
     "name": "TeleHub Brasil",
     "alternateName": "Diretório de Grupos do Telegram Brasil",
-    "url": "https://telehubbrasil.com.br/",
+    "url": "https://www.telehubbrasil.com.br/",
     "description": "Diretório oficial para encontrar e divulgar grupos e canais do Telegram no Brasil.",
     "inLanguage": "pt-BR"
   }
@@ -562,9 +562,9 @@
 
   <!-- SCRIPTS E LÓGICA DO SISTEMA -->
   <script type="module">
-    // 1. Sempre força a URL oficial telehubbrasil.com.br (nunca deixa ficar em .vercel.app)
+    // 1. Sempre força a URL oficial www.telehubbrasil.com.br (nunca deixa ficar em .vercel.app)
     if (window.location.hostname.includes("vercel.app")) {
-      window.location.replace("https://telehubbrasil.com.br" + window.location.pathname + window.location.search + window.location.hash);
+      window.location.replace("https://www.telehubbrasil.com.br" + window.location.pathname + window.location.search + window.location.hash);
     }
 
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
@@ -604,18 +604,21 @@
     const auth = getAuth(app);
     const db = getFirestore(app);
 
+    // LISTA DE CATEGORIAS OFICIAL E DEFINITIVA
     const CATEGORIES = [
       "Amizade e Bate-Papo",
       "Namoro, Amor e Romance",
+      "Divulgações",
+      "Redes Sociais",
       "Adulto (+18)",
       "Filmes, Séries e TV",
-      "Jogos e Gamers",
+      "Jogos e Apps",
       "Ofertas, Cupons e Promoções",
       "Criptomoedas e Finanças",
       "Estudos, Cursos e Concursos",
       "Animes e Cultura Geek",
       "Humor, Memes e Vídeos",
-      "Música e Áudio",
+      "Música",
       "Esportes e Futebol",
       "Notícias e Atualidades",
       "Tecnologia e Programação",
@@ -1053,7 +1056,6 @@
         btnAdmin.classList.remove("hidden");
         adminQuickAddWrap.classList.remove("hidden");
         btnClearAllMain.classList.remove("hidden");
-        autoResetOldHighlightsOnce();
         updateAdminUI();
       } else {
         btnAdmin.classList.add("hidden");
@@ -1062,21 +1064,6 @@
       }
       renderHighlights();
     });
-
-    // Limpa automaticamente 1 única vez os registros antigos bugados para o Admin cadastrar limpo do zero
-    let resetCheckDone = false;
-    async function autoResetOldHighlightsOnce() {
-      if (!isAdminUser || resetCheckDone || allHighlights.length === 0) return;
-      resetCheckDone = true;
-      if (!localStorage.getItem("telehub_clean_v5")) {
-        localStorage.setItem("telehub_clean_v5", "done");
-        for (const item of allHighlights) {
-          try {
-            await deleteDoc(doc(db, "highlights", item.id));
-          } catch (_) {}
-        }
-      }
-    }
 
     document.getElementById("btnClearAllHighlightsMain").addEventListener("click", async () => {
       if (!isAdminUser) return;
@@ -1278,7 +1265,6 @@
 
     onSnapshot(collection(db, "highlights"), (snap) => {
       allHighlights = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-      if (isAdminUser) autoResetOldHighlightsOnce();
       renderHighlights();
       if (isAdminUser) {
         updatePositionSelectOptions();

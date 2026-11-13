@@ -88,8 +88,6 @@
   <!-- HEADER FIXO -->
   <header class="sticky top-0 z-40 bg-[#0f1d38]/95 backdrop-blur-md border-b border-blue-500/20 shadow-lg">
     <div class="max-w-5xl mx-auto px-2.5 sm:px-3 h-16 flex items-center justify-between gap-1.5">
-      
-      <!-- Esquerda: Botão 3 Tracinhos + Logo -->
       <div class="flex items-center gap-2 min-w-0">
         <button id="btnOpenDrawer" aria-label="Abrir Menu de Categorias" class="p-2 rounded-xl bg-blue-600/20 hover:bg-blue-600/40 text-blue-300 border border-blue-400/20 transition active:scale-95 flex-shrink-0">
           <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
@@ -118,7 +116,6 @@
         </a>
       </div>
 
-      <!-- Direita: Botões de Ação -->
       <div class="flex items-center gap-1.5 flex-shrink-0">
         <button id="btnAdminPanel" class="hidden px-2.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow flex items-center gap-1 transition whitespace-nowrap">
           <span>👑 Admin</span>
@@ -139,17 +136,13 @@
     </div>
   </header>
 
-  <!-- GAVETA MENU LATERAL (3 TRACINHOS) -->
+  <!-- GAVETA MENU LATERAL -->
   <div id="drawerOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-200">
     <aside id="drawerContent" class="w-72 max-w-[85vw] bg-[#0f1d38] h-full border-r border-blue-500/20 flex flex-col justify-between p-4 overflow-y-auto custom-scroll">
       <div>
         <div class="flex items-center justify-between pb-4 border-b border-slate-700/70">
-          <div class="flex items-center gap-2">
-            <span class="text-base font-extrabold text-white">Categorias e Menu</span>
-          </div>
-          <button id="btnCloseDrawer" class="p-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
-            ✕
-          </button>
+          <span class="text-base font-extrabold text-white">Categorias e Menu</span>
+          <button id="btnCloseDrawer" class="p-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white">✕</button>
         </div>
 
         <div class="mt-3 space-y-1.5 pb-3 border-b border-slate-800">
@@ -175,19 +168,14 @@
 
   <!-- CONTEÚDO PRINCIPAL -->
   <main class="flex-1 max-w-5xl w-full mx-auto px-3 py-4 space-y-6">
-
-    <!-- Barra de Busca Rápida -->
     <section class="bg-[#13203c] border border-blue-500/20 rounded-2xl p-3 sm:p-4 shadow-lg">
-      <div class="flex flex-col sm:flex-row gap-2.5 items-center justify-between">
-        <div class="relative w-full">
-          <input id="searchInput" type="search" placeholder="Pesquisar grupo ou canal pelo nome ou tema..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#0b1426] border border-slate-700 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-sky-400 transition" />
-          <svg class="w-5 h-5 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
-        </div>
+      <div class="relative w-full">
+        <input id="searchInput" type="search" placeholder="Pesquisar grupo ou canal pelo nome ou tema..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#0b1426] border border-slate-700 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-sky-400 transition" />
+        <svg class="w-5 h-5 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
       </div>
 
-      <!-- Barra de Categoria Ativa -->
       <div id="activeCategoryBar" class="hidden mt-3 pt-3 border-t border-slate-800 flex items-center justify-between flex-wrap gap-2">
         <div class="flex items-center gap-2">
           <span class="text-xs text-slate-300">Categoria:</span>
@@ -215,13 +203,9 @@
         </button>
       </div>
 
-      <!-- 1º da Fila (Card Dourado: "👑 DESTAQUE • GRUPO OFICIAL") -->
       <div id="primaryHighlightContainer" class="space-y-2.5"></div>
-
-      <!-- 2º em diante (Card Azul: apenas "★ DESTAQUE") -->
       <div id="secondaryHighlightsContainer" class="space-y-2.5"></div>
 
-      <!-- CAIXINHA EXCLUSIVA DO ADMIN (INVISÍVEL PARA VISITANTES) -->
       <div id="adminQuickAddHighlightWrap" class="hidden pt-1">
         <button id="btnQuickAddHighlight" type="button" class="w-full py-3.5 px-4 rounded-2xl border-2 border-dashed border-amber-400/50 hover:border-amber-400 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 transition active:scale-95 shadow-lg">
           <span>➕ Cadastrar Destaque</span>
@@ -230,7 +214,7 @@
       </div>
     </section>
 
-    <!-- GRADE DE TODOS OS GRUPOS (100% SEPARADA DOS DESTAQUES) -->
+    <!-- GRADE DE TODOS OS GRUPOS -->
     <section class="space-y-3">
       <div class="flex items-center justify-between px-1">
         <h1 id="publicSectionTitle" class="text-sm sm:text-base font-extrabold text-white flex items-center gap-2">
@@ -252,10 +236,8 @@
         </button>
       </div>
     </section>
-
   </main>
 
-  <!-- RODAPÉ -->
   <footer class="bg-[#09101f] border-t border-slate-800/80 mt-10 py-6 px-3 text-center text-xs text-slate-400 space-y-2">
     <p class="font-bold text-slate-200">TeleHub Brasil — Diretório Oficial de Grupos e Canais do Telegram</p>
     <p>Todos os grupos passam por moderação antes de serem exibidos publicamente.</p>
@@ -264,10 +246,7 @@
   <!-- MODAL 1: VER GRUPO -->
   <div id="modalViewGroup" class="fixed inset-0 bg-black/80 backdrop-blur-xs z-50 hidden items-center justify-center p-3 overflow-y-auto">
     <div class="bg-[#13203c] border border-blue-400/30 rounded-2xl max-w-md w-full p-4 sm:p-5 shadow-2xl space-y-4 relative my-auto">
-      <button id="btnCloseViewModal" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800/90 text-slate-300 hover:text-white flex items-center justify-center font-bold">
-        ✕
-      </button>
-
+      <button id="btnCloseViewModal" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800/90 text-slate-300 hover:text-white flex items-center justify-center font-bold">✕</button>
       <div class="flex items-center gap-3.5 pr-6">
         <img id="viewGroupImg" src="" alt="Foto do Grupo" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-sky-400/40 bg-slate-900 flex-shrink-0" />
         <div class="min-w-0">
@@ -278,7 +257,6 @@
           <h3 id="viewGroupTitle" class="text-base sm:text-lg font-extrabold text-white break-words leading-snug"></h3>
         </div>
       </div>
-
       <div class="bg-[#0b1426] rounded-xl p-3 border border-slate-800 grid grid-cols-3 gap-2 text-center">
         <div>
           <span class="block text-[10px] text-slate-400 uppercase">Cadastrado por</span>
@@ -293,12 +271,10 @@
           <span id="viewGroupTime" class="text-xs font-bold text-slate-200 block mt-0.5"></span>
         </div>
       </div>
-
       <div>
         <span class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Descrição Completa</span>
         <div id="viewGroupDesc" class="bg-[#0b1426]/90 border border-slate-800 rounded-xl p-3 text-xs sm:text-sm text-slate-200 whitespace-pre-line max-h-52 overflow-y-auto custom-scroll leading-relaxed"></div>
       </div>
-
       <a id="viewGroupJoinBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-extrabold text-sm sm:text-base text-center shadow-lg shadow-green-600/30 flex items-center justify-center gap-2 transition active:scale-95">
         <span>🚀 Entrar no Grupo Agora</span>
       </a>
@@ -308,16 +284,12 @@
   <!-- MODAL 2: LOGIN / CONTA -->
   <div id="modalAuth" class="fixed inset-0 bg-black/80 backdrop-blur-xs z-50 hidden items-center justify-center p-3 overflow-y-auto">
     <div class="bg-[#13203c] border border-blue-400/30 rounded-2xl max-w-md w-full p-5 shadow-2xl space-y-4 relative my-auto">
-      <button id="btnCloseAuthModal" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">
-        ✕
-      </button>
-
+      <button id="btnCloseAuthModal" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">✕</button>
       <div id="authLoggedOutView" class="space-y-4">
         <div>
           <h3 class="text-lg font-extrabold text-white">Acesse sua Conta</h3>
           <p class="text-xs text-slate-300 mt-0.5">Crie uma conta rápida ou entre com seu e-mail para cadastrar e gerenciar seus grupos.</p>
         </div>
-
         <button id="btnGoogleLogin" type="button" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm shadow flex items-center justify-center gap-2.5 transition">
           <svg class="w-5 h-5" viewBox="0 0 24 24">
             <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
@@ -327,18 +299,15 @@
           </svg>
           <span>Entrar com o Google</span>
         </button>
-
         <div class="flex items-center gap-2 text-xs text-slate-400">
           <div class="h-px bg-slate-700 flex-1"></div>
           <span>ou com seu e-mail</span>
           <div class="h-px bg-slate-700 flex-1"></div>
         </div>
-
         <div class="grid grid-cols-2 gap-1 bg-[#0b1426] p-1 rounded-xl border border-slate-800">
           <button id="tabLoginBtn" type="button" class="py-1.5 rounded-lg bg-blue-600 text-white font-bold text-xs">Já tenho conta</button>
           <button id="tabRegisterBtn" type="button" class="py-1.5 rounded-lg text-slate-300 font-bold text-xs">Criar Conta</button>
         </div>
-
         <form id="emailAuthForm" class="space-y-3">
           <div id="fieldRegisterNameWrap" class="hidden">
             <label class="block text-xs font-semibold text-slate-300 mb-1">Seu Nome</label>
@@ -365,7 +334,6 @@
           <p id="loggedUserName" class="text-base font-extrabold text-white mt-0.5"></p>
           <p id="loggedUserEmail" class="text-xs text-sky-400"></p>
         </div>
-
         <div class="space-y-2">
           <button id="btnOpenMyGroupsFromProfile" class="w-full py-2.5 px-4 rounded-xl bg-blue-600/30 hover:bg-blue-600/40 border border-blue-400/30 text-sky-200 font-bold text-xs sm:text-sm">
             📂 Ver / Editar Meus Grupos Cadastrados
@@ -378,21 +346,16 @@
     </div>
   </div>
 
-  <!-- MODAL 3: CADASTRAR OU EDITAR GRUPO NORMAL (TODOS OS GRUPOS) -->
+  <!-- MODAL 3: CADASTRAR OU EDITAR GRUPO NORMAL -->
   <div id="modalGroupForm" class="fixed inset-0 bg-black/80 backdrop-blur-xs z-50 hidden items-center justify-center p-3 overflow-y-auto">
     <div class="bg-[#13203c] border border-blue-400/30 rounded-2xl max-w-lg w-full p-4 sm:p-5 shadow-2xl space-y-4 relative my-auto max-h-[92vh] overflow-y-auto custom-scroll">
-      <button id="btnCloseGroupForm" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">
-        ✕
-      </button>
-
+      <button id="btnCloseGroupForm" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">✕</button>
       <div>
         <h3 id="groupFormTitle" class="text-lg font-extrabold text-white">Cadastrar Grupo ou Canal</h3>
         <p class="text-xs text-slate-300 mt-0.5">Cole o link do Telegram para puxar o nome completo e a foto automaticamente.</p>
       </div>
-
       <form id="groupForm" class="space-y-3.5">
         <input type="hidden" id="editGroupId" value="" />
-
         <div class="grid grid-cols-2 gap-2">
           <div>
             <label class="block text-xs font-semibold text-slate-300 mb-1">Tipo</label>
@@ -406,7 +369,6 @@
             <select id="groupCategoryInput" required class="w-full px-3 py-2 rounded-xl bg-[#0b1426] border border-slate-700 text-sm text-white"></select>
           </div>
         </div>
-
         <div>
           <label class="block text-xs font-semibold text-slate-300 mb-1">Link do Grupo ou Canal (t.me/...)</label>
           <div class="flex gap-2">
@@ -417,26 +379,21 @@
           </div>
           <p id="fetchStatusText" class="text-[11px] text-sky-300 mt-1 hidden"></p>
         </div>
-
         <div>
           <label class="block text-xs font-semibold text-slate-300 mb-1">Nome Completo do Grupo / Canal</label>
           <input id="groupNameInput" type="text" required maxlength="150" placeholder="Nome oficial completo do grupo" class="w-full px-3 py-2 rounded-xl bg-[#0b1426] border border-slate-700 text-sm text-white" />
         </div>
-
         <div class="bg-[#0b1426] p-3 rounded-xl border border-slate-800 flex items-center gap-3">
           <img id="groupImgPreview" src="/logo.png" alt="Preview" class="w-14 h-14 rounded-xl object-cover border border-slate-700 bg-slate-900 flex-shrink-0" />
           <div class="flex-1 space-y-1.5">
             <label class="block text-xs font-semibold text-slate-200">Imagem do Grupo</label>
-            <div class="flex flex-wrap gap-2">
-              <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-300 font-bold text-xs border border-slate-700 inline-block">
-                📱 Escolher Foto do Celular
-                <input id="groupFileInput" type="file" accept="image/*" class="hidden" />
-              </label>
-            </div>
+            <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-300 font-bold text-xs border border-slate-700 inline-block">
+              📱 Escolher Foto do Celular
+              <input id="groupFileInput" type="file" accept="image/*" class="hidden" />
+            </label>
             <input id="groupImgUrlInput" type="hidden" value="" />
           </div>
         </div>
-
         <div>
           <div class="flex items-center justify-between mb-1">
             <label class="text-xs font-semibold text-slate-300">Descrição Completa (Mínimo 100 letras)</label>
@@ -444,11 +401,9 @@
           </div>
           <textarea id="groupDescInput" rows="4" required placeholder="Explique sobre o que é o seu grupo, regras básicas e por que as pessoas devem entrar (mínimo de 100 caracteres)..." class="w-full px-3 py-2 rounded-xl bg-[#0b1426] border border-slate-700 text-sm text-white custom-scroll"></textarea>
         </div>
-
         <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2.5 text-[11px] text-amber-200">
           ⏳ <strong>Aviso:</strong> Todo cadastro ou edição passa pela aprovação do Administrador antes de aparecer publicamente no site.
         </div>
-
         <button id="btnSubmitGroup" type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-extrabold text-sm shadow-lg">
           Enviar para Aprovação
         </button>
@@ -459,9 +414,7 @@
   <!-- MODAL 4: MEUS GRUPOS -->
   <div id="modalMyGroups" class="fixed inset-0 bg-black/80 backdrop-blur-xs z-50 hidden items-center justify-center p-3 overflow-y-auto">
     <div class="bg-[#13203c] border border-blue-400/30 rounded-2xl max-w-lg w-full p-4 sm:p-5 shadow-2xl space-y-4 relative my-auto max-h-[90vh] overflow-y-auto custom-scroll">
-      <button id="btnCloseMyGroups" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">
-        ✕
-      </button>
+      <button id="btnCloseMyGroups" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">✕</button>
       <div>
         <h3 class="text-lg font-extrabold text-white">📂 Meus Grupos e Canais</h3>
         <p class="text-xs text-slate-300 mt-0.5">Gerencie seus grupos. Sempre que editar um grupo, ele passará por uma nova análise.</p>
@@ -470,13 +423,10 @@
     </div>
   </div>
 
-  <!-- MODAL 5: PAINEL DO ADMINISTRADOR (SIMPLES E LIMPO) -->
+  <!-- MODAL 5: PAINEL DO ADMINISTRADOR -->
   <div id="modalAdmin" class="fixed inset-0 bg-black/85 backdrop-blur-xs z-50 hidden items-center justify-center p-2 sm:p-4 overflow-y-auto">
     <div class="bg-[#13203c] border border-amber-400/40 rounded-2xl max-w-2xl w-full p-4 sm:p-5 shadow-2xl space-y-4 relative my-auto max-h-[94vh] overflow-y-auto custom-scroll">
-      <button id="btnCloseAdmin" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">
-        ✕
-      </button>
-
+      <button id="btnCloseAdmin" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold">✕</button>
       <div class="flex items-center gap-2">
         <span class="text-xl">👑</span>
         <div>
@@ -491,7 +441,6 @@
         <button id="adminTabAll" class="py-2 rounded-lg text-slate-300 hover:bg-slate-800">📋 Todos no Ar</button>
       </div>
 
-      <!-- ABA 1: CADASTRAR EM DESTAQUE (COM FILA AUTOMÁTICA) -->
       <div id="adminViewHighlights" class="space-y-4">
         <div class="bg-[#0b1426] p-3.5 rounded-xl border border-amber-500/30 space-y-3">
           <div class="flex items-center justify-between flex-wrap gap-2">
@@ -503,13 +452,11 @@
 
           <form id="highlightForm" class="space-y-3">
             <input type="hidden" id="hlEditId" value="" />
-
             <div>
               <label class="block text-xs font-bold text-amber-300 mb-1">Posição na Fila de Destaques</label>
               <select id="hlPositionSelect" class="w-full px-3 py-2.5 rounded-xl bg-[#13203c] border border-amber-400/40 text-xs sm:text-sm font-bold text-white"></select>
               <p class="text-[10px] text-slate-400 mt-1">Se colocar em 1º lugar, quem estava em 1º passa para 2º e quem estava em 2º passa para 3º automaticamente.</p>
             </div>
-
             <div>
               <label class="block text-xs font-semibold text-slate-300 mb-1">Link do Grupo no Telegram (t.me/...)</label>
               <div class="flex gap-1.5">
@@ -518,17 +465,14 @@
               </div>
               <p id="hlFetchStatus" class="text-[11px] text-sky-300 mt-1 hidden"></p>
             </div>
-
             <div>
               <label class="block text-xs font-semibold text-slate-300 mb-1">Nome do Grupo</label>
               <input id="hlTitle" type="text" required placeholder="Nome completo do grupo" class="w-full px-3 py-2 rounded-xl bg-[#13203c] border border-slate-700 text-xs sm:text-sm text-white" />
             </div>
-
             <div>
               <label class="block text-xs font-semibold text-slate-300 mb-1">Descrição do Grupo</label>
               <textarea id="hlDesc" rows="2" placeholder="Descrição que aparecerá no destaque..." class="w-full px-3 py-2 rounded-xl bg-[#13203c] border border-slate-700 text-xs sm:text-sm text-white custom-scroll"></textarea>
             </div>
-
             <div class="flex items-center gap-3 pt-1 flex-wrap">
               <img id="hlImgPreview" src="/logo.png" class="w-12 h-12 rounded-xl object-cover border border-slate-700 bg-slate-900" />
               <label class="cursor-pointer px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-sky-300 font-bold text-xs border border-slate-700">
@@ -549,12 +493,10 @@
         </div>
       </div>
 
-      <!-- ABA 2: PENDENTES -->
       <div id="adminViewPending" class="hidden space-y-3">
         <div id="adminPendingList" class="space-y-2.5"></div>
       </div>
 
-      <!-- ABA 3: TODOS OS GRUPOS NORMAIS -->
       <div id="adminViewAll" class="hidden space-y-2.5">
         <div id="adminAllGroupsList" class="space-y-2"></div>
       </div>
@@ -563,7 +505,6 @@
 
   <!-- SCRIPTS E LÓGICA DO SISTEMA -->
   <script type="module">
-    // 1. Sempre força a URL oficial www.telehubbrasil.com.br (nunca deixa ficar em .vercel.app)
     if (window.location.hostname.includes("vercel.app")) {
       window.location.replace("https://www.telehubbrasil.com.br" + window.location.pathname + window.location.search + window.location.hash);
     }
@@ -600,12 +541,10 @@
     };
 
     const ADMIN_EMAIL = "monteiro.brms@gmail.com";
-
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getFirestore(app);
 
-    // LISTA DE CATEGORIAS OFICIAL E DEFINITIVA
     const CATEGORIES = [
       "Amizade e Bate-Papo",
       "Namoro, Amor e Romance",
@@ -684,7 +623,6 @@
     function initCategories() {
       categoryListNav.innerHTML = "";
       groupCategoryInput.innerHTML = "";
-
       CATEGORIES.forEach(cat => {
         const btn = document.createElement("button");
         btn.className = "w-full text-left px-3 py-2 rounded-xl hover:bg-blue-600/20 text-slate-200 hover:text-sky-300 text-xs sm:text-sm font-medium flex items-center justify-between transition";
@@ -705,9 +643,7 @@
     function openDrawer(pushHist = true) {
       drawerOverlay.classList.remove("hidden");
       requestAnimationFrame(() => drawerOverlay.classList.remove("opacity-0"));
-      if (pushHist) {
-        history.pushState({ modal: "drawer" }, "", "#menu");
-      }
+      if (pushHist) history.pushState({ modal: "drawer" }, "", "#menu");
     }
 
     function closeDrawerOnly() {
@@ -733,9 +669,7 @@
       searchInput.value = "";
       updateCategoryUI();
       renderPublicGroups();
-      if (pushHist) {
-        history.pushState({ view: "home" }, "", "#home");
-      }
+      if (pushHist) history.pushState({ view: "home" }, "", "#home");
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -770,14 +704,11 @@
         el.classList.add("hidden");
         el.classList.remove("flex");
       });
-      if (goBackInHistory && location.hash.startsWith("#modal")) {
-        history.back();
-      }
+      if (goBackInHistory && location.hash.startsWith("#modal")) history.back();
     }
 
     window.addEventListener("popstate", (event) => {
       closeAllModals(false);
-
       if (categoryOpenedFromDrawer && (!event.state || event.state.modal === "drawer")) {
         selectedCategory = null;
         categoryOpenedFromDrawer = false;
@@ -786,7 +717,6 @@
         openDrawer(false);
         return;
       }
-
       if (event.state && event.state.modal === "drawer") {
         openDrawer(false);
       } else if (event.state && event.state.view === "category") {
@@ -851,6 +781,12 @@
       });
     }
 
+    function fetchWithTimeout(url, timeoutMs = 4200) {
+      const ctrl = new AbortController();
+      const id = setTimeout(() => ctrl.abort(), timeoutMs);
+      return fetch(url, { signal: ctrl.signal }).finally(() => clearTimeout(id));
+    }
+
     async function convertRemoteImageToPermanentBase64(imageUrl, maxSize = 240) {
       if (!imageUrl || imageUrl.startsWith("data:")) return imageUrl || "";
       const proxyUrls = [
@@ -875,29 +811,20 @@
       return imageUrl;
     }
 
-    function fetchWithTimeout(url, timeoutMs = 4200) {
-      const ctrl = new AbortController();
-      const id = setTimeout(() => ctrl.abort(), timeoutMs);
-      return fetch(url, { signal: ctrl.signal }).finally(() => clearTimeout(id));
-    }
-
     function parseTelegramHtmlString(html) {
       if (!html) return null;
       const parser = new DOMParser();
       const docHtml = parser.parseFromString(html, "text/html");
-
       const rawTitle =
         docHtml.querySelector(".tgme_page_title")?.textContent ||
         docHtml.querySelector('meta[property="og:title"]')?.getAttribute("content") ||
         docHtml.querySelector('meta[name="twitter:title"]')?.getAttribute("content") ||
         "";
-
       const rawImage =
         docHtml.querySelector(".tgme_page_photo_image")?.getAttribute("src") ||
         docHtml.querySelector('meta[property="og:image"]')?.getAttribute("content") ||
         docHtml.querySelector('meta[name="twitter:image"]')?.getAttribute("content") ||
         "";
-
       const rawDesc =
         docHtml.querySelector(".tgme_page_description")?.textContent ||
         docHtml.querySelector('meta[property="og:description"]')?.getAttribute("content") ||
@@ -908,7 +835,6 @@
       if (!title || title.startsWith("Telegram: Contact") || title.startsWith("Telegram: Join") || title === "Telegram") {
         return null;
       }
-
       return {
         title,
         image: (rawImage || "").trim(),
@@ -919,7 +845,6 @@
     async function fetchTelegramMetadata(url) {
       const cleanUrl = normalizeTelegramLink(url);
       if (!cleanUrl || !cleanUrl.includes("t.me/")) return null;
-
       const tasks = [
         (async () => {
           const res = await fetchWithTimeout(`https://api.microlink.io/?url=${encodeURIComponent(cleanUrl)}`, 4000);
@@ -981,18 +906,13 @@
     function updateCharCounter() {
       const len = groupDescInput.value.trim().length;
       charCountBadge.textContent = `${len} / 100 mín.`;
-      if (len >= 100) {
-        charCountBadge.className = "text-[11px] font-bold text-emerald-400";
-      } else {
-        charCountBadge.className = "text-[11px] font-bold text-red-400";
-      }
+      charCountBadge.className = len >= 100 ? "text-[11px] font-bold text-emerald-400" : "text-[11px] font-bold text-red-400";
     }
     groupDescInput.addEventListener("input", updateCharCounter);
 
     async function handleAutoFetchUserForm() {
       const link = normalizeTelegramLink(groupLinkInput.value);
       if (!link.includes("t.me/") || link.endsWith("t.me/")) return;
-
       fetchStatusText.textContent = "⏳ Puxando nome completo e foto...";
       fetchStatusText.classList.remove("hidden");
 
@@ -1070,9 +990,7 @@
       if (!isAdminUser) return;
       if (!confirm("Esvaziar todos os Destaques atuais para cadastrar tudo do zero?")) return;
       for (const item of allHighlights) {
-        try {
-          await deleteDoc(doc(db, "highlights", item.id));
-        } catch (_) {}
+        try { await deleteDoc(doc(db, "highlights", item.id)); } catch (_) {}
       }
       resetHighlightForm();
       openModal("modalAdmin");
@@ -1128,7 +1046,6 @@
       const name = document.getElementById("authNameInput").value.trim();
       const email = document.getElementById("authEmailInput").value.trim();
       const pass = document.getElementById("authPassInput").value;
-
       try {
         if (isRegisterMode) {
           const cred = await createUserWithEmailAndPassword(auth, email, pass);
@@ -1195,7 +1112,6 @@
         openModal("modalAuth");
         return;
       }
-
       const desc = groupDescInput.value.trim();
       if (desc.length < 100) {
         alert("A descrição precisa ter no mínimo 100 caracteres para manter a qualidade do site.");
@@ -1218,15 +1134,9 @@
         if (image && !image.startsWith("data:")) {
           image = await convertRemoteImageToPermanentBase64(image);
         }
-
         if (editId) {
           await updateDoc(doc(db, "groups", editId), {
-            type,
-            category,
-            link,
-            name,
-            description: desc,
-            image,
+            type, category, link, name, description: desc, image,
             status: isAdminUser ? "approved" : "pending",
             updatedAt: serverTimestamp()
           });
@@ -1234,12 +1144,7 @@
         } else {
           const now = new Date();
           await addDoc(collection(db, "groups"), {
-            type,
-            category,
-            link,
-            name,
-            description: desc,
-            image,
+            type, category, link, name, description: desc, image,
             ownerUid: currentUser.uid,
             ownerName,
             ownerEmail: currentUser.email,
@@ -1275,11 +1180,7 @@
 
     onSnapshot(collection(db, "groups"), (snap) => {
       allGroups = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-      allGroups.sort((a, b) => {
-        const tA = a.createdAt?.seconds || 0;
-        const tB = b.createdAt?.seconds || 0;
-        return tB - tA;
-      });
+      allGroups.sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
       renderPublicGroups();
       if (isAdminUser) updateAdminUI();
     });
@@ -1293,16 +1194,10 @@
       return rawImg;
     }
 
-    // =========================================================================
-    // RENDERIZAÇÃO LIMPA DOS DESTAQUES:
-    // - 1º da fila = Card Dourado com "👑 DESTAQUE • GRUPO OFICIAL" (Sem #1)
-    // - 2º em diante = Card Azul com apenas "★ DESTAQUE" (Sem #2 e sem Oficial)
-    // =========================================================================
     function renderHighlights() {
       const primaryContainer = document.getElementById("primaryHighlightContainer");
       const secondaryContainer = document.getElementById("secondaryHighlightsContainer");
       const topSection = document.getElementById("topHighlightsSection");
-
       const sorted = getSortedValidHighlights();
 
       primaryContainer.innerHTML = "";
@@ -1341,8 +1236,7 @@
         }
         primaryContainer.appendChild(firstCard);
 
-        const others = sorted.slice(1);
-        others.forEach((item) => {
+        sorted.slice(1).forEach((item) => {
           const imgSrc = getBestImageUrl(item.image);
           const card = document.createElement("div");
           card.className = "bg-[#152647] border border-sky-400/40 rounded-2xl p-3.5 shadow-lg flex items-center justify-between gap-3";
@@ -1375,11 +1269,8 @@
       }
 
       if (!selectedCategory) {
-        if (sorted.length === 0 && !isAdminUser) {
-          topSection.classList.add("hidden");
-        } else {
-          topSection.classList.remove("hidden");
-        }
+        if (sorted.length === 0 && !isAdminUser) topSection.classList.add("hidden");
+        else topSection.classList.remove("hidden");
       }
     }
 
@@ -1399,10 +1290,9 @@
         if (g.status !== "approved") return false;
         if (selectedCategory && g.category !== selectedCategory) return false;
         if (search) {
-          const matchName = (g.name || "").toLowerCase().includes(search);
-          const matchDesc = (g.description || "").toLowerCase().includes(search);
-          const matchCat = (g.category || "").toLowerCase().includes(search);
-          return matchName || matchDesc || matchCat;
+          return (g.name || "").toLowerCase().includes(search) ||
+                 (g.description || "").toLowerCase().includes(search) ||
+                 (g.category || "").toLowerCase().includes(search);
         }
         return true;
       });
@@ -1549,28 +1439,18 @@
       const sorted = getSortedValidHighlights();
       const totalSlots = Math.max(sorted.length + 1, 3);
       sel.innerHTML = "";
-
       for (let i = 1; i <= totalSlots; i++) {
         const opt = document.createElement("option");
         opt.value = String(i);
         const occupant = sorted[i - 1];
         if (i === 1) {
-          opt.textContent = occupant
-            ? `Colocar em 1º Lugar (Empurra "${occupant.title.slice(0, 20)}" para 2º)`
-            : `Colocar em 1º Lugar (Destaque Oficial)`;
+          opt.textContent = occupant ? `Colocar em 1º Lugar (Empurra "${occupant.title.slice(0, 20)}" para 2º)` : `Colocar em 1º Lugar (Destaque Oficial)`;
         } else {
-          opt.textContent = occupant
-            ? `Colocar em ${i}º Lugar (Empurra "${occupant.title.slice(0, 20)}" para ${i + 1}º)`
-            : `Colocar em ${i}º Lugar`;
+          opt.textContent = occupant ? `Colocar em ${i}º Lugar (Empurra "${occupant.title.slice(0, 20)}" para ${i + 1}º)` : `Colocar em ${i}º Lugar`;
         }
         sel.appendChild(opt);
       }
-
-      if (selectedPos) {
-        sel.value = String(selectedPos);
-      } else {
-        sel.value = String(sorted.length + 1);
-      }
+      sel.value = selectedPos ? String(selectedPos) : String(sorted.length + 1);
     }
 
     function updateAdminUI() {
@@ -1679,9 +1559,7 @@
       const meta = await fetchTelegramMetadata(url);
       if (meta && meta.title) {
         document.getElementById("hlTitle").value = meta.title;
-        if (meta.description) {
-          document.getElementById("hlDesc").value = meta.description;
-        }
+        if (meta.description) document.getElementById("hlDesc").value = meta.description;
         if (meta.image) {
           document.getElementById("hlImgPreview").src = meta.image;
           document.getElementById("hlImgData").value = meta.image;
@@ -1711,7 +1589,6 @@
     document.getElementById("highlightForm").addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!isAdminUser) return;
-
       const link = normalizeTelegramLink(document.getElementById("hlLink").value);
       if (!link || link === "https://t.me/") {
         alert("Cole o link completo do grupo no Telegram.");
@@ -1738,25 +1615,13 @@
 
         let savedId = editId;
         if (editId) {
-          await updateDoc(doc(db, "highlights", editId), {
-            title,
-            link,
-            description: desc,
-            image: imgData
-          });
+          await updateDoc(doc(db, "highlights", editId), { title, link, description: desc, image: imgData });
         } else {
-          const docRef = await addDoc(collection(db, "highlights"), {
-            title,
-            link,
-            description: desc,
-            image: imgData,
-            order: targetPos
-          });
+          const docRef = await addDoc(collection(db, "highlights"), { title, link, description: desc, image: imgData, order: targetPos });
           savedId = docRef.id;
         }
 
         currentList.splice(insertIndex, 0, { id: savedId });
-
         for (let i = 0; i < currentList.length; i++) {
           const newOrder = i + 1;
           await updateDoc(doc(db, "highlights", currentList[i].id), {
@@ -1816,9 +1681,7 @@
         });
         row.querySelector(".btn-hl-del").addEventListener("click", async () => {
           if (confirm(`Remover "${item.title}" dos destaques?`)) {
-            if (document.getElementById("hlEditId").value === item.id) {
-              resetHighlightForm();
-            }
+            if (document.getElementById("hlEditId").value === item.id) resetHighlightForm();
             await deleteDoc(doc(db, "highlights", item.id));
             await normalizeHighlightOrders();
           }
